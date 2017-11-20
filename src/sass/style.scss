@@ -1,0 +1,19 @@
+@import "../templates/menu";
+@import "../templates/footer";
+@import "pages";
+.wrapper {
+	max-width: 1600px;
+	min-width: 320px;
+	margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Roboto', sans-serif;
+}
+p, div {
+	font-family: 'Roboto', sans-serif;
+}
+ul, li {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

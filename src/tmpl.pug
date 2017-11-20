@@ -1,0 +1,68 @@
+block vars
+	- var globalCdnPath = "/static"; // Путь к глобальным ресурсам(CDN)
+	- var localPath = "/static"; // Путь к локальным ресурсам
+	- var globaPath = "/static"; // Путь к ресурсам маркапа
+
+include ./mixins.pug
+
+doctype html
+block html
+head
+	block title
+	meta(charset="utf-8")
+	meta(http-equiv="X-UA-Compatible" content="IE=edge")
+	meta(name="viewport" content="width=device-width")
+	meta(name="msapplication-tap-highlight" content="no")
+
+	block seositename
+		script(type="application/ld+json")
+			| {
+			|  "@context": "http://schema.org",
+			|  "@type": "WebSite",
+			|  "name": "mos.ru",
+			|  "alternateName": "Официальный сайт Мэра Москвы",
+			|  "url": "https://www.mos.ru/"
+			| }
+
+	block seositelogo
+		script(type="application/ld+json")
+			| {
+			|  "@context": "http://schema.org",
+			|  "@type": "Organization",
+			|  "url": "https://www.mos.ru/",
+			|  "logo": "https://www.mos.ru/front/markup/header-footer/img/logo.svg"
+			| }
+
+
+	block meta
+		meta(property="og:title" content="")
+		meta(property="og:description" content="")
+		meta(property="og:image" content="")
+		meta(property="og:image:url" content="")
+		meta(property="og:url" content="")
+
+	block base
+
+	//- seo canonical and alternate url
+	block canonical
+	block hreflang
+
+	block styles
+		link(rel="stylesheet" href="/front/markup/header-footer/css/mos_layouts.css?mosRuVersionControlFlag")
+	block appstyles
+	//- скрипты подключены в конце страницы в шаблоне футера: footer/tmpl.jade
+
+	block icons
+		+staticons
+
+block body
+
+	block head
+
+	block content
+
+	block footer
+
+	block counters
+
+</html>
