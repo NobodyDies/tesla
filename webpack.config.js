@@ -35,6 +35,10 @@ module.exports = {
 	context: path.resolve(__dirname, 'src'),
 	entry: {
 		'script': './js/script.js',
+		'index': './pages/index.js',
+		'item': './pages/item.js',
+		'catalog': './pages/catalog.js',
+		'basket': './pages/basket.js',
 	},
 	output: {
 		path: path.resolve(__dirname, buildFolder),
@@ -127,6 +131,22 @@ module.exports = {
 		}),
 		new HtmlWebpackPlugin({
 			template: 'pages/index.pug',
+			filename: '../dist/index.html',
+			NODE_ENV: NODE_ENV
+		}),
+		new HtmlWebpackPlugin({
+			template: 'pages/item.pug',
+			filename: '../dist/item.html',
+			NODE_ENV: NODE_ENV
+		}),
+		new HtmlWebpackPlugin({
+			template: 'pages/catalog.pug',
+			filename: '../dist/catalog.html',
+			NODE_ENV: NODE_ENV
+		}),
+		new HtmlWebpackPlugin({
+			template: 'pages/basket.pug',
+			filename: '../dist/basket.html',
 			NODE_ENV: NODE_ENV
 		}),
 		new CopyWebpackPlugin([
