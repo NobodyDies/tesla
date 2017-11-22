@@ -132,21 +132,25 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'pages/index.pug',
 			filename: '../dist/index.html',
+			inject: false,
 			NODE_ENV: NODE_ENV
 		}),
 		new HtmlWebpackPlugin({
 			template: 'pages/item.pug',
 			filename: '../dist/item.html',
+			inject: false,
 			NODE_ENV: NODE_ENV
 		}),
 		new HtmlWebpackPlugin({
 			template: 'pages/catalog.pug',
 			filename: '../dist/catalog.html',
+			inject: false,
 			NODE_ENV: NODE_ENV
 		}),
 		new HtmlWebpackPlugin({
 			template: 'pages/basket.pug',
 			filename: '../dist/basket.html',
+			inject: false,
 			NODE_ENV: NODE_ENV
 		}),
 		new CopyWebpackPlugin([
