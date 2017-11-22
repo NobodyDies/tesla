@@ -143,8 +143,14 @@
 		@media screen and (max-width: 1079px) {
 			justify-content: space-around;
 		}
+		@media screen and (max-width: 991px) {
+			margin: 17px -20px 0;
+		}
 		> * {
 			margin: 20px;
+			@media screen and (max-width: 991px) {
+				margin: 13px;
+			}
 		}
 		a {
 			color: #ffffff;

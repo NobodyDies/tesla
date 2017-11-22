@@ -1,9 +1,38 @@
 nav.navigation
-	button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
-		span(class="sr-only") Toggle navigation
-		span(class="icon-bar")
-		span(class="icon-bar")
-		span(class="icon-bar")
+	.navigation-mobile.hidden-md.hidden-lg.active
+		button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+			span(class="sr-only") Toggle navigation
+			span(class="icon-bar")
+			span(class="icon-bar")
+			span(class="icon-bar")
+		.navigation-mobile-panel
+			.delivery-city
+				span.delivery-city-text Доставка в
+				span.delivery-city-current
+					=" "
+					span  Москве
+			ul.main-nav
+				li
+					a(href="#") МАГАЗИН
+				li
+					a(href="#") СОТРУДНИЧЕСТВО
+				li
+					a(href="#") КОНТАКТЫ
+			.navigation-mobile-bottom
+				.navigation-mobile-phone
+					.navigation-mobile-phone-text Телефон в Москве
+					a.navigation-mobile-phone-number(href="tel:8 800 123-80-76") 8 800 123-80-76
+				ul.navigation-mobile-socials
+					li
+						a.navigation-mobile-socials.socials-facebook(href="#")
+							img(src="/assets/img/facebook.svg")
+					li
+						a.navigation-mobile-socials.socials-instagram(href="#")
+							img(src="/assets/img/instagram.svg")
+					li
+						a.navigation-mobile-socials.socials-telegramm(href="#")
+							img(src="/assets/img/telegram.svg")
+
 	.navigation-logo
 		a(href="/")
 			img(
@@ -25,10 +54,12 @@ nav.navigation
 					a(
 					href="#"
 					) Уфе
-		li.delivery-city Доставка в
-			span.delivery-city-current
-				span
-				|  Москве
+		li.delivery-city
+			span.delivery-city-text Доставка в
+				=" "
+				span.delivery-city-current
+					span
+						|  Москве
 			ul.delivery-city-dropdown
 				li
 					a(
@@ -42,7 +73,7 @@ nav.navigation
 					a(
 					href="#"
 					) Уфе
-	ul.main-nav
+	ul.main-nav.hidden-xs.hidden-sm
 		li
 			a(href="#") МАГАЗИН
 		li
@@ -50,10 +81,63 @@ nav.navigation
 		li
 			a(href="#") КОНТАКТЫ
 
-	a.phone(href="tel:8 800 123-80-76") 8 800 123-80-76
+	a.phone.hidden-xs.hidden-sm(href="tel:8 800 123-80-76") 8 800 123-80-76
 
-	.basket.active
-		img.basket-icon(src="/assets/img/shopping-bag.png")
+	.basket
+		img.basket-icon(src="/assets/img/basket.svg")
 		.basket-count 2
-		ul.basket-list
-			li
+		.basket-goods-panel
+			ul.basket-goods
+				li.basket-goods-item
+					.item-top
+						.item-img
+							img(src="/assets/img/basket-good.png")
+						.item-description
+							.item-title Магнитный кабель
+							ul.item-properties
+								li Чёрный
+								li 100 м
+								li Lightning + MicroUSB
+						.item-delete
+							a(href="#")
+								img(src="/assets/img/garbage.svg")
+					.item-bottom
+						.item-quantity
+							.item-quantity-label Количество:
+							.item-quantity-value
+							|
+							| 1
+						.item-buttons
+							button.item-buttons-add -
+							button.item-buttons-reduce +
+						.item-price
+							.item-price-sum 1 990
+								=" "
+								.item-price-valute Р
+				li.basket-goods-item
+					.item-top
+						.item-img.pull-left
+							img(src="/assets/img/basket-good.png")
+						.item-description.pull-left
+							.item-title Магнитный кабель
+							ul.item-properties
+								li Чёрный
+								li 100 м
+								li Lightning + MicroUSB
+						.item-delete
+							a(href="#")
+								img(src="/assets/img/garbage.svg")
+					.item-bottom
+						.item-quantity
+							.item-quantity-label Количество:
+							.item-quantity-value
+							|
+							| 1
+						.item-buttons
+							button.item-buttons-add -
+							button.item-buttons-reduce +
+						.item-price
+							.item-price-sum 123 990
+								=" "
+								.item-price-valute Р
+			button.basket-order Сделать заказ

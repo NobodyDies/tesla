@@ -146,7 +146,8 @@ module.exports = {
 
 	// webpack dev server configuration
 	devServer: {
-		host: config.server.localhost,
+		host: '0.0.0.0',
+		public: config.server.localhost + ':8000',
 		contentBase: path.join(__dirname, buildFolder),
 		port: config.server.port,
 		historyApiFallback: {
@@ -156,7 +157,8 @@ module.exports = {
 		noInfo: false,
 		stats: {
 			color: true
-		}
+		},
+		disableHostCheck: true
 	},
 
 	// support source maps
