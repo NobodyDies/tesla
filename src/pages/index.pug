@@ -3,7 +3,49 @@ extends ./../templates/common
 block appScripts
 	script(src='/js/index.min.js')
 
+block vars
+	- var menuTransparent = true
+
 block append content
 	.index_page
-		//.index_page-slider
-		//	img(src="/assets/img/slider_main.png" srcset="/assets/img/slider_main_phone.png 920w, /assets/img/slider_main.png 921w")
+		.index_page-slider
+			img(
+			src="/assets/img/slider_main.png"
+			)
+			//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
+			//sizes="(max-width: 991px) 50vw, 992px"
+			.index_page-slider-bottom
+				.copyright © 2017 Tesla Goods Co. ltd
+				.scroll-down
+					.scroll-down-pin
+				ul.socials
+					li
+						a.socials.socials-facebook(href="#")
+							img(src="/assets/img/facebook.svg")
+					li
+						a.socials.socials-instagram(href="#")
+							img(src="/assets/img/instagram.svg")
+					li
+						a.socials.socials-telegramm(href="#")
+							img(src="/assets/img/telegram.svg")
+
+		.index_page-catalog
+			.index_page-catalog-wrapper.content-wrapper
+
+				.index_page-catalog-content.row
+					.grid-sizer.col-md-4.col-xs-6
+					.index_page-catalog-item.col-lg-8.col-md-8.col-xs-12
+						.index_page-catalog-item-content
+							img(src="/assets/img/catalog/item_wide.png")
+					.index_page-catalog-item.col-lg-4.col-md-4.col-xs-6
+						.index_page-catalog-item-content
+							img(src="/assets/img/catalog/item1.png")
+					.index_page-catalog-item.col-lg-4.col-md-4.col-xs-6
+						.index_page-catalog-item-content
+							img(src="/assets/img/catalog/item2.png")
+					.index_page-catalog-item.col-lg-4.col-md-4.col-xs-6
+						.index_page-catalog-item-content
+							img(src="/assets/img/catalog/item3.png")
+					.index_page-catalog-item.col-lg-4.col-md-4.col-xs-6
+						.index_page-catalog-item-content
+							img(src="/assets/img/catalog/item4.png")

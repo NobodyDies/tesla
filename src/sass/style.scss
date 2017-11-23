@@ -25,3 +25,26 @@ ul, li {
 	margin: 0;
 	padding: 0;
 }
+.socials {
+	li {
+		margin-left: 26px;
+		display: inline-block;
+		&:first-child {
+			margin-left: 0;
+		}
+		img {
+			height: 14px;
+		}
+	}
+}
+.copyright {
+	font-size: 13px;
+	line-height: 13px;
+	color: #a8a8a8;
+}
+.content-wrapper {
+	margin: 0 130px;
+	@media screen and (max-width: 991px) {
+	  margin: 0;
+	}
+}
