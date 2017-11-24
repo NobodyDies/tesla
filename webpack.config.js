@@ -110,12 +110,12 @@ module.exports = {
 				})
 			},
 			{
-					test: /\.(png|jpg|jpeg|gif|ico|svg|ttf|woff|eot|woff2)$/,
-					loader: 'file-loader',
-					options: {
-						name: '[path][name].[ext]',
-						publicPath: '/front/markup/maps/'
-					}
+				test: /\.(png|jpg|jpeg|gif|ico|svg|ttf|woff|eot|woff2)$/,
+				loader: 'file-loader',
+				options: {
+					name: '[path][name].[ext]',
+					publicPath: '/front/markup/maps/'
+				}
 			}
 		]
 	},
@@ -157,6 +157,22 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'src/assets'),
 				to: path.resolve(__dirname, buildFolder + '/assets')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/jquery/dist/jquery.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/jquery')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/slick-carousel/slick/slick.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/slick')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/slick-carousel/slick/slick.css'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/slick')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/masonry-layout/dist/masonry.pkgd.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/masonry')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),

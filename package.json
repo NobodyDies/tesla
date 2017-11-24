@@ -10,7 +10,12 @@
     "serve": "cross-env NODE_ENV=production webpack-dev-server --colors",
     "prestart": "yarn install"
   },
-  "dependencies": {},
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "masonry": "^0.0.2",
+    "masonry-layout": "^4.2.0",
+    "slick-carousel": "^1.8.1"
+  },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
     "babel-core": "^6.22.1",
