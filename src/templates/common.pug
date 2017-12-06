@@ -1,6 +1,11 @@
 block vars
 	- var menuTransparent = false
 
+mixin icon(name,mod)
+	- mod = mod || ''
+	svg(class="icon icon-" + name + ' ' + mod)
+		use(xlink:href="/assets/img/icons.svg#icon-" + name)
+
 doctype html
 html(lang="ru")
 
@@ -9,6 +14,7 @@ html(lang="ru")
 		link(href="https://fonts.googleapis.com/css?family=Roboto:300,400&amp;subset=cyrillic" rel="stylesheet")
 		link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous")
 		link(href="/assets/js/slick/slick.css" rel="stylesheet")
+		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.5/css/swiper.min.css")
 		link(href="/css/script.min.css" rel="stylesheet")
 		block appStyles
 
@@ -29,5 +35,7 @@ html(lang="ru")
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
 		script(src='/assets/js/masonry/masonry.pkgd.min.js')
 		script(src='/assets/js/slick/slick.min.js')
+		script(src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.5/js/swiper.min.js")
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/svg4everybody/2.1.9/svg4everybody.min.js')
 		script(src='/js/script.min.js')
 		block appScripts

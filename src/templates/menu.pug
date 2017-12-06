@@ -8,10 +8,30 @@ block prepend menu
 				span(class="icon-bar")
 			.navigation-mobile-panel
 				.delivery-city
-					span.delivery-city-text Доставка в
-					span.delivery-city-current
+					.delivery-city-text 
+						span Доставка в
 						=" "
-						span  Москве
+						span.delivery-city-current.dropdown-toggle#mobDropdownLocationButton(
+						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+						)
+							span
+								|  Москве
+						ul.delivery-city-dropdown.dropdown-menu(
+						aria-labelledby="mobDropdownLocationButton"
+						)
+							li.dropdown-item
+								a(
+								href="#"
+								) Уфе
+							li.dropdown-item
+								a(
+								href="#"
+								) Санкт-Петербурге Петербурге
+							li.dropdown-item
+								a(
+								href="#"
+								) Москве
+
 				ul.main-nav
 					li
 						a(href="#") МАГАЗИН
@@ -41,42 +61,47 @@ block prepend menu
 				)
 		ul.left-menu
 			li.language-switcher
-				span.language-switcher-current RU
-				ul.language-switcher-dropdown
-					li
+				span.language-switcher-current.dropdown-toggle#dropdownMenuButton(
+				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+				) RU
+				ul.language-switcher-dropdown.dropdown-menu(
+				aria-labelledby="dropdownMenuButton"
+				)
+					li.dropdown-item
 						a(
 						href="#"
-						) Уфе
-					li
+						) ENG
+					li.dropdown-item
 						a(
 						href="#"
-						) Уфе
-					li
-						a(
-						href="#"
-						) Уфе
+						) RU
 			li.delivery-city
-				span.delivery-city-text Доставка в
+				.delivery-city-text 
+					span Доставка в
 					=" "
-					span.delivery-city-current
+					span.delivery-city-current.dropdown-toggle#dropdownLocationButton(
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+					)
 						span
 							|  Москве
-				ul.delivery-city-dropdown
-					li
-						a(
-						href="#"
-						) Уфе
-					li
-						a(
-						href="#"
-						) Уфе
-					li
-						a(
-						href="#"
-						) Уфе
+					ul.delivery-city-dropdown.dropdown-menu(
+					aria-labelledby="dropdownLocationButton"
+					)
+						li.dropdown-item
+							a(
+							href="#"
+							) Уфе
+						li.dropdown-item
+							a(
+							href="#"
+							) В Санкт-Петербурге
+						li.dropdown-item
+							a(
+							href="#"
+							) Москве
 		ul.main-nav.hidden-xs.hidden-sm
 			li
-				a(href="#") МАГАЗИН
+				a(href="/catalog.html") МАГАЗИН
 			li
 				a(href="#") СОТРУДНИЧЕСТВО
 			li

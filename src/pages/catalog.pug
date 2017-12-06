@@ -1,4 +1,112 @@
 extends ./../templates/common
 
+block appScripts
+	script(src='/js/catalog.min.js')
+
 block append content
-	h1.catalog Страница каталога
+	.catalog_page
+		.catalog_page-heading-wrap
+			.catalog_page-heading
+				img(src="/assets/img/catalog_main.png")
+				.content-wrapper
+					.catalog_page-heading-text
+						h1 Магнитные кабели
+						span Мы создали самый удобный и надёжный кабель 
+						br
+						span для iPhone и Android смартфонов.
+
+		.catalog_page-catalog
+			.catalog_page-catalog-wrapper.content-wrapper
+				.catalog_page-catalog-content.row
+					.grid-sizer.col-sm-6.col-sm-3
+
+					.catalog_page-catalog-item.col-sm-6
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/1.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1м)
+								.catalog-item-price 1990
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-3
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/2.png")
+							.catalog-item-text
+								.catalog-item-title Коннектор MicroUSB
+								.catalog-item-price 1100
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-3
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/3.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1,5м)
+								.catalog-item-price 1990
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-4
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/4.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1,5м)
+								.catalog-item-price 5800
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-4
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/5.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1,5м)
+								.catalog-item-price 5800
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-4
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/6.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1,5м)
+								.catalog-item-price 5800
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-3
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/7.png")
+							.catalog-item-text
+								.catalog-item-title Powerbank
+								.catalog-item-price 5800
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-3
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/8.png")
+							.catalog-item-text
+								.catalog-item-title Коннектор Type C
+								.catalog-item-price 860
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-6
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/9.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1м)
+								.catalog-item-price 1990
+									=" "
+									span Р
+					.catalog_page-catalog-item.col-sm-3
+						img.catalog-item-star(src="/assets/img/star.svg")
+						a.catalog-item(href="#")
+							img(src="/assets/img/page-catalog/10.png")
+							.catalog-item-text
+								.catalog-item-title Магнитный кабель (1м)
+								.catalog-item-price 1990
+									=" "
+									span Р
