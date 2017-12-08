@@ -197,9 +197,10 @@
 		-webkit-flex-shrink: 0;
 		-ms-flex-negative: 0;
 		@media screen and (max-width: 991px) {
-			margin-left: 15px;
+			padding: 0 15px 0 15px;
 			width: 100%;
 			display: flex;
+			justify-content: space-between;
 			margin-bottom: 30px;
 		}
 		&-title {
@@ -209,7 +210,6 @@
 			}
 		}
 		h3 {
-			width: 200px;
 			font-size: 25px;
 			line-height: 30px;
 			font-weight: bold;
