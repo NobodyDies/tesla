@@ -50,6 +50,7 @@
     "sass-loader": "^6.0.3",
     "string-replace-loader": "^1.2.0",
     "style-loader": "^0.16.1",
+    "svg4everybody": "^2.1.9",
     "unminified-webpack-plugin": "^1.2.0",
     "webpack": "^3.0.0",
     "webpack-dev-server": "^2.4.2",

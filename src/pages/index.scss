@@ -1,7 +1,7 @@
 .index_page {
 	margin-top: -60px;
 	background: rgba(244,242,242,1);
-	padding-bottom: 100px;
+	/* padding-bottom: 100px; */
 	&-slider {
 		height: 100vh;
 		min-height: 320px;
@@ -161,15 +161,36 @@
 }
 /**/
 .index_page-popular {
-	padding: 130px 0 0;
+	padding: 130px 0 0px;
+	@media screen and (max-width: 727px) {
+		padding: 30px 0 0px;
+	}
 	background: rgba(231,231,231,1);
 	&-wrapper {
 		background: linear-gradient(to bottom, rgba(231,231,231,1) 0%, rgba(231,231,231,1) 50%, rgba(244,242,242,1) 50%, rgba(244,242,242,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#f4f2f2', GradientType=0 );
+		> .content-wrapper {
+			display: flex;
+			@media screen and (max-width: 727px) {
+				flex-direction: column;
+			}
+		}
+		@media screen and (max-width: 727px) {
+			background: #e7e7e7;
+		}
 	}
 	.popular-controls {
-		width: 21.3%;
+		width: 200px;
 		padding: 0 45px 0 0;
+		-webkit-box-flex: 0;
+		-webkit-flex-grow: 0;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+		-webkit-flex-shrink: 0;
+		-ms-flex-negative: 0;
+		@media screen and (max-width: 992px) {
+			margin-left: 15px;
+		}
 		h3 {
 			font-size: 25px;
 			line-height: 30px;
@@ -209,24 +230,14 @@
 					fill: #b9b9b9;
 				}
 			}
-
-			/* modernizr?
-			&-left span {
-				display: block;
-				width: 7px;
-				height: 12px;
-				background: #e7e7e7 url(/assets/img/arrow-point-to-right.svg) 50% 50% no-repeat;
-			}
-			&-right span {
-				display: block;
-				width: 7px;
-				height: 12px;
-				background: #e7e7e7 url(/assets/img/arrow-point-to-right.svg) 50% 50% no-repeat;
-			}
-			*/
 		}
 		&-link {
 			color: #2096d0;
+			@media screen and (max-width: 727px) {
+				display: block;
+				align-self: center;
+				margin: 30px 0;
+			}
 			&:hover {
 				cursor: pointer;
 			}
@@ -236,6 +247,9 @@
 				fill: #999999;
 				margin-right: 16px;
 				margin-top: 45px;
+				@media screen and (max-width: 727px) {
+					margin-top: 0px;
+				}
 			}
 		}
 	}
@@ -243,7 +257,22 @@
 		margin: 0 0;
 		padding: 0;
 		/* float: right; */
-		width: 78.7%;
+		/* width: 78.7%; */
+		-webkit-box-flex: 1;
+		-webkit-flex-grow: 1;
+		-ms-flex-positive: 1;
+		flex-grow: 1;
+		width: 100%;
+		@media screen and (max-width: 992px) {
+			margin-right: 15px;
+		}
+		@media screen and (max-width: 727px) {
+			width: auto;
+			margin-left: 15px;
+		}
+		@media screen and (max-width: 480px) {
+			margin: 0;
+		}
 		&-wrapper {
 			width: 100%;
 			flex-grow: 0;

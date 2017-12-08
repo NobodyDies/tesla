@@ -163,6 +163,10 @@ module.exports = {
 				to: path.resolve(__dirname, buildFolder + '/assets/js/jquery')
 			},
 			{
+				from: path.resolve(__dirname, 'node_modules/svg4everybody/dist/svg4everybody.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/svg4everybody')
+			},
+			{
 				from: path.resolve(__dirname, 'node_modules/slick-carousel/slick/slick.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/slick')
 			},
