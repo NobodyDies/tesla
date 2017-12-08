@@ -341,15 +341,28 @@
 					height: auto;
 					max-width: 99.5%;
 					transform: translateX(-50%);
+					/*
 					@media screen and (max-width: 420px) {
 						bottom: 20px;
 					}
 					@media screen and (max-width: 340px) {
-						bottom: 30px;
+						bottom: 25px;
 					}
 					@media screen and (max-width: 380px) {
 						bottom: 50px;
 					}
+					*/
+					@media screen and (max-width: 420px) {
+						bottom: auto;
+						top: 20px;
+					}
+					@media screen and (max-width: 340px) {
+						//bottom: 25px;
+					}
+					@media screen and (max-width: 380px) {
+						//bottom: 50px;
+					}
+
 					&.pull-right {
 						right: 0;
 						left: auto;
