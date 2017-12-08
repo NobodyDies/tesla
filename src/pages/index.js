@@ -51,7 +51,7 @@ $( document ).ready(() => {
 	    speed: 300,
 	    spaceBetween: 40,
 		breakpoints: {
-		    1156: {
+		    1160: {
 				spaceBetween: 40,
 				slidesPerView: 2,
 				slidesPerGroup: 2
@@ -61,17 +61,12 @@ $( document ).ready(() => {
 				slidesPerView: 3,
 				slidesPerGroup: 3
 		    },
-		    920: {
-				spaceBetween: 40,
-				slidesPerView: 2,
-				slidesPerGroup: 2
+		    788: {
+				spaceBetween: 1,
+				slidesPerView: 3,
+				slidesPerGroup: 3
 		    },
-		    727: {
-				spaceBetween: 40,
-				slidesPerView: 2,
-				slidesPerGroup: 2
-		    },
-		    527: {
+		    680: {
 				spaceBetween: 1,
 				slidesPerView: 2,
 				slidesPerGroup: 2
@@ -87,7 +82,7 @@ $( document ).ready(() => {
 
 
 
-var breakpoint = window.matchMedia('(max-width:727px)');
+var breakpoint = window.matchMedia('(max-width:991px)');
 
 var breakpointChecker = function breakpointChecker() {
 

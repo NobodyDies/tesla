@@ -1,7 +1,7 @@
 .index_page {
 	margin-top: -60px;
 	background: rgba(244,242,242,1);
-	/* padding-bottom: 100px; */
+	padding-bottom: 100px;
 	&-slider {
 		height: 100vh;
 		min-height: 320px;
@@ -10,6 +10,7 @@
 			height: 100%;
 			width: 100%;
 			object-fit: cover;
+			font-family: 'object-fit: cover;';
 		}
 		&-content {
 			position: absolute;
@@ -162,7 +163,7 @@
 /**/
 .index_page-popular {
 	padding: 130px 0 0px;
-	@media screen and (max-width: 727px) {
+	@media screen and (max-width: 991px) {
 		padding: 30px 0 0px;
 	}
 	background: rgba(231,231,231,1);
@@ -171,16 +172,15 @@
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e7e7e7', endColorstr='#f4f2f2', GradientType=0 );
 		> .content-wrapper {
 			display: flex;
-			@media screen and (max-width: 727px) {
+			@media screen and (max-width: 991px) {
 				flex-direction: column;
 			}
 		}
-		@media screen and (max-width: 727px) {
+		@media screen and (max-width: 991px) {
 			background: #e7e7e7;
 		}
 	}
 	.popular-controls {
-		width: 200px;
 		padding: 0 45px 0 0;
 		-webkit-box-flex: 0;
 		-webkit-flex-grow: 0;
@@ -188,26 +188,52 @@
 		flex-grow: 0;
 		-webkit-flex-shrink: 0;
 		-ms-flex-negative: 0;
-		@media screen and (max-width: 992px) {
+		@media screen and (max-width: 991px) {
 			margin-left: 15px;
+			width: 100%;
+			display: flex;
+			margin-bottom: 30px;
+		}
+		&-title {
+			margin: 20px 0 0px;
+			@media screen and (max-width: 991px) {
+				margin-top: 0px;
+			}
 		}
 		h3 {
+			width: 200px;
 			font-size: 25px;
 			line-height: 30px;
 			font-weight: bold;
 			color: #333333;
+			margin: 0;
+			@media screen and (max-width: 991px) {
+				font-size: 20px;
+				line-height: 25px;
+			}
 		}
 		&-controls {
 			margin-top: 59px;
 			width: 101px;
 			display: flex;
 			justify-content: space-between;
+			-webkit-box-flex: 0;
+			-ms-flex-positive: 0;
+			flex-grow: 0;
+			-webkit-flex-shrink: 0;
+			-ms-flex-negative: 0;
+			@media screen and (max-width: 991px) {
+				margin-top: 0px;
+			}
 			> div {
 				height: 50px;
 				width: 50px;
 				background: #e7e7e7;
 				display: flex;
 				cursor: pointer;
+				@media screen and (max-width: 991px) {
+					background: #ffffff;
+				}
 				&:hover {
 					.icon {
 						fill: #2096d0;
@@ -233,7 +259,7 @@
 		}
 		&-link {
 			color: #2096d0;
-			@media screen and (max-width: 727px) {
+			@media screen and (max-width: 991px) {
 				display: block;
 				align-self: center;
 				margin: 30px 0;
@@ -247,7 +273,7 @@
 				fill: #999999;
 				margin-right: 16px;
 				margin-top: 45px;
-				@media screen and (max-width: 727px) {
+				@media screen and (max-width: 991px) {
 					margin-top: 0px;
 				}
 			}
@@ -263,12 +289,10 @@
 		-ms-flex-positive: 1;
 		flex-grow: 1;
 		width: 100%;
-		@media screen and (max-width: 992px) {
-			margin-right: 15px;
-		}
-		@media screen and (max-width: 727px) {
+		@media screen and (max-width: 991px) {
 			width: auto;
 			margin-left: 15px;
+			margin-right: 15px;
 		}
 		@media screen and (max-width: 480px) {
 			margin: 0;
@@ -281,7 +305,7 @@
 		&-item {
 			position: relative;
 			background-color: #fcfcfc;
-			/* margin: 0 20px; */
+			//margin: 0 20px;
 			.slider-item-star {
 				position: absolute;
 				top: 15px;
@@ -294,23 +318,21 @@
 			.slider-item {
 				display: block;
 				width: 100%;
-				/* max-width: 220px;*/
+				// max-width: 220px;
 				height: 280px;
 				display: flex;
 				&:hover {
 					text-decoration: none;
 				}
 				img {
-					//object-fit: cover;
+					object-fit: cover;
+					font-family: 'object-fit: cover;';
 					position: absolute;
 					left: 50%;
 					bottom: 0;
-					max-width: 100%;
+					height: auto;
+					max-width: 99.5%;
 					transform: translateX(-50%);
-					&.pull-left {
-						left: 0;
-						transform: translateX(0);
-					}
 					&.pull-right {
 						right: 0;
 						left: auto;
