@@ -32,10 +32,11 @@
 
 	&-catalog {
 		margin-top: -140px;
-
 		&-content {
-			margin: 0 0;
+			margin: 0 -10px;
 			padding: 0;
+			.grid-sizer {
+			}
 			.col-sm-6 {
 				width: 48.936170212765957446808510638298%;
 			}
@@ -47,12 +48,10 @@
 			}
 		}
 		&-item {
-			background-color: #fcfcfc;
 			margin: 0 0 20px 0;
-			padding: 0;
+			padding: 0 10px;
 			overflow: hidden;
 			position: relative;
-
 			.catalog-item-star {
 				position: absolute;
 				top: 15px;
@@ -63,10 +62,10 @@
 				z-index: 2;
 			}
 			.catalog-item {
+				background-color: #fcfcfc;
 				display: block;
 				width: 100%;
 				position: relative;
-
 				&:hover {
 					text-decoration: none;
 				}
@@ -99,20 +98,6 @@
 					}
 				}
 			}
-
 		}
-
-
 	}
-
-
-
-
-
-
-
-
-
 }
-
-
