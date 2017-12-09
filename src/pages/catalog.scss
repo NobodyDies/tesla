@@ -36,6 +36,15 @@
 		&-content {
 			margin: 0 0;
 			padding: 0;
+			.col-sm-6 {
+				width: 48.936170212765957446808510638298%;
+			}
+			.col-sm-4 {
+				width: 31.914893617021276595744680851064%;
+			}
+			.col-sm-3 {
+				width: 23.404255319148936170212765957447%;
+			}
 		}
 		&-item {
 			background-color: #fcfcfc;
@@ -56,23 +65,23 @@
 			.catalog-item {
 				display: block;
 				width: 100%;
-				height: 280px;
-				display: flex;
+				position: relative;
 
 				&:hover {
 					text-decoration: none;
 				}
-				img {
-					position: absolute;
-					left: 50%;
-					bottom: 0;
-					max-width: 100%;
-					transform: translateX(-50%);
+					img {
+					object-fit: cover;
+					font-family: 'object-fit: cover;';
+					width: 100%;
+					height: 100%;
 				}
 				&-text {
-					position: relative;
+					position: absolute;
 					z-index: 2;
-					align-self: flex-end;
+					bottom: 0px;
+					left: 0;
+					right: 0;
 					width: 100%;
 					text-align: center;
 					padding: 0 10px 29px;
