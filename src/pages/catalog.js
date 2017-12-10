@@ -3,7 +3,7 @@ $( document ).ready(() => {
 		itemSelector: '.catalog_page-catalog-item',
 		percentPosition: true,
 		columnWidth: '.grid-sizer',
-		horizontalOrder: true
+		horizontalOrder: true,
 	});
 
 });

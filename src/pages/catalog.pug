@@ -7,20 +7,24 @@ block append content
 	.catalog_page
 		.catalog_page-heading-wrap
 			.catalog_page-heading
-				img(src="/assets/img/catalog_main.png")
+				//img(src="/assets/img/catalog_main.png")
+
+				picture
+					source(srcset="/assets/img/catalog_main.png" media="(min-width: 500px)")
+					source(srcset="/assets/img/catalog_main_phone.png" media="(min-width: 300px)")
+					img(src="/assets/img/catalog_main.png")
+
 				.content-wrapper
 					.catalog_page-heading-text
 						h1 Магнитные кабели
-						span Мы создали самый удобный и надёжный кабель 
-						br
-						span для iPhone и Android смартфонов.
+						p Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов.
 
 		.catalog_page-catalog
 			.catalog_page-catalog-wrapper.content-wrapper
 				.catalog_page-catalog-content.row
 					.grid-sizer.col-xs-1
 
-					.catalog_page-catalog-item.col-sm-6
+					.catalog_page-catalog-item.col-sm-6.col-xs-12
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/1.png")
@@ -29,7 +33,7 @@ block append content
 								.catalog-item-price 1990
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-3
+					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/2.png")
@@ -38,7 +42,7 @@ block append content
 								.catalog-item-price 1100
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-3
+					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/3.png")
@@ -47,7 +51,7 @@ block append content
 								.catalog-item-price 1990
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-4
+					.catalog_page-catalog-item.col-sm-4.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/4.png")
@@ -56,7 +60,7 @@ block append content
 								.catalog-item-price 5800
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-4
+					.catalog_page-catalog-item.col-sm-4.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/5.png")
@@ -65,7 +69,7 @@ block append content
 								.catalog-item-price 5800
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-4
+					.catalog_page-catalog-item.col-sm-4.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/6.png")
@@ -74,7 +78,7 @@ block append content
 								.catalog-item-price 5800
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-3
+					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/7.png")
@@ -83,7 +87,7 @@ block append content
 								.catalog-item-price 5800
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-3
+					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/8.png")
@@ -92,7 +96,7 @@ block append content
 								.catalog-item-price 860
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-6
+					.catalog_page-catalog-item.col-sm-6.col-xs-12.dark-image
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/9.png")
@@ -101,7 +105,7 @@ block append content
 								.catalog-item-price 1990
 									=" "
 									span Р
-					.catalog_page-catalog-item.col-sm-6
+					.catalog_page-catalog-item.col-sm-6.col-xs-12
 						img.catalog-item-star(src="/assets/img/star.svg")
 						a.catalog-item(href="#")
 							img(src="/assets/img/page-catalog/10.png")

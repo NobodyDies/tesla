@@ -10,22 +10,52 @@
 		min-height: 320px;
 		position: relative;
 		color: #333333;
-		> img {
+		@media screen and (max-width: 991px) {
+			//height: 60vh;
+			min-height: 360px;
+		}
+		picture img {
 			max-width: 100%;
 			height: auto;
+			margin-top: 60px;
+			@media screen and (max-width: 991px) {
+				width: 100%;
+				height: auto;
+				max-width: none;
+			}
 		}
 		&-text {
 			position: absolute;
 			bottom: 78px;
 			padding: 0 40px;
+			@media screen and (max-width: 500px) {
+				bottom: 40px;
+			}
 			h1 {
 				font-size: 60px;
 				font-weight: lighter;
+				@media screen and (max-width: 1080px) {
+					font-size: 50px;
+					line-height: 55px;
+				}
+				@media screen and (max-width: 500px) {
+					font-size: 30px;
+					line-height: 35px;
+				}
 			}
-			span {
+			p {
 				font-size: 18px;
 				font-weight: lighter;
 				line-height: 30px;
+				max-width: 420px;
+				@media screen and (max-width: 1080px) {
+					font-size: 16px;
+					line-height: 25px;
+				}
+				@media screen and (max-width: 991px) {
+					font-size: 14px;
+					line-height: 25px;
+				}
 			}
 		}
 	}
@@ -35,27 +65,20 @@
 		&-content {
 			margin: 0 -10px;
 			padding: 0;
-			.grid-sizer {
-			}
-			.col-sm-6 {
-				width: 48.936170212765957446808510638298%;
-			}
-			.col-sm-4 {
-				width: 31.914893617021276595744680851064%;
-			}
-			.col-sm-3 {
-				width: 23.404255319148936170212765957447%;
-			}
 		}
 		&-item {
 			margin: 0 0 20px 0;
 			padding: 0 10px;
 			overflow: hidden;
 			position: relative;
+			@media screen and (max-width: 767px) {
+				//padding: 0;
+				//margin: 0;
+			}
 			.catalog-item-star {
 				position: absolute;
 				top: 15px;
-				right:13px;
+				right: 25px;
 				width: 16px;
 				height: 16px;
 				cursor: pointer;
@@ -69,7 +92,7 @@
 				&:hover {
 					text-decoration: none;
 				}
-					img {
+				img {
 					object-fit: cover;
 					font-family: 'object-fit: cover;';
 					width: 100%;
@@ -97,6 +120,14 @@
 						color: #999999;
 					}
 				}
+			}
+		}
+		.dark-image {
+			.catalog-item-title {
+				color: #f4f2f2;
+			}
+			.catalog-item-price span {
+				color: #f4f2f2;
 			}
 		}
 	}
