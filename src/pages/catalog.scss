@@ -98,18 +98,25 @@
 				text-transform: uppercase;
 				color: #ffffff;
 				background: #8ac551;
-				width: 160px;
+				max-width: 160px;
+				width: 100%;
 				min-height: 50px;
 				display: none;
 				justify-content: center;
 				flex-direction: column;
 				margin: 20px auto 0px;
+				cursor: pointer;
+				@media screen and (max-width: 450px) {
+					max-width: 110px;
+					min-height: 40px;
+				}
 				span {
 					line-height: 20px;
 					font-size: 11px;
 					text-align: center;
 				}
 			}
+
 			.pick-color {
 				display: none;
 			}
@@ -194,6 +201,9 @@
 				height: 16px;
 				cursor: pointer;
 				z-index: 2;
+				@media screen and (max-width: 450px) {
+					right: 13px;
+				}
 			}
 			.catalog-item {
 				background-color: #fcfcfc;
@@ -202,7 +212,6 @@
 				position: relative;
 				@media screen and (max-width: 767px) {
 					border: 1px solid #f4f2f2;
-
 				}
 				&:hover {
 					text-decoration: none;
@@ -228,6 +237,9 @@
 						width: 100%;
 						bottom: 0px;
 						padding: 0 10px 29px;
+						@media screen and (max-width: 450px) {
+							padding: 0 10px 15px;
+						}
 					}
 				}
 				&-title {
