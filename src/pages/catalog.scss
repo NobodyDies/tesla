@@ -35,6 +35,7 @@
 			padding: 0 40px;
 			@media screen and (max-width: 500px) {
 				bottom: 40px;
+				padding: 0 20px;
 			}
 			h1 {
 				font-size: 60px;
@@ -106,9 +107,22 @@
 				flex-direction: column;
 				margin: 20px auto 0px;
 				cursor: pointer;
-				@media screen and (max-width: 450px) {
+				@media screen and (max-width: 1100px) {
 					max-width: 110px;
 					min-height: 40px;
+					margin: 10px auto 0px;
+				}
+				@media screen and (max-width: 991px) {
+					margin: 20px auto 0px;
+				}
+				@media screen and (max-width: 850px) {
+					margin: 10px auto 0px;
+				}
+				@media screen and (max-width: 767px) {
+					margin: 20px auto 0px;
+				}
+				@media screen and (max-width: 400px) {
+					margin: 10px auto 0px;
 				}
 				span {
 					line-height: 20px;
@@ -119,6 +133,31 @@
 
 			.pick-color {
 				display: none;
+				@media screen and (max-width: 1100px) {
+					p {
+						margin-top: 5px;
+					}
+				}
+				@media screen and (max-width: 991px) {
+					p {
+						margin-top: 15px;
+					}
+				}
+				@media screen and (max-width: 850px) {
+					p {
+						margin-top: 5px;
+					}
+				}
+				@media screen and (max-width: 767px) {
+					p {
+						margin-top: 15px;
+					}
+				}
+				@media screen and (max-width: 400px) {
+					p {
+						margin-top: 5px;
+					}
+				}
 			}
 
 			[type="radio"]#color1 + label:after,
@@ -237,7 +276,19 @@
 						width: 100%;
 						bottom: 0px;
 						padding: 0 10px 29px;
-						@media screen and (max-width: 450px) {
+						@media screen and (max-width: 1100px) {
+							padding: 0 10px 15px;
+						}
+						@media screen and (max-width: 1100px) {
+							padding: 0 10px 29px;
+						}
+						@media screen and (max-width: 850px) {
+							padding: 0 10px 15px;
+						}
+						@media screen and (max-width: 767px) {
+							padding: 0 10px 29px;
+						}
+						@media screen and (max-width: 400px) {
 							padding: 0 10px 15px;
 						}
 					}
