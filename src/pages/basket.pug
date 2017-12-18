@@ -7,34 +7,41 @@ block append content
 				.col-sm-8.col-xs-12
 					.basket_page-content-left
 
-						.basket_page-content-left-heading
-							h2 Контакты
-							span Мы отправим Вам СМС с номером заказа
+						.basket_page-content-left-wrap
+							.basket_page-content-left-heading
+								h2 Контакты
+								span Мы отправим Вам СМС с номером заказа
 
-						input(type="text" placeholder="Телефон" id="phone" name="phone")
-						input(type="text" placeholder="Имя" id="name" name="name")
-						.button 
-							span Заказ в 1 клик
+							.basket_page-inputs-block
+								.basket_page-inputs
+									input(type="text" placeholder="Телефон" id="phone" name="phone")
+									input(type="text" placeholder="Имя" id="name" name="name")
+								.button 
+									span Заказ в 1 клик
 
-						.basket_page-content-left-heading
-							h2 Доставка
-							span Куда именно доставить Вашу посылку?
+						.basket_page-content-left-wrap.delivery
+							.basket_page-content-left-heading
+								h2 Доставка
+								span Куда именно доставить Вашу посылку?
 
-						input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
-						input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
-						a(href="#") Показать варианты оформления подарка
+							.basket_page-inputs-block
+								input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
+								input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
 
-						form.pick-color
-							p
-								input#color1(name="group1" type="radio" checked="true")
-								label(for="color1") Курьерская доставка
-							p
-								input#color2(name="group1" type="radio")
-								label(for="color2") СДЭК
-							p
-								input#color3(name="group1" type="radio")
-								label(for="color3") Почта России
-						h2 Оплата
+							a(href="#") Показать варианты оформления подарка
+
+							form.pick-color.pick-delivery
+								p
+									input#courier(name="group1" type="radio" checked="true")
+									label(for="courier") Курьерская доставка
+								p
+									input#cdek(name="group1" type="radio")
+									label(for="cdek") СДЭК
+								p
+									input#rupost(name="group1" type="radio")
+									label(for="rupost") Почта России
+							h2 Оплата
+
 
 				.col-sm-4.col-xs-12
 					.basket_page-content-right

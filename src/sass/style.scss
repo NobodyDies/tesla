@@ -152,3 +152,37 @@ ul, li {
 		border: 1px solid #2096d0;
 	}
 }
+
+.pick-delivery {
+
+	[type="radio"]:not(:checked)+label, 
+	[type="radio"]:checked+label {
+		padding-left: 45px;
+	}
+
+	p {
+		margin-right: 50px;
+	}
+
+	[type="radio"]+label {
+		font-size: 14px;
+		font-weight: lighter;
+		line-height: 38px;
+	}
+
+	[type="radio"]:not(:checked)+label:after {
+		background: #fff;
+		-webkit-transform: scale(0);
+		transform: scale(0);
+	}
+
+	[type="radio"]:checked+label:after {
+		background: #2096d0;
+		-webkit-transform: scale(0.4);
+		transform: scale(0.4);
+	}
+
+	[type="radio"]:checked+label:before {
+		border: 1px solid #e1e1e1;
+	}
+}
