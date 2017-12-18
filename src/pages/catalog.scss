@@ -112,15 +112,8 @@
 			overflow: hidden;
 			position: relative;
 			.button {
-				text-transform: uppercase;
-				color: #ffffff;
-				background: #8ac551;
-				max-width: 160px;
-				width: 100%;
 				min-height: 50px;
 				display: none;
-				justify-content: center;
-				flex-direction: column;
 				margin: 20px auto 0px;
 				cursor: pointer;
 				@media screen and (max-width: 1100px) {
@@ -139,11 +132,6 @@
 				}
 				@media screen and (max-width: 400px) {
 					margin: 10px auto 0px;
-				}
-				span {
-					line-height: 20px;
-					font-size: 11px;
-					text-align: center;
 				}
 			}
 

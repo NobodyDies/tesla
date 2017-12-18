@@ -50,6 +50,24 @@ ul, li {
 	}
 }
 
+.button {
+	text-transform: uppercase;
+	color: #ffffff;
+	background: #8ac551;
+	max-width: 160px;
+	width: 100%;
+	min-height: 40px;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	cursor: pointer;
+	span {
+		line-height: 20px;
+		font-size: 11px;
+		text-align: center;
+	}
+}
+
 .pick-color {
 	p {
 		display: inline-block;
