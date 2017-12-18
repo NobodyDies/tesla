@@ -59,12 +59,17 @@
 					input[type=text] {
 						&:first-child {
 							max-width: 317px;
+							margin-bottom: 24px;
 						}
 
 						&:last-child {
 							max-width: 200px;
 						}
 					}
+				}
+				.pick-delivery p {
+					margin-top: 19px;
+					margin-bottom: 4px;
 				}
 				a {
 					border-bottom: 1px dotted #2096d0;

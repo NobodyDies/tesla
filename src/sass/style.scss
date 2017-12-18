@@ -186,3 +186,24 @@ ul, li {
 		border: 1px solid #e1e1e1;
 	}
 }
+
+.pick-payment {
+	//display: flex;
+	//justify-content: space-between;
+	p {
+		margin-right: 0px;
+	}
+	img {
+		display: block;
+	}
+	[type="radio"]:not(:checked)+label, 
+	[type="radio"]:checked+label {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		//max-width: 78px;
+		span {
+			//max-width: 95px;
+		}
+	}
+}
