@@ -44,35 +44,40 @@ block append content
 						.basket_page-content-left-wrap
 							.basket_page-content-left-heading
 								h2 Оплата
-							form.pick-color.pick-delivery.pick-payment
-								p
-									input#bankcard(name="group1" type="radio" checked="true")
-									label(for="bankcard")
-										span
-											img(src="/assets/img/payment/1.png")
-											span Банковская карта
 
-								p
-									input#webmoney(name="group1" type="radio")
-									label(for="webmoney")
-										span
-											img(src="/assets/img/payment/2.png")
-											span Web money
-								p
-									input#yamoney(name="group1" type="radio")
-									label(for="yamoney")
-										span
-											img(src="/assets/img/payment/3.png")
-											span Яндекс деньги
-								p
-									input#sberbank(name="group1" type="radio")
-									label(for="sberbank")
-										span
-											img(src="/assets/img/payment/4.png")
-											span Сбербанк онлайн
+							ul.nav.nav-tabs#pick-payment-tabs(role="tablist")
+								li.active(role="presentation")
+									a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Оплата при получении
+								li(role="presentation")
+									a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Оплата он-лайн
+
+							.tab-content
+								div#home.tab-pane.active(role="tabpanel")
+								div#profile.tab-pane(role="tabpanel")
+									form.pick-color.pick-delivery.pick-payment
+										p
+											input#bankcard(name="group1" type="radio" checked="true")
+											label(for="bankcard")
+												img(src="/assets/img/payment/1.png")
+												span Банковская карта
+										p
+											input#webmoney(name="group1" type="radio")
+											label(for="webmoney")
+												img(src="/assets/img/payment/2.png")
+												span Web money
+										p
+											input#yamoney(name="group1" type="radio")
+											label(for="yamoney")
+												img(src="/assets/img/payment/3.png")
+												span Яндекс деньги
+										p
+											input#sberbank(name="group1" type="radio")
+											label(for="sberbank")
+												img(src="/assets/img/payment/4.png")
+												span Сбербанк онлайн
 
 						.basket_page-content-left-wrap
-							.button 
+							.button.summary-button
 								span Сделать заказ
 
 

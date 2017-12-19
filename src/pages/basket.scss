@@ -78,6 +78,38 @@
 					}
 				}
 			}
+
+			.nav-tabs {
+				margin-top: 26px;
+				width: 100%;
+				//width: 50%;
+			}
+			.nav-tabs li {
+				width: 50%;
+			}
+			.nav-tabs>li>a {
+				padding: 9px 15px;
+				text-align: center;
+				color: #666666;
+				background: #f4f2f2;
+				border: 1px solid #f4f2f2;
+				border-radius: 0px;
+				margin-right: -1px;
+			}
+
+			.nav-tabs>li.active>a, 
+			.nav-tabs>li.active>a:focus, 
+			.nav-tabs>li.active>a:hover {
+				background: #fff;
+				border: 1px solid #e8e8e8;
+				border-radius: 0px;
+			}
+
+			.summary-button {
+				max-width: 180px;
+				height: 50px;
+				margin: 10px auto -10px;
+			}
 		}
 
 		&-right {

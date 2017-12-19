@@ -157,17 +157,23 @@ ul, li {
 
 	[type="radio"]:not(:checked)+label, 
 	[type="radio"]:checked+label {
-		padding-left: 45px;
+		padding-left: 35px;
 	}
 
 	p {
 		margin-right: 50px;
 	}
 
+	[type="radio"]+label:before, 
+	[type="radio"]+label:after {
+		width: 20px;
+		height: 20px;
+	}
+
 	[type="radio"]+label {
 		font-size: 14px;
 		font-weight: lighter;
-		line-height: 38px;
+		line-height: 30px;
 	}
 
 	[type="radio"]:not(:checked)+label:after {
@@ -189,41 +195,37 @@ ul, li {
 
 .pick-payment {
 	display: flex;
-	//justify-content: space-between;
+	justify-content: space-between;
+	margin-top: 65px;
+	margin-bottom: 18px;
 
 	p {
-		margin-right: 25px;
-	}
-
-	img {
-		display: block;
+		//margin-right: 25px;
+		margin-right: 0px;
 	}
 
 	[type="radio"]:not(:checked)+label, 
 	[type="radio"]:checked+label {
 		position: relative;
-		height: auto;
+		display: inline-block;
+
 		> span {
-			/*
-			position: absolute;
-			bottom: 0px;
-			*/
-			//position: relative;
-			//top: -200%;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-		}
-		//max-width: 78px;
-		> span > span {
-			//display: block;
+			position: relative;
+			top: 3px;
+			vertical-align: top;
+			display: inline-block;
+			//max-width: 95px;
+			max-width: 74px;
 			line-height: 20px;
-			max-width: 95px;
-			text-align: center;
-			//display: inline-block;
+			//text-align: center;
 		}
 		img {
-			margin-bottom: 16px;
+			display: block;
+			position: absolute;
+			//left: 55px;
+			left: 50%;
+			bottom: 43px;
+			//transform: translateX(-50%);
 		}
 	}
 }
