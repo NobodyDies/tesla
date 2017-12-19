@@ -155,6 +155,10 @@ ul, li {
 
 .pick-delivery {
 
+	[type="radio"]+label:after {
+		display: block;
+	}
+
 	[type="radio"]:not(:checked)+label, 
 	[type="radio"]:checked+label {
 		padding-left: 35px;

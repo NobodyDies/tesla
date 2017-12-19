@@ -164,45 +164,6 @@
 				}
 			}
 
-			[type="radio"]#color1 + label:after,
-			[type="radio"]#color4 + label:after,
-			[type="radio"]#color7 + label:after,
-			[type="radio"]#color10 + label:after,
-			[type="radio"]#color13 + label:after,
-			[type="radio"]#color16 + label:after,
-			[type="radio"]#color19 + label:after,
-			[type="radio"]#color22 + label:after,
-			[type="radio"]#color25 + label:after,
-			[type="radio"]#color28 + label:after {
-				background: #e7e7ea;
-			}
-
-			[type="radio"]#color2 + label:after,
-			[type="radio"]#color5 + label:after,
-			[type="radio"]#color8 + label:after,
-			[type="radio"]#color11 + label:after,
-			[type="radio"]#color14 + label:after,
-			[type="radio"]#color17 + label:after,
-			[type="radio"]#color20 + label:after,
-			[type="radio"]#color23 + label:after,
-			[type="radio"]#color26 + label:after,
-			[type="radio"]#color29 + label:after {
-				background: #e8cbae;
-			}
-
-			[type="radio"]#color3 + label:after,
-			[type="radio"]#color6 + label:after,
-			[type="radio"]#color9 + label:after,
-			[type="radio"]#color12 + label:after,
-			[type="radio"]#color15 + label:after,
-			[type="radio"]#color18 + label:after,
-			[type="radio"]#color21 + label:after,
-			[type="radio"]#color24 + label:after,
-			[type="radio"]#color27 + label:after,
-			[type="radio"]#color30 + label:after {
-				background: #4b4d4e;
-			}
-
 			&:hover {
 				.catalog-item-text {
 					border: 2px solid #2096d0;
@@ -253,6 +214,34 @@
 				display: block;
 				width: 100%;
 				position: relative;
+				.pick-color {
+					[type="radio"]+label > span {
+						border-radius: 50%;
+					}
+					[type="radio"]+label > span {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 0;
+						margin: 4px;
+						width: 30px;
+						height: 30px;
+						z-index: 0;
+						-webkit-transition: .28s ease;
+						transition: .28s ease;
+					}
+					[type="radio"]:not(:checked)+label > span {
+						-webkit-transform: scale(0.6);
+						transform: scale(0.6);
+					}
+					[type="radio"]:checked+label > span {
+						-webkit-transform: scale(0.5);
+						transform: scale(0.5);
+					}
+					[type="radio"]+label:after {
+						display: none;
+					}
+				}
 				@media screen and (max-width: 767px) {
 					border: 1px solid #f4f2f2;
 				}
