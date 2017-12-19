@@ -14,6 +14,20 @@ block append content
 			)
 			//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
 			//sizes="(max-width: 991px) 50vw, 992px"
+			.index_page-slider-content
+				h1 Гаджеты, которые упростят вашу жизнь
+				span Мы создали самый удобный и надёжный кабель
+				br
+				span для iPhone и Android смартфонов. Сверхпрочный кабель Tesla 
+				br
+				span с магнитным коннектором невероятно долговечен
+				br
+				br
+				a(href="#").index_page-slider-content-more Подробнее
+					span
+				span.index_page-slider-circle
+				span.index_page-slider-circle.circle-blue
+
 			.index_page-slider-bottom
 				.copyright © 2017 Tesla Goods Co. ltd
 				.scroll-down
@@ -43,14 +57,16 @@ block append content
 						img(src="/assets/img/catalog/item1.png")
 					.index_page-catalog-item.col-sm-4.col-xs-6
 						a.catalog-item-content.white.bottom-left(hre="#")
-							.catalog-item-header Для автомобиля
+							.catalog-item-header Для 
+								br
+								| автомобиля
 						img(src="/assets/img/catalog/item4.png")
 					.index_page-catalog-item.col-sm-4.col-xs-6
-						a.catalog-item-content.white.bottom-left(hre="#")
+						a.catalog-item-content.white.top-left(hre="#")
 							.catalog-item-header Чехлы
 						img(src="/assets/img/catalog/item2.png")
 					.index_page-catalog-item.col-sm-4.col-xs-6
-						a.catalog-item-content.white.bottom-right(hre="#")
+						a.catalog-item-content.white.top-right(hre="#")
 							.catalog-item-header Сетевые адаптеры
 						img(src="/assets/img/catalog/item3.png")
 
@@ -59,15 +75,15 @@ block append content
 				.content-wrapper.row
 					.popular-controls.col-md-3
 						.popular-controls-title
-							h3 Популярные товары
+							h3 Популярные
+							h3 товары
 						.popular-controls-controls
-							.popular-controls-controls-left.btn
-							.popular-controls-controls-right.btn
+							.popular-controls-controls-left
+								+icon('arrow-left','')
+							.popular-controls-controls-right
+								+icon('arrow-right','')
 						a.popular-controls-link
-							button.navbar-toggle.collapsed
-								span(class="icon-bar")
-								span(class="icon-bar")
-								span(class="icon-bar")
+							+icon('menu','') 
 							span Полный каталог
 					.swiper-container.index_page-popular-slider.col-md-9
 						.swiper-wrapper.index_page-popular-slider-wrapper
@@ -103,7 +119,7 @@ block append content
 								a.slider-item(href="")
 									img(src="/assets/img/catalog/slider1.png")
 									.slider-item-text
-										.slider-item-title Магнитный кабель Магнитный кабель Магнитный кабель
+										.slider-item-title Магнитный кабель
 										.slider-item-price 1 490
 											=" "
 											span Р

@@ -51,20 +51,25 @@ $( document ).ready(() => {
 	    speed: 300,
 	    spaceBetween: 40,
 		breakpoints: {
-		    // when window width is <= 320px
-		    1024: {
-		    	slidesPerView: 2,
-		    	slidesPerGroup: 2
+		    1160: {
+				spaceBetween: 40,
+				slidesPerView: 2,
+				slidesPerGroup: 2
 		    },
-		    // when window width is <= 480px
-		    600: {
-		    	slidesPerView: 2,
-		    	slidesPerGroup: 2
+		    991: {
+				spaceBetween: 40,
+				slidesPerView: 3,
+				slidesPerGroup: 3
 		    },
-		    // when window width is <= 640px
-		    480: {
-		    	slidesPerView: 2,
-		    	slidesPerGroup: 2
+		    788: {
+				spaceBetween: 1,
+				slidesPerView: 3,
+				slidesPerGroup: 3
+		    },
+		    680: {
+				spaceBetween: 1,
+				slidesPerView: 2,
+				slidesPerGroup: 2
 		    }
 		},
 
@@ -74,6 +79,28 @@ $( document ).ready(() => {
 	    	prevEl: '.popular-controls-controls-left',
 	    }
 	});
+
+
+
+var breakpoint = window.matchMedia('(max-width:991px)');
+
+var breakpointChecker = function breakpointChecker() {
+
+   if (breakpoint.matches === true) {
+
+      $('.popular-controls-link').appendTo('.index_page-popular-wrapper > .content-wrapper');
+      return;
+
+   } else if (breakpoint.matches === false) {
+      
+      $('.popular-controls-link').appendTo('.popular-controls');
+      return;
+   }
+};
+
+breakpoint.addListener(breakpointChecker);
+
+breakpointChecker();
 
 
 });

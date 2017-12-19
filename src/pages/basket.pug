@@ -1,4 +1,163 @@
 extends ./../templates/common
 
 block append content
-	h1.basket Страница корзины
+	.basket_page
+		.basket_page-content-wrapper.content-wrapper
+			.basket_page-content.row
+				.col-sm-8.col-xs-12
+					.basket_page-content-left
+
+						.basket_page-content-left-wrap
+							.basket_page-content-left-heading
+								h2 Контакты
+								span Мы отправим Вам СМС с номером заказа
+
+							.basket_page-inputs-block
+								.basket_page-inputs
+									input(type="text" placeholder="Телефон" id="phone" name="phone")
+									input(type="text" placeholder="Имя" id="name" name="name")
+								.button 
+									span Заказ в 1 клик
+
+						.basket_page-content-left-wrap.delivery
+							.basket_page-content-left-heading
+								h2 Доставка
+								span Куда именно доставить Вашу посылку?
+
+							.basket_page-inputs-block
+								input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
+								input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
+
+							a(href="#") Показать варианты оформления подарка
+
+							form.pick-color.pick-delivery
+								p
+									input#courier(name="group1" type="radio" checked="true")
+									label(for="courier") Курьерская доставка
+								p
+									input#cdek(name="group1" type="radio")
+									label(for="cdek") СДЭК
+								p
+									input#rupost(name="group1" type="radio")
+									label(for="rupost") Почта России
+
+						.basket_page-content-left-wrap
+							.basket_page-content-left-heading
+								h2 Оплата
+
+							ul.nav.nav-tabs#pick-payment-tabs(role="tablist")
+								li.active(role="presentation")
+									a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Оплата при получении
+								li(role="presentation")
+									a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Оплата он-лайн
+
+							.tab-content
+								div#home.tab-pane.active(role="tabpanel")
+								div#profile.tab-pane(role="tabpanel")
+									form.pick-color.pick-delivery.pick-payment
+										p
+											input#bankcard(name="group1" type="radio" checked="true")
+											label(for="bankcard")
+												img(src="/assets/img/payment/1.png")
+												span Банковская карта
+										p
+											input#webmoney(name="group1" type="radio")
+											label(for="webmoney")
+												img(src="/assets/img/payment/2.png")
+												span Web money
+										p
+											input#yamoney(name="group1" type="radio")
+											label(for="yamoney")
+												img(src="/assets/img/payment/3.png")
+												span Яндекс деньги
+										p
+											input#sberbank(name="group1" type="radio")
+											label(for="sberbank")
+												img(src="/assets/img/payment/4.png")
+												span Сбербанк онлайн
+
+						.basket_page-content-left-wrap
+							.button.summary-button
+								span Сделать заказ
+
+
+				.col-sm-4.col-xs-12
+					.basket_page-content-right
+						h3 Товары в корзине
+						ul.basket-goods
+							li.basket-goods-item
+								.item-top
+									.item-img
+										img(src="/assets/img/basket-good.png")
+									.item-description
+										.item-title Магнитный кабель
+										ul.item-properties
+											li Чёрный
+											li 100 м
+											li Lightning + MicroUSB
+									.item-delete
+										a(href="#")
+											img(src="/assets/img/garbage.svg")
+								.item-bottom
+									.item-quantity
+										.item-quantity-label Количество:
+										.item-quantity-value
+										|
+										| 1
+									.item-buttons
+										button.item-buttons-add -
+										button.item-buttons-reduce +
+									.item-price
+										.item-price-sum 1 990
+											=" "
+											.item-price-valute Р
+							li.basket-goods-item
+								.item-top
+									.item-img.pull-left
+										img(src="/assets/img/basket-good2.png")
+									.item-description.pull-left
+										.item-title Сетевой адаптер
+										ul.item-properties
+											li Чёрный
+											li 100 м
+											li Lightning + MicroUSB
+									.item-delete
+										a(href="#")
+											img(src="/assets/img/garbage.svg")
+								.item-bottom
+									.item-quantity
+										.item-quantity-label Количество:
+										.item-quantity-value
+										|
+										| 1
+									.item-buttons
+										button.item-buttons-add -
+										button.item-buttons-reduce +
+									.item-price
+										.item-price-sum 650
+											=" "
+											.item-price-valute Р
+						ul.basket-goods-calculations
+							li
+								.item-price-label Общая стоимость товаров
+								.item-price
+									.item-price-sum 2640
+										=" "
+										.item-price-valute Р
+							li
+								.item-price-label Доставка
+								.item-price
+									.item-price-sum 300
+										=" "
+										.item-price-valute Р
+							li
+								.item-price-promocode 
+									a Применить промокод
+						ul.basket-goods-calculations.black-border
+							li
+								.item-price-label К оплате
+								.item-price
+									.item-price-sum 2940
+										=" "
+										.item-price-valute Р
+
