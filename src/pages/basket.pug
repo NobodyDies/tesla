@@ -1,5 +1,8 @@
 extends ./../templates/common
 
+block appScripts
+	script(src='/js/basket.min.js')
+
 block append content
 	.basket_page
 		.basket_page-content-wrapper.content-wrapper
@@ -156,5 +159,5 @@ block append content
 										=" "
 										.item-price-valute Р
 						.basket_page-content-left-wrap
-							.button.summary-button
+							.button.summary-button#next-step
 								span Сделать заказ
