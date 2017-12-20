@@ -27,9 +27,7 @@ block append content
 							.basket_page-inputs-block
 								input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
 								input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
-
 							a(href="#") Показать варианты оформления подарка
-
 							form.pick-color.pick-delivery
 								p
 									input#courier(name="group1" type="radio" checked="true")
@@ -44,13 +42,11 @@ block append content
 						.basket_page-content-left-wrap
 							.basket_page-content-left-heading
 								h2 Оплата
-
 							ul.nav.nav-tabs#pick-payment-tabs(role="tablist")
 								li.active(role="presentation")
 									a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Оплата при получении
 								li(role="presentation")
 									a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Оплата он-лайн
-
 							.tab-content
 								div#home.tab-pane.active(role="tabpanel")
 								div#profile.tab-pane(role="tabpanel")
@@ -75,7 +71,6 @@ block append content
 											label(for="sberbank")
 												img(src="/assets/img/payment/4.png")
 												span Сбербанк онлайн
-
 						.basket_page-content-left-wrap
 							.button.summary-button
 								span Сделать заказ
@@ -160,4 +155,6 @@ block append content
 									.item-price-sum 2940
 										=" "
 										.item-price-valute Р
-
+						.basket_page-content-left-wrap
+							.button.summary-button
+								span Сделать заказ
