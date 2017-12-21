@@ -15,6 +15,7 @@
 		}
 		&-left {
 			padding: 0px 40px 20px;
+
 			@media screen and (max-width: 991px) {
 				padding: 10px 40px 20px;
 			}
@@ -25,8 +26,10 @@
 			&-wrap {
 				padding: 30px 0px;
 				border-top: 1px solid #e8e8e8;
+
 				@media screen and (max-width: 991px) {
 					padding: 20px 0px;
+
 					&:last-child {
 						border: none;
 						padding-top: 10px;
@@ -93,6 +96,7 @@
 				align-items: flex-start;
 				justify-content: space-between;
 				margin-top: 26px;
+
 				@media screen and (max-width: 991px) {
 					display: block;
 					margin-top: 15px;
@@ -103,6 +107,7 @@
 					margin-right: 20px;
 					max-width: 357px;
 					width: 100%;
+
 					@media screen and (max-width: 991px) {
 						max-width: 100%;
 						display: block;
@@ -128,6 +133,7 @@
 						margin-right: 20px;
 					}
 					input[type=text] {
+
 						&:first-child {
 							max-width: 317px;
 							margin-bottom: 24px;
@@ -205,6 +211,7 @@
 
 		&-right {
 			padding: 20px;
+
 			@media screen and (max-width: 991px) {
 				padding-top: 30px;
 			}
@@ -225,6 +232,7 @@
 			}
 			.summary-button {
 				display: none;
+
 				@media screen and (max-width: 767px) {
 					margin-top: 10px;
 					display: flex;
@@ -285,6 +293,7 @@
 			white-space: nowrap;
 			flex-grow: 0;
 			flex-shrink: 0;
+
 			&:before {
 				content: ' ';
 				display: inline-block;
@@ -319,6 +328,7 @@
 			margin-left: auto;
 			flex-grow: 0;
 			flex-shrink: 0;
+
 			> a {
 				margin-left: 10px;
 			}
@@ -411,6 +421,7 @@
 
 		.item-price {
 			float: right;
+
 			&-label {
 				@media screen and (max-width: 1080px) {
 					margin-right: 10px;
@@ -442,7 +453,6 @@
 		border-top: 2px solid #000000;
 		padding: 24px 0 7px;
 	}
-
 
 	.button {
 		@media screen and (max-width: 991px) {

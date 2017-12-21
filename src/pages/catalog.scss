@@ -2,6 +2,7 @@
 	margin-top: -60px;
 	background: rgba(244,242,242,1);
 	padding-bottom: 100px;
+
 	&-heading-wrap {
 		padding-bottom: 140px;
 		background: #e7e7e7;
@@ -11,8 +12,8 @@
 		position: relative;
 		color: #333333;
 		@media screen and (max-width: 991px) {
-			//height: 60vh;
 			min-height: 420px;
+
 			.content-wrapper {
 				max-width: 750px;
 				margin: 0 auto;
@@ -33,6 +34,7 @@
 			position: absolute;
 			bottom: 78px;
 			padding: 0 40px;
+
 			@media screen and (max-width: 900px) {
 				bottom: 30px;
 				padding: 0 65px;
@@ -84,6 +86,7 @@
 
 	&-catalog {
 		margin-top: -140px;
+
 		.dark-image {
 			.catalog-item-title {
 				color: #f4f2f2;
@@ -111,11 +114,13 @@
 			padding: 0 10px;
 			overflow: hidden;
 			position: relative;
+
 			.button {
 				min-height: 50px;
 				display: none;
 				margin: 20px auto 0px;
 				cursor: pointer;
+
 				@media screen and (max-width: 1100px) {
 					max-width: 110px;
 					min-height: 40px;
@@ -174,7 +179,7 @@
 				.catalog-item {
 					img {
 						opacity: 0.1;
-						-webkit-filter: grayscale(100%); /* Safari 6.0 - 9.0 */
+						-webkit-filter: grayscale(100%);
 						filter: grayscale(100%);
 					}
 					&-title {
@@ -205,6 +210,7 @@
 				height: 16px;
 				cursor: pointer;
 				z-index: 2;
+
 				@media screen and (max-width: 450px) {
 					right: 13px;
 				}
@@ -214,6 +220,7 @@
 				display: block;
 				width: 100%;
 				position: relative;
+
 				.pick-color {
 					[type="radio"]+label > span {
 						border-radius: 50%;
@@ -264,6 +271,7 @@
 					width: 100%;
 					text-align: center;
 					text-decoration: none;
+
 					&-wrap {
 						position: absolute;
 						width: 100%;
