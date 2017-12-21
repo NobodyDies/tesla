@@ -1,4 +1,75 @@
 extends ./../templates/common
 
+block appScripts
+	script(src='/js/item.min.js')
+
 block content
-	h1.item Страница товара
+	.item_page
+		.content-wrapper
+
+			ul.item_page-breadcrump
+				li
+					a(href="") Магазин
+				li
+					a(href="") Кабели
+				li Магнитный кабель
+
+			.item_page-content.row
+				.col-sm-6.col-xs-12
+
+					.swiper-container.gallery-top
+						.swiper-wrapper
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/1)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/2)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/3)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/4)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/5)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/6)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/7)")
+
+					.swiper-button-next.swiper-button-white
+					.swiper-button-prev.swiper-button-white
+
+					.swiper-container.gallery-thumbs
+						.swiper-wrapper
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/1)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/2)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/3)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/4)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/5)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/6)")
+							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/7)")
+
+				.col-sm-6.col-xs-12
+					h1 Магнитный кабель
+					.item_page-price 1990
+						=" "
+						span Р
+					span Активируй 10% скидку
+					p Сверпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться.
+					span Длина кабеля
+					span 100 м
+					span 150 м
+					span Цвет - серый
+					form.pick-color
+						p
+							input#color1(name="group1" type="radio" checked="true")
+							label(for="color1")
+								span(style="background: #e7e7ea;")
+						p
+							input#color2(name="group1" type="radio")
+							label(for="color2")
+								span(style="background: #e8cbae;")
+						p
+							input#color3(name="group1" type="radio")
+							label(for="color3")
+								span(style="background: #4b4d4e;")
+					span Коннекторы
+					span Lightning + MicroUSB
+					span Type + MicroUSB
+					span Посмотреть все кабели
+
+			.item_page-content.gray-background.row
+				.col-sm-6.col-xs-12
+					h1.item Страница товара
+				.col-sm-6.col-xs-12
