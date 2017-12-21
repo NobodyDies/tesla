@@ -19,55 +19,100 @@ block content
 
 					.swiper-container.gallery-top
 						.swiper-wrapper
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/1)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/2)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/3)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/4)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/5)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/6)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/7)")
-
-					.swiper-button-next.swiper-button-white
-					.swiper-button-prev.swiper-button-white
+							.swiper-slide
+								img(src="/assets/img/page-item/1.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/2.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/3.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/4.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/5.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/6.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/7.png")
 
 					.swiper-container.gallery-thumbs
 						.swiper-wrapper
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/1)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/2)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/3)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/4)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/5)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/6)")
-							.swiper-slide(style="background-image:url(http://lorempixel.com/1200/1200/nature/7)")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/1.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/2.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/3.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/4.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/5.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/6.png")
+							.swiper-slide
+								img(src="/assets/img/page-item/thumbs/7.png")
 
 				.col-sm-6.col-xs-12
-					h1 Магнитный кабель
-					.item_page-price 1990
-						=" "
-						span Р
-					span Активируй 10% скидку
-					p Сверпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться.
-					span Длина кабеля
-					span 100 м
-					span 150 м
-					span Цвет - серый
-					form.pick-color
-						p
-							input#color1(name="group1" type="radio" checked="true")
-							label(for="color1")
-								span(style="background: #e7e7ea;")
-						p
-							input#color2(name="group1" type="radio")
-							label(for="color2")
-								span(style="background: #e8cbae;")
-						p
-							input#color3(name="group1" type="radio")
-							label(for="color3")
-								span(style="background: #4b4d4e;")
-					span Коннекторы
-					span Lightning + MicroUSB
-					span Type + MicroUSB
-					span Посмотреть все кабели
+					.item_page-description
+						h1 Магнитный кабель
+						.item_page-price 1990
+							=" "
+							span Р
+						span Активируй 10% скидку
+						p Сверпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться.
+						a(href="#").item_page-description-more Подробнее о товаре
+							span
+						span Длина кабеля
+
+						br
+
+						p.select-length
+							input#length1(name="length" type="radio")
+							label(for="length1") 100 м
+
+						br
+
+						p.select-length
+							input#length2(name="length" type="radio")
+							label(for="length2") 150 м
+
+						br
+
+						span Цвет - серый
+						form.pick-color
+							p
+								input#color1(name="group1" type="radio" checked="true")
+								label(for="color1")
+									span(style="background: #e7e7ea;")
+							p
+								input#color2(name="group1" type="radio")
+								label(for="color2")
+									span(style="background: #e8cbae;")
+							p
+								input#color3(name="group1" type="radio")
+								label(for="color3")
+									span(style="background: #4b4d4e;")
+						span Коннекторы
+
+						br
+
+						p.select-length
+							input#connector1(name="connectors" type="radio")
+							label(for="connector1") Lightning + MicroUSB
+
+						br
+
+						p.select-length
+							input#connector2(name="connectors" type="radio")
+							label(for="connector2") Type + MicroUSB
+
+						br
+
+						.button.summary-button
+							span В корзину
+
+						a.popular-controls-link
+							+icon('menu','') 
+							span Посмотреть все кабели
 
 			.item_page-content.gray-background.row
 				.col-sm-6.col-xs-12
