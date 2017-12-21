@@ -17,4 +17,10 @@ $( document ).ready((e) => {
     	$(this).toggleClass('star-set');
     });
 
+	$('.index_page-catalog-content').masonry({
+		itemSelector: '.index_page-catalog-item',
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
+	});
+
 });

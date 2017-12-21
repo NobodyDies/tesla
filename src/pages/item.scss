@@ -9,14 +9,27 @@
 	ul.item_page-breadcrump {
 
 		li {
+			display: inline-block;
+			color: #999999;
+			font-weight: lighter;
+
+			.icon {
+				width: 4px;
+				height: 7px;
+				fill: #cccccc;
+				margin-left: 13px;
+				margin-right: 16px;
+			}
 
 			a {
-				//s
+				color: #333333;
 			}
 		}
 	}
 
 	&-description {
+		font-weight: lighter;
+
 		&-more {
 			color:#2096d0;
 			text-transform: uppercase;
@@ -70,62 +83,72 @@
 			fill: #2096d0;
 		}
 
+		.select-length {
+			position: relative;
+			display: inline-block;
 
+			[type="radio"]:not(:checked), 
+			[type="radio"]:checked {
+				position: absolute;
+				opacity: 0;
+				pointer-events: none;
+			}
 
-	}
+			label {
+				cursor: pointer;
+				padding: 5px 16px;
+				height: 30px;
+				color: #666666;
+				font-weight: 300;
+				&:hover {
+					background: #F7F7F7;
+				}
+			}
 
+			[type="radio"]:not(:checked) + label {
+				border: 1px solid #e2e0e0;
+			}
 
-
-	.select-length {
-		position: relative;
-		display: inline-block;
-
-		[type="radio"]:not(:checked), 
-		[type="radio"]:checked {
-			position: absolute;
-			opacity: 0;
-			pointer-events: none;
-		}
-
-		label {
-			cursor: pointer;
-			padding: 5px 16px;
-			height: 30px;
-			color: #666666;
-			font-weight: 300;
-		}
-
-		[type="radio"]:not(:checked) + label {
-			border: 1px solid #e2e0e0;
-		}
-
-		[type="radio"]:checked + label {
-			border: 1px solid #2096d0;
-			color: #2096d0;
-		}
-	}
-
-	.popular-controls-link {
-		color: #2096d0;
-		@media screen and (max-width: 991px) {
-			display: block;
-			align-self: center;
-			margin: 30px 0;
-		}
-		&:hover {
-			cursor: pointer;
-		}
-		.icon {
-			width: 14px;
-			height: 11px;
-			fill: #999999;
-			margin-right: 16px;
-			margin-top: 45px;
-			@media screen and (max-width: 991px) {
-				margin-top: 0px;
+			[type="radio"]:checked + label {
+				border: 1px solid #2096d0;
+				color: #2096d0;
 			}
 		}
+
+		.popular-controls-link {
+			color: #2096d0;
+			@media screen and (max-width: 991px) {
+				display: block;
+				align-self: center;
+				margin: 30px 0;
+			}
+			&:hover {
+				cursor: pointer;
+			}
+			.icon {
+				width: 14px;
+				height: 11px;
+				fill: #999999;
+				margin-right: 16px;
+				margin-top: 45px;
+				@media screen and (max-width: 991px) {
+					margin-top: 0px;
+				}
+			}
+		}
+
+
 	}
+
+
+
+	.gray-background {
+		background: #f4f2f2;
+	}
+
+
+
+
 
 
 
