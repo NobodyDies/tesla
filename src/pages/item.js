@@ -13,4 +13,8 @@ $( document ).ready((e) => {
     galleryTop.controller.control = galleryThumbs;
     galleryThumbs.controller.control = galleryTop;
 
+    $('.item_page-description-star').on('click', function() {
+    	$(this).toggleClass('star-set');
+    });
+
 });

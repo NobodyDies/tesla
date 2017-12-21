@@ -33,7 +33,48 @@
 				margin-left: 30px;
 			}
 		}
+
+		.summary-button {
+			height: 50px;
+			max-width: 220px;
+		}
+
+		&-star {
+			display: flex;
+			width: 50px;
+			height: 50px;
+			border: 1px solid #e2e0e0;
+			cursor: pointer;
+			margin-left: 10px;
+
+			&:hover {
+				background: #F7F7F7;
+			}
+
+			&:active {
+				.icon {
+					-webkit-transform: scale(0.6);
+					transform: scale(0.6);
+				}
+			}
+
+			.icon {
+				margin: auto;
+				width: 20px;
+				height: 20px;
+				-webkit-transition: .35s ease;
+				transition: .35s ease;
+			}
+		}
+		.star-set {
+			fill: #2096d0;
+		}
+
+
+
 	}
+
+
 
 	.select-length {
 		position: relative;
