@@ -99,6 +99,19 @@ ul, li {
 	justify-content: center;
 	flex-direction: column;
 	cursor: pointer;
+	transition: background .2s ease-out;
+	-moz-transition: background .2s ease-out;
+	-webkit-transition: background .2s ease-out;
+	-o-transition: background .2s ease-out;
+
+	&:hover {
+		background: #81ba4a;
+	}
+
+	&:active {
+		background: #8eca55;
+	}
+
 	span {
 		line-height: 20px;
 		font-size: 11px;
@@ -290,6 +303,7 @@ ul, li {
 
 	[type="radio"]:checked+label:before {
 		border: 1px solid #2096d0;
+		transition: background .2s ease-out;
 	}
 }
 

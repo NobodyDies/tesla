@@ -24,4 +24,17 @@ $( document ).ready(() => {
 		columnWidth: '.grid-sizer'
 	});
 
+	$('.gallery-thumbs .gallery-thumbs-img').on('click', function() {
+		$('.gallery-thumbs .gallery-thumbs-img').removeClass('is-active');
+    	$(this).addClass('is-active');
+    });
+
+	$('.gallery-thumbs').masonry({
+		itemSelector: '.gallery-thumbs-img',
+		percentPosition: true,
+		gutter: 1,
+		//columnWidth: '.gallery-sizer'
+	});
+
+
 });
