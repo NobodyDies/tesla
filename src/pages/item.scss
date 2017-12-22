@@ -79,7 +79,25 @@
 	}
 
 	&-description {
+		padding-left: 8px;
 		font-weight: lighter;
+
+		h1 {
+			font-size: 30px;
+			font-weight: lighter;
+			margin: 0px;
+			margin-top: -6px;
+		}
+
+		&-price {
+			font-size: 30px;
+			font-weight: lighter;
+			color: #2096d0;
+
+			> span {
+				color: #999999;
+			}
+		}
 
 		.link-more-info {
 			margin-top: 25px;
