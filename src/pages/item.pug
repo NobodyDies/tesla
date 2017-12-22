@@ -70,40 +70,38 @@ block content
 								input#discount(name="discount" type="radio")
 								label(for="discount") Активируй 10% скидку
 
-						p Сверпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться.
+						p.item_page-description-text Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
+
 						a(href="#").link-more-info Подробнее о товаре
 							span
-						span Длина кабеля
 
-						br
+						.item_page-description-length
+							span Длина кабеля
 
-						p.select-length
-							input#length1(name="length" type="radio")
-							label(for="length1") 100 м
+							.length-selectors
+								p.select-length
+									input#length1(name="length" type="radio")
+									label(for="length1") 100 м
+								p.select-length
+									input#length2(name="length" type="radio")
+									label(for="length2") 150 м
 
-						br
+						.item_page-description-color
+							span Цвет - серый
 
-						p.select-length
-							input#length2(name="length" type="radio")
-							label(for="length2") 150 м
-
-						br
-
-						span Цвет - серый
-
-						form.pick-color
-							p
-								input#color1(name="group1" type="radio" checked="true")
-								label(for="color1")
-									span(style="background: #e7e7ea;")
-							p
-								input#color2(name="group1" type="radio")
-								label(for="color2")
-									span(style="background: #e8cbae;")
-							p
-								input#color3(name="group1" type="radio")
-								label(for="color3")
-									span(style="background: #4b4d4e;")
+							form.pick-color
+								p
+									input#color1(name="group1" type="radio" checked="true")
+									label(for="color1")
+										span(style="background: #e7e7ea;")
+								p
+									input#color2(name="group1" type="radio")
+									label(for="color2")
+										span(style="background: #e8cbae;")
+								p
+									input#color3(name="group1" type="radio")
+									label(for="color3")
+										span(style="background: #4b4d4e;")
 
 						span Коннекторы
 

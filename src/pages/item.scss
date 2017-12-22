@@ -90,6 +90,8 @@
 		}
 
 		&-price {
+			display: block;
+			margin: 12px 0 9px;
 			font-size: 30px;
 			font-weight: lighter;
 			color: #2096d0;
@@ -99,13 +101,63 @@
 			}
 		}
 
+		&-text {
+			line-height: 25px;
+			color: #666666;
+		}
+
 		.link-more-info {
-			margin-top: 25px;
+			margin-top: 21px;
 			letter-spacing: 1px;
 			display: block;
 
 			span {
 				background: #999999;
+			}
+		}
+
+		&-length {
+			display: flex;
+			justify-content: flex-start;
+			margin-top: 34px;
+
+			span {
+				display: block;
+				margin-top: 6px;
+			}
+
+			.length-selectors {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-start;
+				max-width: 155px;
+				margin-left: 30px;
+
+				.select-length {
+					margin-right: 10px;
+
+					&:last-child {
+						margin-right: 0px;
+					}
+				}
+			}
+		}
+
+		&-color {
+			display: flex;
+			justify-content: flex-start;
+
+			span {
+				display: block;
+				margin-top: 10px;
+			}
+
+			.pick-color {
+				margin-left: 32px;
+
+				p {
+					margin-top: 1px;
+				}
 			}
 		}
 
