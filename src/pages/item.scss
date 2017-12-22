@@ -30,25 +30,17 @@
 	&-description {
 		font-weight: lighter;
 
-		&-more {
-			color:#2096d0;
-			text-transform: uppercase;
-			font-size: 11px;
+		.link-more-info {
 			margin-top: 25px;
 			letter-spacing: 1px;
 			display: block;
+
 			span {
-				display: inline-block;
-				width: 50px;
-				height: 1px;
 				background: #999999;
-				vertical-align: 4px;
-				margin-left: 30px;
 			}
 		}
 
-		.summary-button {
-			height: 50px;
+		.big-button {
 			max-width: 220px;
 		}
 
@@ -114,30 +106,6 @@
 				color: #2096d0;
 			}
 		}
-
-		.popular-controls-link {
-			color: #2096d0;
-			@media screen and (max-width: 991px) {
-				display: block;
-				align-self: center;
-				margin: 30px 0;
-			}
-			&:hover {
-				cursor: pointer;
-			}
-			.icon {
-				width: 14px;
-				height: 11px;
-				fill: #999999;
-				margin-right: 16px;
-				margin-top: 45px;
-				@media screen and (max-width: 991px) {
-					margin-top: 0px;
-				}
-			}
-		}
-
-
 	}
 
 

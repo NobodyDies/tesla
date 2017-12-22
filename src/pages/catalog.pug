@@ -5,9 +5,8 @@ block appScripts
 
 block append content
 	.catalog_page
-		.catalog_page-heading-wrap
-			.catalog_page-heading
-				//img(src="/assets/img/catalog_main.png")
+		.catalog_page-heading
+			.catalog_page-heading-content
 
 				picture
 					source(srcset="/assets/img/catalog_main.png" media="(min-width: 500px)")
@@ -15,12 +14,12 @@ block append content
 					img(src="/assets/img/catalog_main.png")
 
 				.content-wrapper
-					.catalog_page-heading-text
+					.catalog_page-heading-content-text
 						h1 Магнитные кабели
 						p Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов.
 
 		.catalog_page-catalog
-			.catalog_page-catalog-wrapper.content-wrapper
+			.content-wrapper
 				.catalog_page-catalog-content.row
 					.grid-sizer.col-xs-1
 
@@ -50,7 +49,7 @@ block append content
 											input#color3(name="group1" type="radio")
 											label(for="color3")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -78,7 +77,7 @@ block append content
 											input#color6(name="group1" type="radio")
 											label(for="color6")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -106,7 +105,7 @@ block append content
 											input#color9(name="group1" type="radio")
 											label(for="color9")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-4.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -134,7 +133,7 @@ block append content
 											input#color12(name="group1" type="radio")
 											label(for="color12")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-4.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -162,7 +161,7 @@ block append content
 											input#color15(name="group1" type="radio")
 											label(for="color15")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-4.col-xs-12
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -190,7 +189,7 @@ block append content
 											input#color18(name="group1" type="radio")
 											label(for="color18")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -218,7 +217,7 @@ block append content
 											input#color21(name="group1" type="radio")
 											label(for="color21")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-3.col-xs-6
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -246,7 +245,7 @@ block append content
 											input#color24(name="group1" type="radio")
 											label(for="color24")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-6.col-xs-12.dark-image
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -274,7 +273,7 @@ block append content
 											input#color27(name="group1" type="radio")
 											label(for="color27")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину
 					.catalog_page-catalog-item.col-sm-6.col-xs-12
 						img.catalog-item-star(src="/assets/img/star.svg")
@@ -302,5 +301,5 @@ block append content
 											input#color30(name="group1" type="radio")
 											label(for="color30")
 												span(style="background: #4b4d4e;")
-									.button
+									.green-button
 										span В корзину

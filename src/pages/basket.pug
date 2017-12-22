@@ -19,7 +19,7 @@ block append content
 								.basket_page-inputs
 									input(type="text" placeholder="Телефон" id="phone" name="phone")
 									input(type="text" placeholder="Имя" id="name" name="name")
-								.button 
+								.green-button
 									span Заказ в 1 клик
 
 						.basket_page-content-left-wrap.delivery
@@ -31,7 +31,7 @@ block append content
 								input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
 								input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
 							a(href="#") Показать варианты оформления подарка
-							form.pick-color.pick-delivery
+							form.radio-button
 								p
 									input#courier(name="group1" type="radio" checked="true")
 									label(for="courier") Курьерская доставка
@@ -53,7 +53,7 @@ block append content
 							.tab-content
 								div#home.tab-pane.active(role="tabpanel")
 								div#profile.tab-pane(role="tabpanel")
-									form.pick-color.pick-delivery.pick-payment
+									form.pick-payment
 										p
 											input#bankcard(name="group1" type="radio" checked="true")
 											label(for="bankcard")
@@ -75,7 +75,7 @@ block append content
 												img(src="/assets/img/payment/4.png")
 												span Сбербанк онлайн
 						.basket_page-content-left-wrap
-							.button.summary-button
+							.green-button.big-button
 								span Сделать заказ
 
 
@@ -159,5 +159,5 @@ block append content
 										=" "
 										.item-price-valute Р
 						.basket_page-content-left-wrap
-							.button.summary-button#next-step
+							.green-button.big-button#next-step
 								span Сделать заказ

@@ -3,82 +3,85 @@
 	background: rgba(244,242,242,1);
 	padding-bottom: 100px;
 
-	&-heading-wrap {
+	&-heading {
 		padding-bottom: 140px;
 		background: #e7e7e7;
-	}
-	&-heading {
-		min-height: 360px;
-		position: relative;
-		color: #333333;
-		@media screen and (max-width: 991px) {
-			min-height: 420px;
 
-			.content-wrapper {
-				max-width: 750px;
-				margin: 0 auto;
-				width: 100%;
-			}
-		}
-		picture img {
-			max-width: 100%;
-			height: auto;
-			margin-top: 60px;
+		&-content {
+			min-height: 360px;
+			position: relative;
+			color: #333333;
+
 			@media screen and (max-width: 991px) {
-				width: 100%;
-				height: auto;
-				max-width: none;
-			}
-		}
-		&-text {
-			position: absolute;
-			bottom: 78px;
-			padding: 0 40px;
+				min-height: 420px;
 
-			@media screen and (max-width: 900px) {
-				bottom: 30px;
-				padding: 0 65px;
-			}
-			@media screen and (max-width: 500px) {
-				bottom: 40px;
-				padding: 0 20px;
-			}
-			h1 {
-				font-size: 60px;
-				font-weight: lighter;
-				@media screen and (max-width: 1080px) {
-					font-size: 50px;
-					line-height: 55px;
+				.content-wrapper {
+					max-width: 750px;
+					margin: 0 auto;
+					width: 100%;
 				}
-				@media screen and (max-width: 921px) {
-					font-size: 40px;
-					line-height: 45px;
+			}
+			picture img {
+				max-width: 100%;
+				height: auto;
+				margin-top: 60px;
+				@media screen and (max-width: 991px) {
+					width: 100%;
+					height: auto;
+					max-width: none;
+				}
+			}
+			&-text {
+				position: absolute;
+				bottom: 78px;
+				padding: 0 40px;
+
+				@media screen and (max-width: 900px) {
+					bottom: 30px;
+					padding: 0 65px;
 				}
 				@media screen and (max-width: 500px) {
-					font-size: 38px;
-					line-height: 43px;
+					bottom: 40px;
+					padding: 0 20px;
 				}
-				@media screen and (max-width: 400px) {
-					font-size: 30px;
-					line-height: 35px;
+				h1 {
+					font-size: 60px;
+					font-weight: lighter;
+					@media screen and (max-width: 1080px) {
+						font-size: 50px;
+						line-height: 55px;
+					}
+					@media screen and (max-width: 921px) {
+						font-size: 40px;
+						line-height: 45px;
+					}
+					@media screen and (max-width: 500px) {
+						font-size: 38px;
+						line-height: 43px;
+					}
+					@media screen and (max-width: 400px) {
+						font-size: 30px;
+						line-height: 35px;
+					}
 				}
-			}
-			p {
-				font-size: 18px;
-				font-weight: lighter;
-				line-height: 30px;
-				max-width: 420px;
-				@media screen and (max-width: 1080px) {
-					font-size: 17px;
-					line-height: 25px;
-				}
-				@media screen and (max-width: 921px) {
-					font-size: 15px;
-					line-height: 26px;
-				}
-				@media screen and (max-width: 500px) {
-					font-size: 14px;
-					line-height: 25px;
+				p {
+					font-size: 18px;
+					font-weight: lighter;
+					line-height: 30px;
+					max-width: 420px;
+
+					@media screen and (max-width: 1080px) {
+						font-size: 17px;
+						line-height: 25px;
+					}
+					@media screen and (max-width: 921px) {
+						font-size: 15px;
+						line-height: 26px;
+					}
+					@media screen and (max-width: 500px) {
+						font-size: 14px;
+						line-height: 25px;
+					}
 				}
 			}
 		}
@@ -98,11 +101,13 @@
 		&-content {
 			margin: 0 -10px;
 			padding: 0;
+
 			@media screen and (max-width: 767px) {
 				padding: 0;
 				margin: 0;
 			}
 			.grid-sizer {
+
 				@media screen and (max-width: 767px) {
 					padding: 0;
 					margin: 0;
@@ -115,7 +120,12 @@
 			overflow: hidden;
 			position: relative;
 
-			.button {
+			@media screen and (max-width: 767px) {
+				padding: 0;
+				margin: 0;
+			}
+
+			.green-button {
 				min-height: 50px;
 				display: none;
 				margin: 20px auto 0px;
@@ -142,6 +152,7 @@
 
 			.pick-color {
 				display: none;
+
 				@media screen and (max-width: 1100px) {
 					p {
 						margin-top: 5px;
@@ -193,14 +204,10 @@
 					.pick-color {
 						display: block;
 					}
-					.button {
+					.green-button {
 						display: flex;
 					}
 				}
-			}
-			@media screen and (max-width: 767px) {
-				padding: 0;
-				margin: 0;
 			}
 			.catalog-item-star {
 				position: absolute;
@@ -220,6 +227,10 @@
 				display: block;
 				width: 100%;
 				position: relative;
+
+				@media screen and (max-width: 767px) {
+					border: 1px solid #f4f2f2;
+				}
 
 				.pick-color {
 					[type="radio"]+label > span {
@@ -249,9 +260,6 @@
 						display: none;
 					}
 				}
-				@media screen and (max-width: 767px) {
-					border: 1px solid #f4f2f2;
-				}
 				&:hover {
 					text-decoration: none;
 				}
@@ -277,6 +285,7 @@
 						width: 100%;
 						bottom: 0px;
 						padding: 0 10px 29px;
+
 						@media screen and (max-width: 1100px) {
 							padding: 0 10px 15px;
 						}
