@@ -175,6 +175,10 @@ module.exports = {
 				to: path.resolve(__dirname, buildFolder + '/assets/js/slick')
 			},
 			{
+				from: path.resolve(__dirname, 'node_modules/swiper-thumbnails/js/swiper.thumbnails.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/swiper-thumbnails')
+			},
+			{
 				from: path.resolve(__dirname, 'node_modules/masonry-layout/dist/masonry.pkgd.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/masonry')
 			}

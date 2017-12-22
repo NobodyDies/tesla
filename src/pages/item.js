@@ -1,12 +1,12 @@
 $( document ).ready((e) => {
 
     var galleryTop = new Swiper('.gallery-top', {
-      spaceBetween: 10,
+      //spaceBetween: 10,
     });
     var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 10,
-      centeredSlides: true,
-      slidesPerView: 'auto',
+      spaceBetween: 1,
+      //centeredSlides: true,
+      //slidesPerView: 'auto',
       touchRatio: 0.2,
       slideToClickedSlide: true,
     });
