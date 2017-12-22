@@ -1,17 +1,18 @@
-$( document ).ready((e) => {
+$( document ).ready(() => {
 
-    var galleryTop = new Swiper('.gallery-top', {
-      //spaceBetween: 10,
+    var mySwiper = new Swiper('.item_page-content-slider', {
+      //spaceBetween: 10,  
     });
-    var galleryThumbs = new Swiper('.gallery-thumbs', {
-      spaceBetween: 1,
-      //centeredSlides: true,
-      //slidesPerView: 'auto',
-      touchRatio: 0.2,
-      slideToClickedSlide: true,
-    });
-    galleryTop.controller.control = galleryThumbs;
-    galleryThumbs.controller.control = galleryTop;
+
+	swiperThumbs(mySwiper, {
+		// Our default options
+		element: 'gallery-thumbs',
+		activeClass: 'is-active',
+		scope: '.sw'
+		// Parent element that surrounds your Swiper 
+		// html & Swiper thumbnail html to support multiple 
+		// Swiper instances on one page.
+	});
 
     $('.item_page-description-star').on('click', function() {
     	$(this).toggleClass('star-set');
