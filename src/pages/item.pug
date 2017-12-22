@@ -48,17 +48,6 @@ block content
 						.item_page-content-thumbs-img
 							img(src="/assets/img/page-item/thumbs/6.png")
 
-						.item_page-content-thumbs-img
-							img(src="/assets/img/page-item/thumbs/1.png")
-						.item_page-content-thumbs-img
-							img(src="/assets/img/page-item/thumbs/2.png")
-						.item_page-content-thumbs-img
-							img(src="/assets/img/page-item/thumbs/3.png")
-						.item_page-content-thumbs-img
-							img(src="/assets/img/page-item/thumbs/4.png")
-						.item_page-content-thumbs-img
-							img(src="/assets/img/page-item/thumbs/5.png")
-
 				.col-sm-6.col-xs-12
 					.item_page-description
 						h1 Магнитный кабель
@@ -77,7 +66,6 @@ block content
 
 						.item_page-description-length
 							span Длина кабеля
-
 							.length-selectors
 								p.select-length
 									input#length1(name="length" type="radio")
@@ -103,27 +91,23 @@ block content
 									label(for="color3")
 										span(style="background: #4b4d4e;")
 
-						span Коннекторы
+						.item_page-description-connectors
+							span Коннекторы
+							.connector-selectors
+								p.select-length
+									input#connector1(name="connectors" type="radio")
+									label(for="connector1") Lightning + MicroUSB
+								p.select-length
+									input#connector2(name="connectors" type="radio")
+									label(for="connector2") Type + MicroUSB
 
-						br
 
-						p.select-length
-							input#connector1(name="connectors" type="radio")
-							label(for="connector1") Lightning + MicroUSB
+						.item_page-description-basket
+							.green-button.big-button
+								span В корзину
 
-						br
-
-						p.select-length
-							input#connector2(name="connectors" type="radio")
-							label(for="connector2") Type + MicroUSB
-
-						br
-
-						.green-button.big-button
-							span В корзину
-
-						.item_page-description-star
-							+icon('star','')
+							.item_page-description-star
+								+icon('star','')
 
 						a.catalog-link
 							+icon('menu','') 
