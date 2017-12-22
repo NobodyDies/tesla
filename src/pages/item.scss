@@ -12,7 +12,7 @@
 		li {
 			display: inline-block;
 			color: #999999;
-			font-weight: lighter;
+			font-weight: 300;
 
 			.icon {
 				width: 4px;
@@ -80,11 +80,11 @@
 
 	&-description {
 		padding-left: 8px;
-		font-weight: lighter;
+		font-weight: 300;
 
 		h1 {
 			font-size: 30px;
-			font-weight: lighter;
+			font-weight: 300;
 			margin: 0px;
 			margin-top: -6px;
 		}
