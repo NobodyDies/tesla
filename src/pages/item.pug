@@ -114,20 +114,19 @@ block content
 							span Посмотреть все кабели
 
 
-
-
-
-		.item_page-content.gray-background.row
+		.item_page-order-info.row
 			.col-sm-6.col-xs-12
-				h1.item Страница товара
-
-				+icon('package','')
-
-				+icon('speech-bubble','')
-
-				+icon('cancel','')
-
+				.item_page-order-info-content
+					+icon('package','')
+					.item_page-order-info-text
+						h4 Заказ до 15:00, доставка: пн 21 августа – бесплатно
+						p Варианты доставки для местоположение: Москва
 			.col-sm-6.col-xs-12
+				.item_page-order-info-content
+					+icon('speech-bubble','')
+					.item_page-order-info-text
+						h4 Помощь при покупке. Пообщяйтесь со специалистами в чате или позвоните по телефону
+						strong 8 800 333-51-73
 
 		.content-wrapper
 			.index_page-catalog
@@ -150,6 +149,10 @@ block content
 							a.catalog-item-content.white.top-left(hre="#")
 								.catalog-item-header
 							img(src="/assets/img/page-item/photos/4.png")
+
+
+		+icon('cancel','')
+
 
 		.content-wrapper
 			.item_page-content.gray-background.row

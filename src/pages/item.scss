@@ -40,6 +40,7 @@
 		&-thumbs {
 			width: 100%;
 			padding-top: 23px;
+			padding-bottom: 70px;
 			box-sizing: border-box;
 
 			&-img {
@@ -81,6 +82,7 @@
 	&-description {
 		padding-left: 8px;
 		font-weight: 300;
+		padding-bottom: 70px;
 
 		h1 {
 			font-size: 30px;
@@ -250,6 +252,32 @@
 
 		.catalog-link .icon {
 		    margin-top: 35px;
+		}
+	}
+
+	&-order-info {
+		background: #f4f2f2;
+
+		&-content {
+			width: 100%;
+			display: flex;
+
+			.icon {
+				fill: #cccccc;
+
+				&-package {
+					width: 34px;
+					height: 34px;
+				}
+				&-speech-bubble {
+					width: 36px;
+					height: 30px;
+				}
+			}
+		}
+
+		&-text {
+			//display: block;
 		}
 	}
 
