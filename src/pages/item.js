@@ -25,13 +25,13 @@ $( document ).ready(() => {
 		columnWidth: '.grid-sizer'
 	});
 
-	$('.item_page-content-thumbs .item_page-content-thumbs-img').on('click', function() {
-		$('.item_page-content-thumbs .item_page-content-thumbs-img').removeClass('is-active');
+	$('.item_page-thumbs-img').on('click', function() {
+		$('.item_page-thumbs .item_page-thumbs-img').removeClass('is-active');
     	$(this).addClass('is-active');
     });
 
-	$('.item_page-content-thumbs').masonry({
-		itemSelector: '.item_page-content-thumbs-img',
+	$('.item_page-thumbs').masonry({
+		itemSelector: '.item_page-thumbs-img',
 		percentPosition: true,
 		gutter: 1,
 		//columnWidth: '.gallery-sizer'

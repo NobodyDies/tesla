@@ -28,58 +28,56 @@
 		}
 	}
 
-	&-content {
 
-		&-slider {
-			width: 100%;
-			margin-left: auto;
-			margin-right: auto;
-			overflow: hidden;
-		}
+	&-slider {
+		width: 100%;
+		margin-left: auto;
+		margin-right: auto;
+		overflow: hidden;
+	}
 
-		&-thumbs {
-			width: 100%;
-			padding-top: 23px;
-			padding-bottom: 70px;
-			box-sizing: border-box;
+	&-thumbs {
+		width: 100%;
+		padding-top: 23px;
+		padding-bottom: 70px;
+		box-sizing: border-box;
 
-			&-img {
-				margin-bottom: 2px;
+		&-img {
+			margin-bottom: 2px;
 
-				max-width: 16.449275362318840579710144927536%;
-				cursor: pointer;
-				transition: opacity .3s ease-out;
-				-moz-transition: opacity .3s ease-out;
-				-webkit-transition: opacity .3s ease-out;
-				-o-transition: opacity .3s ease-out;
+			max-width: 16.449275362318840579710144927536%;
+			cursor: pointer;
+			transition: opacity .3s ease-out;
+			-moz-transition: opacity .3s ease-out;
+			-webkit-transition: opacity .3s ease-out;
+			-o-transition: opacity .3s ease-out;
 
-				&:hover {
-					opacity: 0.8;
-				}
-
-				img {
-					height: auto;
-					max-width: 100%;
-				}
-
+			&:hover {
+				opacity: 0.8;
 			}
 
-			.is-active {
-				position: relative;
+			img {
+				height: auto;
+				max-width: 100%;
+			}
 
-				&:before {
-					content: '';
-					width: 100%;
-					height: 3px;
-					background: #2096d0;
-					position: absolute;
-					bottom: 0px;
-				}
+		}
+
+		.is-active {
+			position: relative;
+
+			&:before {
+				content: '';
+				width: 100%;
+				height: 3px;
+				background: #2096d0;
+				position: absolute;
+				bottom: 0px;
 			}
 		}
 	}
 
-	&-description {
+	&-item {
 		padding-left: 8px;
 		font-weight: 300;
 		padding-bottom: 70px;
@@ -118,7 +116,7 @@
 			}
 		}
 
-		.select-length {
+		.item-option {
 			position: relative;
 			display: inline-block;
 
@@ -183,6 +181,10 @@
 			}
 		}
 
+		&-connectors {
+			margin-top: 18px;
+		}
+
 		&-color {
 			display: flex;
 			justify-content: flex-start;
@@ -199,10 +201,6 @@
 					margin-top: 1px;
 				}
 			}
-		}
-
-		&-connectors {
-			margin-top: 18px;
 		}
 
 		&-basket {
@@ -255,6 +253,11 @@
 		}
 	}
 
+
+
+
+
+
 	&-order-info {
 		background: #f4f2f2;
 
@@ -272,7 +275,7 @@
 			align-items: flex-start;
 			margin-right: -15px;
 			margin-left: -15px;
-			padding: 60px 0;
+			padding: 60px 0 80px;
 
 			.icon {
 				fill: #cccccc;
@@ -312,6 +315,39 @@
 			//display: block;
 		}
 	}
+
+	&-discount {
+		background: linear-gradient(to bottom, rgba(244,242,242,1) 0%, rgba(244,242,242,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f2f2', endColorstr='#e7e7e7', GradientType=0 );
+
+		&-title {
+			margin: 20px 0 0px;
+
+			@media screen and (max-width: 991px) {
+				margin-top: 0px;
+			}
+
+			h3 {
+				font-size: 25px;
+				line-height: 30px;
+				font-weight: bold;
+				color: #333333;
+				margin: 0;
+
+				@media screen and (max-width: 991px) {
+					font-size: 20px;
+					line-height: 25px;
+				}
+			}	
+		}
+	}
+
+
+
+
+
+
+
 
 
 

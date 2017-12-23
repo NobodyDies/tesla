@@ -16,10 +16,9 @@ block content
 					+icon('arrow-right','')
 				li Магнитный кабель
 
-			.item_page-content.row
+			.row
 				.col-sm-6.col-xs-12.sw
-
-					.item_page-content-slider
+					.item_page-slider
 						.swiper-wrapper
 							.swiper-slide
 								img(src="/assets/img/page-item/1.png")
@@ -33,25 +32,26 @@ block content
 								img(src="/assets/img/page-item/5.png")
 							.swiper-slide
 								img(src="/assets/img/page-item/6.png")
-
-					.item_page-content-thumbs
-						.item_page-content-thumbs-img
+					.item_page-thumbs
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/1.png")
-						.item_page-content-thumbs-img
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/2.png")
-						.item_page-content-thumbs-img
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/3.png")
-						.item_page-content-thumbs-img
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/4.png")
-						.item_page-content-thumbs-img
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/5.png")
-						.item_page-content-thumbs-img
+						.item_page-thumbs-img
 							img(src="/assets/img/page-item/thumbs/6.png")
 
+
 				.col-sm-6.col-xs-12
-					.item_page-description
+					.item_page-item
 						h1 Магнитный кабель
-						.item_page-description-price 1990
+
+						.item_page-item-price 1990
 							=" "
 							span Р
 						//-
@@ -59,24 +59,23 @@ block content
 								input#discount(name="discount" type="radio")
 								label(for="discount") Активируй 10% скидку
 
-						p.item_page-description-text Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
+						p.item_page-item-text Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
 
 						a(href="#").link-more-info Подробнее о товаре
 							span
 
-						.item_page-description-length
+						.item_page-item-length
 							span Длина кабеля
 							.length-selectors
-								p.select-length
+								p.item-option
 									input#length1(name="length" type="radio")
 									label(for="length1") 100 м
-								p.select-length
+								p.item-option
 									input#length2(name="length" type="radio")
 									label(for="length2") 150 м
 
-						.item_page-description-color
+						.item_page-item-color
 							span Цвет - серый
-
 							form.pick-color
 								p
 									input#color1(name="group1" type="radio" checked="true")
@@ -91,26 +90,24 @@ block content
 									label(for="color3")
 										span(style="background: #4b4d4e;")
 
-						.item_page-description-connectors
+						.item_page-item-connectors
 							span Коннекторы
 							.connector-selectors
-								p.select-length
+								p.item-option
 									input#connector1(name="connectors" type="radio")
 									label(for="connector1") Lightning + MicroUSB
-								p.select-length
+								p.item-option
 									input#connector2(name="connectors" type="radio")
 									label(for="connector2") Type + MicroUSB
 
-
-						.item_page-description-basket
+						.item_page-item-basket
 							.green-button.big-button
 								span В корзину
-
-							.item_page-description-star
+							.item_page-item-star
 								+icon('star','')
 
 						a.catalog-link
-							+icon('menu','') 
+							+icon('menu','')
 							span Посмотреть все кабели
 
 
@@ -128,6 +125,16 @@ block content
 						.item_page-order-info-text
 							p Помощь при покупке. Пообщяйтесь со специалистами в чате или позвоните по телефону 
 								strong 8 800 333-51-73
+
+		.item_page-discount
+			.content-wrapper
+				.item_page-discount-title
+					h3 Покупайте
+					h3 выгодно
+				.item_page-discount-offer
+
+
+
 
 		.content-wrapper
 			.index_page-catalog
