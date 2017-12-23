@@ -1,13 +1,17 @@
 $( document ).ready(() => {
 
-    var mySwiper = new Swiper('.item_page-content-slider', {
+    var mySwiper = new Swiper('.item_page-slider-wrapper', {
 		speed: 700,
+		navigation: {
+			nextEl: '.item_page-slider-next',
+			prevEl: '.item_page-slider-prev',
+		},
 		//spaceBetween: 20,
     });
 
 	swiperThumbs(mySwiper, {
 		// Our default options
-		element: 'item_page-content-thumbs',
+		element: 'item_page-slider-thumbs',
 		activeClass: 'is-active',
 		scope: '.sw'
 		// Parent element that surrounds your Swiper 
@@ -25,13 +29,13 @@ $( document ).ready(() => {
 		columnWidth: '.grid-sizer'
 	});
 
-	$('.item_page-thumbs-img').on('click', function() {
-		$('.item_page-thumbs .item_page-thumbs-img').removeClass('is-active');
+	$('.item_page-slider-thumbs-img').on('click', function() {
+		$('.item_page-slider-thumbs .item_page-slider-thumbs-img').removeClass('is-active');
     	$(this).addClass('is-active');
     });
 
-	$('.item_page-thumbs').masonry({
-		itemSelector: '.item_page-thumbs-img',
+	$('.item_page-slider-thumbs').masonry({
+		itemSelector: '.item_page-slider-thumbs-img',
 		percentPosition: true,
 		gutter: 1,
 		//columnWidth: '.gallery-sizer'
