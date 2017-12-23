@@ -19,8 +19,8 @@ $( document ).ready(() => {
     	$(this).toggleClass('star-set');
     });
 
-	$('.index_page-catalog-content').masonry({
-		itemSelector: '.index_page-catalog-item',
+	$('.item_page-gallery-content').masonry({
+		itemSelector: '.item_page-gallery-item',
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
