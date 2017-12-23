@@ -884,26 +884,24 @@
 						padding: 0 10px 29px;
 
 						@media screen and (max-width: 1100px) {
-							padding: 0 10px 15px;
-						}
-						@media screen and (max-width: 1100px) {
-							padding: 0 10px 29px;
+							padding: 0 10px 12px;
 						}
 						@media screen and (max-width: 850px) {
-							padding: 0 10px 15px;
+							padding: 0 10px 12px;
 						}
 						@media screen and (max-width: 767px) {
 							padding: 0 10px 29px;
 						}
 						@media screen and (max-width: 400px) {
-							padding: 0 10px 15px;
+							padding: 0 10px 12px;
 						}
 					}
 				}
 				&-title {
 					color: #333333;
 					font-size: 16px;
-					line-height: 25px;
+					line-height: 19px;
+					margin-bottom: 4px;
 				}
 				&-price {
 					color: #2096d0;
