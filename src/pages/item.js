@@ -41,5 +41,19 @@ $( document ).ready(() => {
 		//columnWidth: '.gallery-sizer'
 	});
 
+	var breakpoint = window.matchMedia('(max-width:767px)');
+
+	var breakpointChecker = function breakpointChecker() {
+		if (breakpoint.matches === true) {
+			$('.item_page-item-heading').prependTo('.item_page');
+			return;
+		} else if (breakpoint.matches === false) {
+			$('.item_page-item-heading').prependTo('.item_page-item');
+			return;
+		}
+	};
+
+	breakpoint.addListener(breakpointChecker);
+	breakpointChecker();
 
 });
