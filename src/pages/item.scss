@@ -249,7 +249,7 @@
 
 			span {
 				display: block;
-				max-width: 132px;
+				max-width: 130px;
 				width: 100%;
 				font-size: 16px;
 				margin-top: 4px;
@@ -258,9 +258,9 @@
 			.length-selectors, 
 			.connector-selectors {
 				display: flex;
-				justify-content: space-between;
-				align-items: flex-start;
-				//margin-left: 30px;
+				//align-items: flex-start;
+				flex-wrap: wrap;
+				//justify-content: flex-start;
 
 				.item-option {
 					margin-right: 10px;
@@ -500,6 +500,7 @@
 		}
 
 		&-offer {
+			display: block;
 			position: relative;
 			max-width: 350px;
 			width: 100%;
