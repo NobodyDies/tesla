@@ -8,6 +8,10 @@
 	ul.item_page-breadcrump {
 		padding-bottom: 35px;
 
+		@media screen and (max-width: 767px) {
+			display: none;
+		}
+
 		li {
 			display: inline-block;
 			color: #999999;
@@ -122,22 +126,24 @@
 		font-weight: 300;
 		padding-bottom: 70px;
 
-		h1 {
-			font-size: 30px;
-			font-weight: 300;
-			margin: 0px;
-			margin-top: -6px;
-		}
+		&-heading {
+			h1 {
+				font-size: 30px;
+				font-weight: 300;
+				margin: 0px;
+				margin-top: -6px;
+			}
 
-		&-price {
-			display: block;
-			margin: 12px 0 9px;
-			font-size: 30px;
-			font-weight: lighter;
-			color: #2096d0;
+			&-price {
+				display: block;
+				margin: 12px 0 9px;
+				font-size: 30px;
+				font-weight: lighter;
+				color: #2096d0;
 
-			> span {
-				color: #999999;
+				> span {
+					color: #999999;
+				}
 			}
 		}
 
