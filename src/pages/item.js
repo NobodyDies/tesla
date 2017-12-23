@@ -19,7 +19,7 @@ $( document ).ready(() => {
 		// Swiper instances on one page.
 	});
 
-    $('.item_page-description-star').on('click', function() {
+    $('.item_page-item-basket-star').on('click', function() {
     	$(this).toggleClass('star-set');
     });
 

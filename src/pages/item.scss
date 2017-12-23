@@ -126,6 +126,11 @@
 		font-weight: 300;
 		padding-bottom: 70px;
 
+		@media screen and (max-width: 767px) {
+			display: flex;
+			flex-direction: column;
+		}
+
 		&-heading {
 			h1 {
 				font-size: 30px;
@@ -150,12 +155,20 @@
 		&-text {
 			line-height: 25px;
 			color: #666666;
+
+			@media screen and (max-width: 767px) {
+				order: 2;
+			}
 		}
 
 		.link-more-info {
 			margin-top: 21px;
 			letter-spacing: 1px;
 			display: block;
+
+			@media screen and (max-width: 767px) {
+				order: 3;
+			}
 
 			span {
 				background: #999999;
@@ -227,13 +240,27 @@
 			}
 		}
 
+		&-length {
+			@media screen and (max-width: 767px) {
+				order: 4;
+			}
+		}
+
 		&-connectors {
 			margin-top: 18px;
+
+			@media screen and (max-width: 767px) {
+				order: 6;
+			}
 		}
 
 		&-color {
 			display: flex;
 			justify-content: flex-start;
+
+			@media screen and (max-width: 767px) {
+				order: 5;
+			}
 
 			span {
 				display: block;
@@ -255,47 +282,58 @@
 			max-width: 280px;
 			margin-top: 25px;
 
+			@media screen and (max-width: 767px) {
+				order: 1;
+			}
+
 			.big-button {
 				max-width: 220px;
 			}
+
+			&-star {
+				display: flex;
+				width: 50px;
+				height: 50px;
+				border: 1px solid #e2e0e0;
+				cursor: pointer;
+				transition: background .2s ease-out;
+				-moz-transition: background .2s ease-out;
+				-webkit-transition: background .2s ease-out;
+				-o-transition: background .2s ease-out;
+
+				&:hover {
+					background: #F7F7F7;
+				}
+
+				&:active {
+					.icon {
+						-webkit-transform: scale(0.6);
+						transform: scale(0.6);
+					}
+				}
+
+				.icon {
+					margin: auto;
+					width: 20px;
+					height: 20px;
+					-webkit-transition: .35s ease;
+					transition: .35s ease;
+				}
+			}
+			.star-set {
+				fill: #2096d0;
+			}
 		}
 
-		&-star {
-			display: flex;
-			width: 50px;
-			height: 50px;
-			border: 1px solid #e2e0e0;
-			cursor: pointer;
-			transition: background .2s ease-out;
-			-moz-transition: background .2s ease-out;
-			-webkit-transition: background .2s ease-out;
-			-o-transition: background .2s ease-out;
+		.catalog-link{
 
-			&:hover {
-				background: #F7F7F7;
-			}
-
-			&:active {
-				.icon {
-					-webkit-transform: scale(0.6);
-					transform: scale(0.6);
-				}
+			@media screen and (max-width: 767px) {
+				order: 7;
 			}
 
 			.icon {
-				margin: auto;
-				width: 20px;
-				height: 20px;
-				-webkit-transition: .35s ease;
-				transition: .35s ease;
+				margin-top: 35px;
 			}
-		}
-		.star-set {
-			fill: #2096d0;
-		}
-
-		.catalog-link .icon {
-		    margin-top: 35px;
 		}
 	}
 
