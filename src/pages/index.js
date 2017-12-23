@@ -88,12 +88,12 @@ var breakpointChecker = function breakpointChecker() {
 
    if (breakpoint.matches === true) {
 
-      $('.popular-controls-link').appendTo('.index_page-popular-wrapper > .content-wrapper');
+      $('.catalog-link').appendTo('.index_page-popular-wrapper > .content-wrapper');
       return;
 
    } else if (breakpoint.matches === false) {
       
-      $('.popular-controls-link').appendTo('.popular-controls');
+      $('.catalog-link').appendTo('.popular-controls');
       return;
    }
 };
