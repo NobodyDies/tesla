@@ -249,7 +249,8 @@
 
 			span {
 				display: block;
-				max-width: 130px;
+				max-width: 120px;
+				margin-right: 10px;
 				width: 100%;
 				font-size: 16px;
 				margin-top: 4px;
@@ -374,15 +375,39 @@
 			}
 		}
 
-		.catalog-link{
+		&-all {
 
 			@media screen and (max-width: 767px) {
+				padding: 0px 20px;
+				width: 100%;
 				order: 7;
-				border-top: 1px solid #e2e0e0;
 			}
 
-			.icon {
-				margin-top: 35px;
+			&-wrap {
+
+				.catalog-link {
+					margin: 0px;
+
+					.icon {
+						margin-top: 35px;
+					}
+				}
+
+				@media screen and (max-width: 767px) {
+					margin-top: 20px;
+					width: 100%;
+					display: flex;
+					justify-content: center;
+					border-top: 1px solid #e2e0e0;
+
+					.catalog-link {
+						margin: 30px;
+
+						.icon {
+							margin-top: 0px;
+						}
+					}
+				}
 			}
 		}
 	}

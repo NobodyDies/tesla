@@ -78,10 +78,10 @@ block content
 							.length-selectors
 								p.item-option
 									input#length1(name="length" type="radio")
-									label(for="length1") 100 м
+									label(for="length1") 100 см
 								p.item-option
 									input#length2(name="length" type="radio")
-									label(for="length2") 150 м
+									label(for="length2") 150 см
 
 						.item_page-item-color
 							span Цвет - серый
@@ -108,18 +108,6 @@ block content
 								p.item-option
 									input#connector2(name="connectors" type="radio")
 									label(for="connector2") Type + MicroUSB
-								p.item-option
-									input#connector2(name="connectors" type="radio")
-									label(for="connector2") Type + MicroUSB
-								p.item-option
-									input#connector1(name="connectors" type="radio")
-									label(for="connector1") Lightning + MicroUSB
-								p.item-option
-									input#connector2(name="connectors" type="radio")
-									label(for="connector2") Type + MicroUSB
-								p.item-option
-									input#connector2(name="connectors" type="radio")
-									label(for="connector2") Type + MicroUSB
 
 						.item_page-item-basket-wrap
 							.item_page-item-basket
@@ -128,9 +116,11 @@ block content
 								.item_page-item-basket-star
 									+icon('star','')
 
-						a.catalog-link
-							+icon('menu','')
-							span Посмотреть все кабели
+						.item_page-item-all
+							.item_page-item-all-wrap
+								a.catalog-link
+									+icon('menu','')
+									span Посмотреть все кабели
 
 
 		.item_page-order-info
