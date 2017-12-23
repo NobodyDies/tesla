@@ -147,21 +147,27 @@ block content
 							span Р
 
 
-		.item_page-descr#MainMenu Информация о продукте
+		.item_page-descr
 			.list-group.panel
-				a.list-group-item.list-group-item-success(href="#demo3" data-toggle="collapse" data-parent="#MainMenu") Item 1 
-					i.fa.fa-caret-down
-				.collapse#demo3
+				a.list-group-item.list-group-item-success(href="#prodinfo" data-toggle="collapse" data-parent=".item_page-descr") Информация о продукте 
+					.cross
+						span
+						span
+				.collapse#prodinfo
 					a.list-group-item(href="#") Subitem 1
 					a.list-group-item(href="#") Subitem 2
 					a.list-group-item(href="#") Subitem 3
 
-				a.list-group-item.list-group-item-success(href="#demo4" data-toggle="collapse" data-parent="#MainMenu") Item 2
-					i.fa.fa-caret-down
-				.collapse#demo4
+				a.list-group-item.list-group-item-success(href="#prodpecs" data-toggle="collapse" data-parent=".item_page-descr") Характеристики
+					.cross
+						span
+						span
+				.collapse#prodpecs
 					a.list-group-item(href="#") Subitem 1
 					a.list-group-item(href="#") Subitem 2
 					a.list-group-item(href="#") Subitem 3
+
+
 
 
 		.content-wrapper
@@ -187,7 +193,7 @@ block content
 							img(src="/assets/img/page-item/photos/4.png")
 
 
-		+icon('cancel','')
+		
 
 
 		.content-wrapper
