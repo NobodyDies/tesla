@@ -2,10 +2,6 @@
 	background: #ffffff;
 	padding-top: 36px;
 
-	@media screen and (max-width: 767px) {
-		padding-top: 0px;
-	}
-
 	@media screen and (max-width: 991px) {
 		.content-wrapper {
 			padding: 0px 20px;
@@ -13,6 +9,8 @@
 	}
 
 	@media screen and (max-width: 767px) {
+		padding-top: 0px;
+
 		.content-wrapper {
 			padding: 0px;
 		}
@@ -148,6 +146,7 @@
 		}
 
 		&-heading {
+
 			@media screen and (max-width: 767px) {
 				display: flex;
 				justify-content: space-between;
@@ -396,7 +395,6 @@
 			}
 
 			&-wrap {
-
 				.catalog-link {
 					margin: 0px;
 
