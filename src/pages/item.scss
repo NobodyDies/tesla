@@ -129,6 +129,7 @@
 		@media screen and (max-width: 767px) {
 			display: flex;
 			flex-direction: column;
+			background: #f4f2f2;
 		}
 
 		&-heading {
@@ -280,10 +281,13 @@
 			display: flex;
 			justify-content: space-between;
 			max-width: 280px;
+			width: 100%;
 			margin-top: 25px;
 
 			@media screen and (max-width: 767px) {
 				order: 1;
+				margin: 25px auto 0px;
+				background: #ffffff;
 			}
 
 			.big-button {
@@ -337,18 +341,22 @@
 		}
 	}
 
-
-
-
-
-
 	&-order-info {
 		background: #f4f2f2;
+
+		@media screen and (max-width: 767px) {
+			background: #ffffff;
+		}
 
 		.col-sm-6 {
 			&:nth-child(2) {
 				.item_page-order-info-content {
 					padding-left: 23px;
+
+					@media screen and (max-width: 767px) {
+						border-top: 1px solid #e2e0e0;
+						padding-left: 0px;
+					}
 				}
 			}
 		}
@@ -360,6 +368,11 @@
 			margin-right: -15px;
 			margin-left: -15px;
 			padding: 60px 0 80px;
+
+			@media screen and (max-width: 767px) {
+				margin-right: 0px;
+				margin-left: 0px;
+			}
 
 			.icon {
 				fill: #cccccc;
@@ -396,7 +409,6 @@
 				cursor: pointer;
 				color: #2096d0;
 			}
-			//display: block;
 		}
 	}
 
@@ -404,16 +416,24 @@
 		background: linear-gradient(to bottom, rgba(244,242,242,1) 0%, rgba(244,242,242,1) 50%, rgba(255,255,255,1) 50%, rgba(255,255,255,1) 100%);
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f2f2', endColorstr='#e7e7e7', GradientType=0 );
 
+		@media screen and (max-width: 767px) {
+			background: #e7e7e7;
+		}
+
 		.content-wrapper {
 			display: flex;
 			justify-content: space-between;
+
+			@media screen and (max-width: 767px) {
+				flex-direction: column;
+			}
 		}
 
 		&-title {
 			margin: 0px;
 
-			@media screen and (max-width: 991px) {
-				margin-top: 0px;
+			@media screen and (max-width: 767px) {
+				padding: 31px 21px;
 			}
 
 			h3 {
@@ -427,6 +447,9 @@
 					font-size: 20px;
 					line-height: 25px;
 				}
+				@media screen and (max-width: 767px) {
+					display: inline-block;
+				}
 			}	
 		}
 
@@ -437,8 +460,18 @@
 			max-height: 200px;
 			margin-left: 20px;
 
+			@media screen and (max-width: 767px) {
+				margin-bottom: 1px;
+				margin-left: 0px;
+				max-width: none;
+				max-height: none;
+
+				&:last-child {
+					margin-bottom: 0px;
+				}
+			}
 			img {
-				max-width: 100%;
+				width: 100%;
 				height: auto;
 			}
 
