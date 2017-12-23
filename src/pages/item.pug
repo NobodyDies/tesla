@@ -67,7 +67,8 @@ block content
 								input#discount(name="discount" type="radio")
 								label(for="discount") Активируй 10% скидку
 
-						p.item_page-item-text Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
+						.item_page-item-text
+							p Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
 
 						a(href="#").link-more-info Подробнее о товаре
 							span
@@ -107,12 +108,12 @@ block content
 								p.item-option
 									input#connector2(name="connectors" type="radio")
 									label(for="connector2") Type + MicroUSB
-
-						.item_page-item-basket
-							.green-button.big-button
-								span В корзину
-							.item_page-item-basket-star
-								+icon('star','')
+						.item_page-item-basket-wrap
+							.item_page-item-basket
+								.green-button.big-button
+									span В корзину
+								.item_page-item-basket-star
+									+icon('star','')
 
 						a.catalog-link
 							+icon('menu','')
