@@ -156,6 +156,7 @@
 		li {
 			display: inline-block;
 			padding: 0px 18px;
+			transition: background .1s ease-in;
 
 			&:hover {
 				background: #2095ce;
@@ -164,6 +165,10 @@
 		}
 		a {
 			color: #ffffff;
+			display: block;
+			height: 100%;
+
+			&:focus,
 			&:hover {
 				text-decoration: none;
 			}
