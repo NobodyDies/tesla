@@ -33,11 +33,33 @@ block prepend menu
 								) Москве
 
 				ul.main-nav
-					li
-						a(href="#") МАГАЗИН
-					li
-						a(href="#") СОТРУДНИЧЕСТВО
-					li
+					li.panel
+						a(href="#store" data-toggle="collapse" data-parent=".main-nav") МАГАЗИН
+						.subitem.collapse#store
+							ul
+								li
+									a(href="#") Магнитные кабели
+								li
+									a(href="#") Powerbank
+								li
+									a(href="#") Чехлы
+								li
+									a(href="#") Сетевые адаптеры
+								li
+									a(href="#") Для автомобиля
+					li.panel
+						a(href="#partnership" data-toggle="collapse" data-parent=".main-nav") СОТРУДНИЧЕСТВО
+						.subitem.collapse#partnership
+							ul
+								li
+									a(href="#") sometext
+								li
+									a(href="#") sometext2
+								li
+									a(href="#") sometext3
+								li
+									a(href="#") sometext4
+					li.panel
 						a(href="#") КОНТАКТЫ
 				.navigation-mobile-bottom
 					.navigation-mobile-phone

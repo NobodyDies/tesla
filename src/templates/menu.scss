@@ -246,6 +246,7 @@
 		width: 60px;
 		height: 60px;
 		display: flex;
+
 		.navbar-toggle {
 			float: left;
 			margin: 0;
@@ -366,25 +367,59 @@
 					}
 				}
 			}
+
 			.main-nav {
 				clear: both;
 				display: block;
+
+				li.panel {
+					background-color: transparent;
+					border: none;
+					border-radius: 0;
+					box-shadow: none;
+				}
+
 				li {
 					display: block;
 					font-size: 14px;
 					line-height: 20px;
 					border-bottom: 1px solid #2b2e31;
 					margin: 0;
+
+					&:hover {
+						background: transparent;
+					}
+
 					&:last-child {
 						border: none;
 					}
+
 					a {
 						padding: 25px 0;
 						display: block;
+
 						&:hover {
 							text-decoration: none;
 						}
 					}
+
+					.subitem {
+						li {
+							border: none;
+
+							a {
+								padding: 8px 0;
+								color: #ffffff;
+							}
+
+							&:last-child {
+								a {
+									padding-bottom: 35px;
+								}
+							}
+						}
+					}
+
 				}
 			}
 			.navigation-mobile-bottom {
@@ -518,5 +553,12 @@
 				}
 			}
 		}
+	}
+}
+
+
+.svg-for-khamit {
+	img {
+		width: 30px; height:30px;
 	}
 }
