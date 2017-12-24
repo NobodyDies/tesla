@@ -20,10 +20,17 @@
 
 	&.transparent {
 		background-color: transparent;
+
+		.delivery-city {
+			&-dropdown {
+				background: transparent;
+			}
+		}
 	}
 	&-logo {
 		padding: 16px 0 19px 21px;
 		display: inline-block;
+
 		@media screen and (max-width: 991px) {
 			margin: 0 auto;
 			padding: 16px 0 19px 0px;
@@ -31,6 +38,7 @@
 	}
 	.left-menu {
 		display: inline-block;
+
 		@media screen and (max-width: 991px) {
 			display: none;
 		}
@@ -44,7 +52,7 @@
 			position: relative;
 			a {
 				color: #cccccc;
-				padding: 5px 0px;
+				//padding: 5px 0px;
 				&:hover {
 					background: transparent;
 					color: #ffffff;
@@ -103,8 +111,9 @@
 		}
 		&-dropdown {
 			@extend .dropdown-styling;
-			right: -102px;
-			left: auto;
+			left: 49px;
+			right: auto;
+			background: #1b1e21;
 			li {
 				a {
 					color: #cccccc;
@@ -268,6 +277,7 @@
 			left: 0;
 			z-index: 999;
 			min-height: 100vh;
+
 			.delivery-city {
 				display: flex;
 				padding: 22px 0 0 50px;
@@ -275,6 +285,7 @@
 				float: right;
 				font-size: 14px;
 				color: #cccccc;
+
 				&-text {
 					flex-shrink: 0;
 					flex-grow: 0;
@@ -308,6 +319,7 @@
 					background: #ffffff;
 					border-radius: 0px;
 					width: 200px;
+
 					li {
 						padding: 2px 0;
 					}
@@ -375,6 +387,7 @@
 	.basket-goods-item {
 		border-bottom: 1px solid #e8e8e8;
 		padding: 30px 0 29px;
+
 		&:last-child {
 			border: none;
 		}
@@ -395,6 +408,7 @@
 			white-space: nowrap;
 			flex-grow: 0;
 			flex-shrink: 0;
+
 			&:before {
 				content: ' ';
 				display: inline-block;
