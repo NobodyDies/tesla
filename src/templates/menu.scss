@@ -21,12 +21,14 @@
 	&.transparent {
 		background-color: transparent;
 
-		.delivery-city {
+		.delivery-city, 
+		.language-switcher {
 			&-dropdown {
 				background: transparent;
 			}
 		}
 	}
+
 	&-logo {
 		padding: 16px 0 19px 21px;
 		display: inline-block;
@@ -61,27 +63,42 @@
 			&:last-child {
 				margin-right: 0;
 			}
+		}
+	}
 
-			.language-switcher {
-				&-current {
-					position: relative;
-					cursor: pointer;
-					padding-right: 14px;
-					&:after {
-						content: "";
-						position: absolute;
-						right: 0px;
-						top: 5px;
-						height: 5px;
-						width: 5px;
-						border: 1px solid #cccccc;
-						border-top: none;
-						border-right: none;
-						transform: rotate(-45deg);
+	.language-switcher {
+
+		&-current {
+			position: relative;
+			cursor: pointer;
+			padding-right: 14px;
+
+			&:after {
+				content: "";
+				position: absolute;
+				right: 0px;
+				top: 5px;
+				height: 5px;
+				width: 5px;
+				border: 1px solid #cccccc;
+				border-top: none;
+				border-right: none;
+				transform: rotate(-45deg);
+			}
+		}
+		&-dropdown {
+			@extend .dropdown-styling;
+
+			left: -20px;
+			background: #1b1e21;
+			min-width: 90px;
+
+			li {
+				a {
+					&:focus {
+						background-color: transparent;
+						outline: none;
 					}
-				}
-				&-dropdown {
-					@extend .dropdown-styling;
 				}
 			}
 		}
@@ -117,6 +134,12 @@
 			li {
 				a {
 					color: #cccccc;
+
+					&:focus {
+						background-color: transparent;
+						outline: none;
+					}
+
 					&:hover {
 						background: transparent;
 						color: #2096d0;
@@ -132,10 +155,18 @@
 		line-height: 60px;
 		li {
 			display: inline-block;
-			margin: 0px 18px;
+			padding: 0px 18px;
+
+			&:hover {
+				background: #2095ce;
+			}
+			//margin: 0px 18px;
 		}
 		a {
 			color: #ffffff;
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -316,6 +347,7 @@
 				.dropdown-menu {
 					top: 36px;
 					right: -52px;
+					left: auto;
 					background: #ffffff;
 					border-radius: 0px;
 					width: 200px;
@@ -326,6 +358,7 @@
 					li > a {
 						white-space: normal;
 						color: #333333;
+
 						&:hover {
 							color: #2096d0;
 							background-color: #f8f9fa;
