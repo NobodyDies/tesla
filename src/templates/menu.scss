@@ -20,10 +20,19 @@
 
 	&.transparent {
 		background-color: transparent;
+
+		.delivery-city, 
+		.language-switcher {
+			&-dropdown {
+				background: transparent;
+			}
+		}
 	}
+
 	&-logo {
 		padding: 16px 0 19px 21px;
 		display: inline-block;
+
 		@media screen and (max-width: 991px) {
 			margin: 0 auto;
 			padding: 16px 0 19px 0px;
@@ -31,6 +40,7 @@
 	}
 	.left-menu {
 		display: inline-block;
+
 		@media screen and (max-width: 991px) {
 			display: none;
 		}
@@ -44,7 +54,7 @@
 			position: relative;
 			a {
 				color: #cccccc;
-				padding: 5px 0px;
+				//padding: 5px 0px;
 				&:hover {
 					background: transparent;
 					color: #ffffff;
@@ -53,27 +63,42 @@
 			&:last-child {
 				margin-right: 0;
 			}
+		}
+	}
 
-			.language-switcher {
-				&-current {
-					position: relative;
-					cursor: pointer;
-					padding-right: 14px;
-					&:after {
-						content: "";
-						position: absolute;
-						right: 0px;
-						top: 5px;
-						height: 5px;
-						width: 5px;
-						border: 1px solid #cccccc;
-						border-top: none;
-						border-right: none;
-						transform: rotate(-45deg);
+	.language-switcher {
+
+		&-current {
+			position: relative;
+			cursor: pointer;
+			padding-right: 14px;
+
+			&:after {
+				content: "";
+				position: absolute;
+				right: 0px;
+				top: 5px;
+				height: 5px;
+				width: 5px;
+				border: 1px solid #cccccc;
+				border-top: none;
+				border-right: none;
+				transform: rotate(-45deg);
+			}
+		}
+		&-dropdown {
+			@extend .dropdown-styling;
+
+			left: -20px;
+			background: #1b1e21;
+			min-width: 90px;
+
+			li {
+				a {
+					&:focus {
+						background-color: transparent;
+						outline: none;
 					}
-				}
-				&-dropdown {
-					@extend .dropdown-styling;
 				}
 			}
 		}
@@ -103,11 +128,18 @@
 		}
 		&-dropdown {
 			@extend .dropdown-styling;
-			right: -102px;
-			left: auto;
+			left: 49px;
+			right: auto;
+			background: #1b1e21;
 			li {
 				a {
 					color: #cccccc;
+
+					&:focus {
+						background-color: transparent;
+						outline: none;
+					}
+
 					&:hover {
 						background: transparent;
 						color: #2096d0;
@@ -123,10 +155,23 @@
 		line-height: 60px;
 		li {
 			display: inline-block;
-			margin: 0px 18px;
+			padding: 0px 18px;
+			transition: background .1s ease-in;
+
+			&:hover {
+				background: #2095ce;
+			}
+			//margin: 0px 18px;
 		}
 		a {
 			color: #ffffff;
+			display: block;
+			height: 100%;
+
+			&:focus,
+			&:hover {
+				text-decoration: none;
+			}
 		}
 	}
 
@@ -206,6 +251,7 @@
 		width: 60px;
 		height: 60px;
 		display: flex;
+
 		.navbar-toggle {
 			float: left;
 			margin: 0;
@@ -268,6 +314,7 @@
 			left: 0;
 			z-index: 999;
 			min-height: 100vh;
+
 			.delivery-city {
 				display: flex;
 				padding: 22px 0 0 50px;
@@ -275,6 +322,7 @@
 				float: right;
 				font-size: 14px;
 				color: #cccccc;
+
 				&-text {
 					flex-shrink: 0;
 					flex-grow: 0;
@@ -305,15 +353,18 @@
 				.dropdown-menu {
 					top: 36px;
 					right: -52px;
+					left: auto;
 					background: #ffffff;
 					border-radius: 0px;
 					width: 200px;
+
 					li {
 						padding: 2px 0;
 					}
 					li > a {
 						white-space: normal;
 						color: #333333;
+
 						&:hover {
 							color: #2096d0;
 							background-color: #f8f9fa;
@@ -321,25 +372,59 @@
 					}
 				}
 			}
+
 			.main-nav {
 				clear: both;
 				display: block;
+
+				li.panel {
+					background-color: transparent;
+					border: none;
+					border-radius: 0;
+					box-shadow: none;
+				}
+
 				li {
 					display: block;
 					font-size: 14px;
 					line-height: 20px;
 					border-bottom: 1px solid #2b2e31;
 					margin: 0;
+
+					&:hover {
+						background: transparent;
+					}
+
 					&:last-child {
 						border: none;
 					}
+
 					a {
 						padding: 25px 0;
 						display: block;
+
 						&:hover {
 							text-decoration: none;
 						}
 					}
+
+					.subitem {
+						li {
+							border: none;
+
+							a {
+								padding: 8px 0;
+								color: #ffffff;
+							}
+
+							&:last-child {
+								a {
+									padding-bottom: 35px;
+								}
+							}
+						}
+					}
+
 				}
 			}
 			.navigation-mobile-bottom {
@@ -375,6 +460,7 @@
 	.basket-goods-item {
 		border-bottom: 1px solid #e8e8e8;
 		padding: 30px 0 29px;
+
 		&:last-child {
 			border: none;
 		}
@@ -395,6 +481,7 @@
 			white-space: nowrap;
 			flex-grow: 0;
 			flex-shrink: 0;
+
 			&:before {
 				content: ' ';
 				display: inline-block;
@@ -471,5 +558,12 @@
 				}
 			}
 		}
+	}
+}
+
+
+.svg-for-khamit {
+	img {
+		width: 30px; height:30px;
 	}
 }

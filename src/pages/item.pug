@@ -1,4 +1,272 @@
 extends ./../templates/common
 
+block appScripts
+	script(src='/js/item.min.js')
+
 block content
-	h1.item Страница товара
+	.item_page
+		.content-wrapper
+
+			ul.item_page-breadcrump
+				li
+					a(href="") Магазин
+					+icon('arrow-right','')
+				li
+					a(href="") Кабели
+					+icon('arrow-right','')
+				li Магнитный кабель
+
+			.row
+				.col-sm-6.col-xs-12.sw
+					.item_page-slider
+						.item_page-slider-wrapper
+							.swiper-wrapper
+								.swiper-slide
+									img(src="/assets/img/page-item/1.png")
+								.swiper-slide
+									img(src="/assets/img/page-item/2.png")
+								.swiper-slide
+									img(src="/assets/img/page-item/3.png")
+								.swiper-slide
+									img(src="/assets/img/page-item/4.png")
+								.swiper-slide
+									img(src="/assets/img/page-item/5.png")
+								.swiper-slide
+									img(src="/assets/img/page-item/6.png")
+
+						.item_page-slider-prev
+							+icon('arrow-left','')
+						.item_page-slider-next
+							+icon('arrow-right','')
+
+						.item_page-slider-thumbs
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/1.png")
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/2.png")
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/3.png")
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/4.png")
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/5.png")
+							.item_page-slider-thumbs-img
+								img(src="/assets/img/page-item/thumbs/6.png")
+
+
+				.col-sm-6.col-xs-12
+					.item_page-item
+						.item_page-item-heading
+							h1 Магнитный кабель
+
+							.item_page-item-heading-price 1990
+								=" "
+								span Р
+						//-
+							p.select-length
+								input#discount(name="discount" type="radio")
+								label(for="discount") Активируй 10% скидку
+
+						.item_page-item-text
+							p Сверхпрочный кабель с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоеденится.
+
+						a(href="#").link-more-info Подробнее о товаре
+							span
+
+						.item_page-item-length
+							span Длина кабеля
+							.length-selectors
+								p.item-option
+									input#length1(name="length" type="radio")
+									label(for="length1") 100 см
+								p.item-option
+									input#length2(name="length" type="radio")
+									label(for="length2") 150 см
+
+						.item_page-item-color
+							span Цвет - серый
+							form.pick-color
+								p
+									input#color1(name="group1" type="radio" checked="true")
+									label(for="color1")
+										span(style="background: #e7e7ea;")
+								p
+									input#color2(name="group1" type="radio")
+									label(for="color2")
+										span(style="background: #e8cbae;")
+								p
+									input#color3(name="group1" type="radio")
+									label(for="color3")
+										span(style="background: #4b4d4e;")
+
+						.item_page-item-connectors
+							span Коннекторы
+							.connector-selectors
+								p.item-option
+									input#connector1(name="connectors" type="radio")
+									label(for="connector1") Lightning + MicroUSB
+								p.item-option
+									input#connector2(name="connectors" type="radio")
+									label(for="connector2") Type + MicroUSB
+
+						.item_page-item-basket-wrap
+							.item_page-item-basket
+								.green-button.big-button
+									span В корзину
+								.item_page-item-basket-star
+									+icon('star','')
+
+						.item_page-item-all
+							.item_page-item-all-wrap
+								a.catalog-link
+									+icon('menu','')
+									span Посмотреть все кабели
+
+
+		.item_page-order-info
+			.content-wrapper.row
+				.col-sm-6.col-xs-12
+					.item_page-order-info-content
+						+icon('package','')
+						.item_page-order-info-text
+							p Заказ до 15:00, доставка: пн 21 августа – бесплатно
+							a Варианты доставки для местоположения: Москва
+				.col-sm-6.col-xs-12
+					.item_page-order-info-content
+						+icon('speech-bubble','')
+						.item_page-order-info-text
+							p Помощь при покупке. Пообщяйтесь со специалистами в чате или позвоните по телефону 
+								strong 8 800 333-51-73
+
+		.item_page-discount
+			.content-wrapper
+				.item_page-discount-title
+					h3 Покупайте
+					=" "
+					h3 выгодно
+				a.item_page-discount-offer(href="#")
+					img(src="/assets/img/page-item/offer1.png")
+					.item_page-discount-offer-title 2 кабеля и 4 коннектора
+						.item_page-discount-offer-price
+							span.old-price 2 780
+							="1990 "
+							span Р
+				a.item_page-discount-offer(href="#")
+					img(src="/assets/img/page-item/offer2.png")
+					.item_page-discount-offer-title 3 кабеля и 6 коннекторов
+						.item_page-discount-offer-price
+							span.old-price 2 780
+							="1990 "
+							span Р
+
+
+		.item_page-descr
+			.content-wrapper.panel
+				a.item_page-descr-item(href="#prodinfo" data-toggle="collapse" data-parent=".item_page-descr") Информация о продукте 
+					.cross
+						span
+						span
+				.collapse#prodinfo
+					.list-group-item
+						.list-group-item-heading
+							h3 Описание
+						.list-group-item-text
+							p Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов. Сверпрочный кабель Tesla с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Просто поднесите телефон к кабелю и произойдёт автоматическое соединение. Почти магия. Tesla поддерживает быструю зарядку и синхронизацию данных.
+							p Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться. 
+					.list-group-item
+						.list-group-item-heading
+							h3 Особенности
+						.list-group-item-text
+							p Подключение к устройству по технологии Bluetooth® класса 1 для воспроизведения музыки по беспроводной связи. До 8 часов работы без подзарядки — куда бы вы ни отправились.
+
+				a.item_page-descr-item(href="#prodpecs" data-toggle="collapse" data-parent=".item_page-descr") Характеристики
+					.cross
+						span
+						span
+				.collapse#prodpecs
+					.list-group-item
+						.list-group-item-heading
+							h3 Описание
+						.list-group-item-text
+							p Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов. Сверпрочный кабель Tesla с магнитный коннектором невероятно долговечен и удобен в использовании. Оплётка из нейлона устойчива к стиранию и разрыву. Просто поднесите телефон к кабелю и произойдёт автоматическое соединение. Почти магия. Tesla поддерживает быструю зарядку и синхронизацию данных.
+							p Разьём удерживает на месте магнитами, поэтому, если кто-то случайно заденет шнур, он просто и безопастно для смартфона отсоедениться. 
+					.list-group-item
+						.list-group-item-heading
+							h3 Особенности
+						.list-group-item-text
+							p Подключение к устройству по технологии Bluetooth® класса 1 для воспроизведения музыки по беспроводной связи. До 8 часов работы без подзарядки — куда бы вы ни отправились.
+
+
+		.item_page-gallery
+			.item_page-gallery-wrapper.content-wrapper
+				.item_page-gallery-content.row
+					.grid-sizer.col-sm-3.col-xs-6
+					.item_page-gallery-item.col-sm-6.col-xs-12
+						a.gallery-item-content.black.top-left(hre="#")
+							.gallery-item-header
+						img(src="/assets/img/page-item/photos/1.png")
+					.item_page-gallery-item.col-sm-6.col-xs-12
+						a.gallery-item-content.white.top-right(hre="#")
+							.gallery-item-header
+						img(src="/assets/img/page-item/photos/2.png")
+					.item_page-gallery-item.col-sm-3.col-xs-6
+						a.gallery-item-content.white.bottom-left(hre="#")
+							.gallery-item-header
+						img(src="/assets/img/page-item/photos/3.png")
+					.item_page-gallery-item.col-sm-3.col-xs-6
+						a.gallery-item-content.white.top-left(hre="#")
+							.gallery-item-header
+						img(src="/assets/img/page-item/photos/4.png")
+
+		
+		.item_page-rec
+			.content-wrapper
+				.row
+					.col-sm-12.col-xs-12
+						h2 Рекомендовано вам
+					.item_page-rec-item.col-sm-3.col-xs-6
+						img.rec-item-star(src="/assets/img/star.svg")
+						a.rec-item(href="#")
+							img(src="/assets/img/page-item/recom1.png")
+							.rec-item-text
+								.rec-item-text-wrap
+									.rec-item-title Powerbank
+									.rec-item-price 5800
+										=" "
+										span Р
+					.item_page-rec-item.col-sm-3.col-xs-6
+						img.rec-item-star(src="/assets/img/star.svg")
+						a.rec-item(href="#")
+							img(src="/assets/img/page-item/recom2.png")
+							.rec-item-text
+								.rec-item-text-wrap
+									.rec-item-title Чехол состаренная кожа
+									.rec-item-price 860
+										=" "
+										span Р
+					.item_page-rec-item.col-sm-3.col-xs-6
+						img.rec-item-star(src="/assets/img/star.svg")
+						a.rec-item(href="#")
+							img(src="/assets/img/page-item/recom3.png")
+							.rec-item-text
+								.rec-item-text-wrap
+									.rec-item-title Коннектор Type C
+									.rec-item-price 860
+										=" "
+										span Р
+					.item_page-rec-item.col-sm-3.col-xs-6
+						img.rec-item-star(src="/assets/img/star.svg")
+						a.rec-item(href="#")
+							img(src="/assets/img/page-item/recom4.png")
+							.rec-item-text
+								.rec-item-text-wrap
+									.rec-item-title Магнитный кабель (1,5м)
+									.rec-item-price 1990
+										=" "
+										span Р
+
+		.item_page-bottom-pic
+			picture
+				source(srcset="/assets/img/page-item/bottom.png" media="(min-width: 768px)")
+				source(srcset="/assets/img/page-item/bottom-ph.png" media="(min-width: 300px)")
+				img(src="/assets/img/page-item/bottom.png")

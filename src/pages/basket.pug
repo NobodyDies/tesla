@@ -1,5 +1,8 @@
 extends ./../templates/common
 
+block appScripts
+	script(src='/js/basket.min.js')
+
 block append content
 	.basket_page
 		.basket_page-content-wrapper.content-wrapper
@@ -16,7 +19,7 @@ block append content
 								.basket_page-inputs
 									input(type="text" placeholder="Телефон" id="phone" name="phone")
 									input(type="text" placeholder="Имя" id="name" name="name")
-								.button 
+								.green-button
 									span Заказ в 1 клик
 
 						.basket_page-content-left-wrap.delivery
@@ -27,10 +30,8 @@ block append content
 							.basket_page-inputs-block
 								input(type="text" placeholder="Почтовый адрес: город, улица" id="city" name="city")
 								input(type="text" placeholder="Корпус, квартира" id="apartment" name="apartment")
-
 							a(href="#") Показать варианты оформления подарка
-
-							form.pick-color.pick-delivery
+							form.radio-button
 								p
 									input#courier(name="group1" type="radio" checked="true")
 									label(for="courier") Курьерская доставка
@@ -44,17 +45,15 @@ block append content
 						.basket_page-content-left-wrap
 							.basket_page-content-left-heading
 								h2 Оплата
-
 							ul.nav.nav-tabs#pick-payment-tabs(role="tablist")
 								li.active(role="presentation")
 									a(href="#home" aria-controls="home" role="tab" data-toggle="tab") Оплата при получении
 								li(role="presentation")
 									a(href="#profile" aria-controls="profile" role="tab" data-toggle="tab") Оплата он-лайн
-
 							.tab-content
 								div#home.tab-pane.active(role="tabpanel")
 								div#profile.tab-pane(role="tabpanel")
-									form.pick-color.pick-delivery.pick-payment
+									form.pick-payment
 										p
 											input#bankcard(name="group1" type="radio" checked="true")
 											label(for="bankcard")
@@ -75,9 +74,8 @@ block append content
 											label(for="sberbank")
 												img(src="/assets/img/payment/4.png")
 												span Сбербанк онлайн
-
 						.basket_page-content-left-wrap
-							.button.summary-button
+							.green-button.big-button
 								span Сделать заказ
 
 
@@ -160,4 +158,6 @@ block append content
 									.item-price-sum 2940
 										=" "
 										.item-price-valute Р
-
+						.basket_page-content-left-wrap
+							.green-button.big-button#next-step
+								span Сделать заказ

@@ -5660,6 +5660,10 @@ svgo@^0.7.0:
     sax "~1.2.1"
     whet.extend "~0.9.9"
 
+swiper-thumbnails@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/swiper-thumbnails/-/swiper-thumbnails-1.0.5.tgz#458158d23012b38af1139fa9fd97bf39ea3c890d"
+
 tapable@^0.2.7:
   version "0.2.8"
   resolved "https://registry.yarnpkg.com/tapable/-/tapable-0.2.8.tgz#99372a5c999bf2df160afc0d74bed4f47948cd22"

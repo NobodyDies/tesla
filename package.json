@@ -14,7 +14,8 @@
     "jquery": "^3.2.1",
     "masonry": "^0.0.2",
     "masonry-layout": "^4.2.0",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper-thumbnails": "^1.0.5"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",
