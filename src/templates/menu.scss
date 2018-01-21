@@ -244,6 +244,8 @@
 				padding: 20px 20px 0 20px;
 			}
 			.basket-order {
+				text-transform: uppercase;
+				letter-spacing: 2px;
 				width: 100%;
 				height: 50px;
 				line-height: 50px;
@@ -549,6 +551,20 @@
 					background-color: #ffffff;
 					border: none;
 					font-size: 16px;
+					outline: none;
+					transition: background .2s ease-out;
+					-moz-transition: background .2s ease-out;
+					-webkit-transition: background .2s ease-out;
+					-o-transition: background .2s ease-out;
+
+					&:hover {
+						background-color: #f7f7f7;
+					}
+
+					&:active {
+						background-color: #f3f3f3;
+					}
+
 					&:first-child {
 						border-right: 1px solid #e8e8e8;
 					}
