@@ -1,23 +1,114 @@
 block prepend menu
 	nav.navigation(class=menuTransparent ? 'transparent' : '')
-		.navigation-mobile.hidden-md.hidden-lg.active
-			button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
-				span(class="sr-only") Toggle navigation
-				span(class="icon-bar")
-				span(class="icon-bar")
-				span(class="icon-bar")
-			.navigation-mobile-panel
-				.delivery-city
+		.content-wrapper
+			.navigation-mobile.hidden-md.hidden-lg.active
+				button(type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar")
+					span(class="sr-only") Toggle navigation
+					span(class="icon-bar")
+					span(class="icon-bar")
+					span(class="icon-bar")
+				.navigation-mobile-panel
+					.delivery-city
+						.delivery-city-text 
+							span Доставка в
+							=" "
+							span.delivery-city-current.dropdown-toggle#mobDropdownLocationButton(
+							data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+							)
+								span
+									|  Москве
+							ul.delivery-city-dropdown.dropdown-menu(
+							aria-labelledby="mobDropdownLocationButton"
+							)
+								li.dropdown-item
+									a(
+									href="#"
+									) Уфе
+								li.dropdown-item
+									a(
+									href="#"
+									) Санкт-Петербурге Петербурге
+								li.dropdown-item
+									a(
+									href="#"
+									) Москве
+
+					ul.main-nav
+						li.panel
+							a(href="#store" data-toggle="collapse" data-parent=".main-nav") МАГАЗИН
+							.subitem.collapse#store
+								ul
+									li
+										a(href="#") Магнитные кабели
+									li
+										a(href="#") Powerbank
+									li
+										a(href="#") Чехлы
+									li
+										a(href="#") Сетевые адаптеры
+									li
+										a(href="#") Для автомобиля
+						li.panel
+							a(href="#partnership" data-toggle="collapse" data-parent=".main-nav") СОТРУДНИЧЕСТВО
+							.subitem.collapse#partnership
+								ul
+									li
+										a(href="#") sometext
+									li
+										a(href="#") sometext2
+									li
+										a(href="#") sometext3
+									li
+										a(href="#") sometext4
+						li.panel
+							a(href="#") КОНТАКТЫ
+					.navigation-mobile-bottom
+						.navigation-mobile-phone
+							.navigation-mobile-phone-text Телефон в Москве
+							a.navigation-mobile-phone-number(href="tel:8 800 123-80-76") 8 800 123-80-76
+						ul.navigation-mobile-socials
+							li
+								a.navigation-mobile-socials.socials-facebook(href="#")
+									img(src="/assets/img/facebook.svg")
+							li
+								a.navigation-mobile-socials.socials-instagram(href="#")
+									img(src="/assets/img/instagram.svg")
+							li
+								a.navigation-mobile-socials.socials-telegramm(href="#")
+									img(src="/assets/img/telegram.svg")
+
+			.navigation-logo
+				a(href="/")
+					img(
+					src="/assets/img/logo.png"
+					)
+			ul.left-menu
+				li.language-switcher
+					span.language-switcher-current.dropdown-toggle#dropdownMenuButton(
+					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
+					) RU
+					ul.language-switcher-dropdown.dropdown-menu(
+					aria-labelledby="dropdownMenuButton"
+					)
+						li.dropdown-item
+							a(
+							href="#"
+							) ENG
+						li.dropdown-item
+							a(
+							href="#"
+							) RU
+				li.delivery-city
 					.delivery-city-text 
 						span Доставка в
 						=" "
-						span.delivery-city-current.dropdown-toggle#mobDropdownLocationButton(
+						span.delivery-city-current.dropdown-toggle#dropdownLocationButton(
 						data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
 						)
 							span
 								|  Москве
 						ul.delivery-city-dropdown.dropdown-menu(
-						aria-labelledby="mobDropdownLocationButton"
+						aria-labelledby="dropdownLocationButton"
 						)
 							li.dropdown-item
 								a(
@@ -26,166 +117,76 @@ block prepend menu
 							li.dropdown-item
 								a(
 								href="#"
-								) Санкт-Петербурге Петербурге
+								) В Санкт-Петербурге
 							li.dropdown-item
 								a(
 								href="#"
 								) Москве
+			ul.main-nav.hidden-xs.hidden-sm
+				li
+					a(href="/catalog.html") МАГАЗИН
+				li
+					a(href="/basket.html") СОТРУДНИЧЕСТВО
+				li
+					a(href="/item.html") КОНТАКТЫ
 
-				ul.main-nav
-					li.panel
-						a(href="#store" data-toggle="collapse" data-parent=".main-nav") МАГАЗИН
-						.subitem.collapse#store
-							ul
-								li
-									a(href="#") Магнитные кабели
-								li
-									a(href="#") Powerbank
-								li
-									a(href="#") Чехлы
-								li
-									a(href="#") Сетевые адаптеры
-								li
-									a(href="#") Для автомобиля
-					li.panel
-						a(href="#partnership" data-toggle="collapse" data-parent=".main-nav") СОТРУДНИЧЕСТВО
-						.subitem.collapse#partnership
-							ul
-								li
-									a(href="#") sometext
-								li
-									a(href="#") sometext2
-								li
-									a(href="#") sometext3
-								li
-									a(href="#") sometext4
-					li.panel
-						a(href="#") КОНТАКТЫ
-				.navigation-mobile-bottom
-					.navigation-mobile-phone
-						.navigation-mobile-phone-text Телефон в Москве
-						a.navigation-mobile-phone-number(href="tel:8 800 123-80-76") 8 800 123-80-76
-					ul.navigation-mobile-socials
-						li
-							a.navigation-mobile-socials.socials-facebook(href="#")
-								img(src="/assets/img/facebook.svg")
-						li
-							a.navigation-mobile-socials.socials-instagram(href="#")
-								img(src="/assets/img/instagram.svg")
-						li
-							a.navigation-mobile-socials.socials-telegramm(href="#")
-								img(src="/assets/img/telegram.svg")
+			a.phone.hidden-xs.hidden-sm(href="tel:8 800 123-80-76") 8 800 123-80-76
 
-		.navigation-logo
-			a(href="/")
-				img(
-				src="/assets/img/logo.png"
-				)
-		ul.left-menu
-			li.language-switcher
-				span.language-switcher-current.dropdown-toggle#dropdownMenuButton(
-				data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-				) RU
-				ul.language-switcher-dropdown.dropdown-menu(
-				aria-labelledby="dropdownMenuButton"
-				)
-					li.dropdown-item
-						a(
-						href="#"
-						) ENG
-					li.dropdown-item
-						a(
-						href="#"
-						) RU
-			li.delivery-city
-				.delivery-city-text 
-					span Доставка в
-					=" "
-					span.delivery-city-current.dropdown-toggle#dropdownLocationButton(
-					data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"
-					)
-						span
-							|  Москве
-					ul.delivery-city-dropdown.dropdown-menu(
-					aria-labelledby="dropdownLocationButton"
-					)
-						li.dropdown-item
-							a(
-							href="#"
-							) Уфе
-						li.dropdown-item
-							a(
-							href="#"
-							) В Санкт-Петербурге
-						li.dropdown-item
-							a(
-							href="#"
-							) Москве
-		ul.main-nav.hidden-xs.hidden-sm
-			li
-				a(href="/catalog.html") МАГАЗИН
-			li
-				a(href="/basket.html") СОТРУДНИЧЕСТВО
-			li
-				a(href="/item.html") КОНТАКТЫ
-
-		a.phone.hidden-xs.hidden-sm(href="tel:8 800 123-80-76") 8 800 123-80-76
-
-		.basket
-			img.basket-icon(src="/assets/img/basket.svg")
-			.basket-count 2
-			.basket-goods-panel
-				ul.basket-goods
-					li.basket-goods-item
-						.item-top
-							.item-img
-								img(src="/assets/img/basket-good.png")
-							.item-description
-								.item-title Магнитный кабель
-								ul.item-properties
-									li Чёрный
-									li 100 м
-									li Lightning + MicroUSB
-							.item-delete
-								a(href="#")
-									img(src="/assets/img/garbage.svg")
-						.item-bottom
-							.item-quantity
-								.item-quantity-label Количество:
-								.item-quantity-value
-								|
-								| 1
-							.item-buttons
-								button.item-buttons-add -
-								button.item-buttons-reduce +
-							.item-price
-								.item-price-sum 1 990
-									=" "
-									.item-price-valute Р
-					li.basket-goods-item
-						.item-top
-							.item-img.pull-left
-								img(src="/assets/img/basket-good.png")
-							.item-description.pull-left
-								.item-title Магнитный кабель
-								ul.item-properties
-									li Чёрный
-									li 100 м
-									li Lightning + MicroUSB
-							.item-delete
-								a(href="#")
-									img(src="/assets/img/garbage.svg")
-						.item-bottom
-							.item-quantity
-								.item-quantity-label Количество:
-								.item-quantity-value
-								|
-								| 1
-							.item-buttons
-								button.item-buttons-add -
-								button.item-buttons-reduce +
-							.item-price
-								.item-price-sum 123 990
-									=" "
-									.item-price-valute Р
-				button.basket-order Сделать заказ
+			.basket
+				img.basket-icon(src="/assets/img/basket.svg")
+				.basket-count 2
+				.basket-goods-panel
+					ul.basket-goods
+						li.basket-goods-item
+							.item-top
+								.item-img
+									img(src="/assets/img/basket-good.png")
+								.item-description
+									.item-title Магнитный кабель
+									ul.item-properties
+										li Чёрный
+										li 100 м
+										li Lightning + MicroUSB
+								.item-delete
+									a(href="#")
+										img(src="/assets/img/garbage.svg")
+							.item-bottom
+								.item-quantity
+									.item-quantity-label Количество:
+									.item-quantity-value
+									|
+									| 1
+								.item-buttons
+									button.item-buttons-add -
+									button.item-buttons-reduce +
+								.item-price
+									.item-price-sum 1 990
+										=" "
+										.item-price-valute Р
+						li.basket-goods-item
+							.item-top
+								.item-img.pull-left
+									img(src="/assets/img/basket-good.png")
+								.item-description.pull-left
+									.item-title Магнитный кабель
+									ul.item-properties
+										li Чёрный
+										li 100 м
+										li Lightning + MicroUSB
+								.item-delete
+									a(href="#")
+										img(src="/assets/img/garbage.svg")
+							.item-bottom
+								.item-quantity
+									.item-quantity-label Количество:
+									.item-quantity-value
+									|
+									| 1
+								.item-buttons
+									button.item-buttons-add -
+									button.item-buttons-reduce +
+								.item-price
+									.item-price-sum 123 990
+										=" "
+										.item-price-valute Р
+					button.basket-order Сделать заказ

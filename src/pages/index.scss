@@ -66,6 +66,9 @@
 			position: absolute;
 			bottom: 35px;
 			width: 100%;
+			left: 50%;
+			transform: translateX(-50%);
+			max-width: 1200px;
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;

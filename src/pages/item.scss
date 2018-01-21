@@ -973,8 +973,11 @@
 
 	&-bottom-pic {
 		img {
+			-o-object-fit: cover;
+			object-fit: cover;
+			font-family: 'object-fit: cover;';
 			width: 100%;
-			height: auto;
+			max-height: 380px;
 		}
 	}
 
