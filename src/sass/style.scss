@@ -3,11 +3,18 @@
 @import "pages";
 .wrapper {
 	/*max-width: 1600px;*/
-	max-width: 1200px;
+	/* max-width: 1200px; */
+	width: 100%;
 	min-width: 320px;
-	margin: 0 auto;
 	overflow: hidden;
 }
+
+.center-wrapper {
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
 html, body {
 	height: 100%;
 	min-height: 100%;
@@ -44,9 +51,12 @@ ul, li {
 	color: #a8a8a8;
 }
 .content-wrapper {
-	margin: 0 130px;
+	max-width: 1200px;
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 130px;
 	@media screen and (max-width: 991px) {
-		margin: 0;
+		padding: 0;
 	}
 }
 

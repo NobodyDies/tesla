@@ -1,6 +1,6 @@
 .item_page {
 	background: #ffffff;
-	padding-top: 36px;
+	padding-top: 96px;
 
 	@media screen and (max-width: 991px) {
 		.content-wrapper {
@@ -312,6 +312,7 @@
 				margin-top: 10px;
 				max-width: 132px;
 				width: 100%;
+				font-size: 16px;
 			}
 
 			.pick-color {
@@ -964,8 +965,11 @@
 
 	&-bottom-pic {
 		img {
+			-o-object-fit: cover;
+			object-fit: cover;
+			font-family: 'object-fit: cover;';
 			width: 100%;
-			height: auto;
+			max-height: 380px;
 		}
 	}
 

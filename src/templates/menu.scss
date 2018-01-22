@@ -1,12 +1,21 @@
 .navigation {
 	margin: 0;
-	height: 60px;
 	z-index: 100;
-	position: relative;
+	transition: background .2s ease-in;
+	//position: relative;
+
+position: fixed;
+width: 100%;
+
 	background-color: #1b1e21;
-	display: flex;
-	flex-wrap: nowrap;
-	justify-content: space-between;
+
+	.content-wrapper {
+		height: 60px;
+		display: flex;
+		flex-wrap: nowrap;
+		justify-content: space-between;
+		padding: 0px;
+	}
 
 	.dropdown-styling {
 		position: absolute;
@@ -200,7 +209,8 @@
 				background-color: #ffffff;
 			}
 			.basket-goods-panel {
-				transform: translateX(0);
+				display: block;
+				opacity: 1;
 			}
 		}
 		&-icon {
@@ -222,8 +232,9 @@
 			transition: all .3s ease-in;
 		}
 		&-goods-panel {
-			transform: translateX(100%);
-			transition: transform .1s ease-in;
+			display: none;
+			opacity: 0;
+			transition: opacity .1s ease-in;
 			position: absolute;
 			top: 100%;
 			right: -1px;
@@ -231,12 +242,15 @@
 			background-color: #ffffff;
 			cursor: auto;
 			line-height: 0;
+
 			.basket-goods {
 				font-size: 14px;
 				line-height: 22px;
 				padding: 20px 20px 0 20px;
 			}
 			.basket-order {
+				text-transform: uppercase;
+				letter-spacing: 2px;
 				width: 100%;
 				height: 50px;
 				line-height: 50px;
@@ -279,6 +293,7 @@
 		}
 		&:hover {
 			min-height: 100vh;
+
 			.navigation-mobile-panel {
 				transform: translateX(0);
 			}
@@ -541,6 +556,20 @@
 					background-color: #ffffff;
 					border: none;
 					font-size: 16px;
+					outline: none;
+					transition: background .2s ease-out;
+					-moz-transition: background .2s ease-out;
+					-webkit-transition: background .2s ease-out;
+					-o-transition: background .2s ease-out;
+
+					&:hover {
+						background-color: #f7f7f7;
+					}
+
+					&:active {
+						background-color: #f3f3f3;
+					}
+
 					&:first-child {
 						border-right: 1px solid #e8e8e8;
 					}
@@ -558,12 +587,5 @@
 				}
 			}
 		}
-	}
-}
-
-
-.svg-for-khamit {
-	img {
-		width: 30px; height:30px;
 	}
 }
