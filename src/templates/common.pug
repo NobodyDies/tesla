@@ -45,4 +45,8 @@ html(lang="ru")
 		script(src='/js/script.min.js')
 		script.
 			objectFitImages();
+		script.
+			$('.navigation-mobile > .navbar-toggle').on('click', function() {
+				$('.navigation-mobile-panel').toggleClass('navigation-mobile-opened');
+			});
 		block appScripts
