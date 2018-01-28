@@ -14,24 +14,33 @@
 			font-family: 'object-fit: cover;';
 		}
 
+		.center-wrapper {
+			position: absolute;
+			height: 100%;
+			top: 0px;
+			left: 50%;
+			transform: translatex(-50%);
+		}
+
 		&-content {
 			position: absolute;
-			top: 50%;
-			left: 50%;
+			top: 35%;
+			left: 45%;
 			transform: translateX(-50%);
 			color: #ffffff;
+			font-weight: 100;
 
-
-/*
-@media screen and (max-width: 767px) {
-	top: 35%;
-	left: 45%;
-}
-*/
+			@media screen and (max-width: 520px) {
+				top: 35%;
+				left: 12px;
+				transform: translateX(0%);
+			}
 
 			h1 {
 				font-size: 60px;
-				font-weight: 300;
+				max-width: 630px;
+				font-weight: 100;
+
 				@media screen and (max-width: 991px) {
 				  font-size: 30px;
 				  line-height: 35px;
@@ -41,7 +50,6 @@
 			span {
 				font-size: 18px;
 				line-height: 30px;
-				font-weight: 300;
 
 				@media screen and (max-width: 991px) {
 				  font-size: 14px;
