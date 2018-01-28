@@ -203,18 +203,6 @@ width: 100%;
 		background: rgba(32, 149, 206, 0);
 		transition: background .2s ease-in;
 
-		&:hover {
-			background: rgba(32, 149, 206, 1);
-
-			.basket-count {
-				color: #1a1d20;
-				background-color: #ffffff;
-			}
-			.basket-goods-panel {
-				display: block;
-				opacity: 1;
-			}
-		}
 		&-icon {
 			width: 17px;
 			height: 20px;
@@ -234,9 +222,9 @@ width: 100%;
 			transition: all .3s ease-in;
 		}
 		&-goods-panel {
-			display: none;
+			visibility: hidden;
 			opacity: 0;
-			transition: opacity .1s ease-in;
+			transition: visibility 0.15s, opacity 0.15s ease-in;
 			position: absolute;
 			top: 100%;
 			right: -1px;
@@ -261,6 +249,19 @@ width: 100%;
 				color: #ffffff;
 				font-size: 11px;
 			}
+		}
+	}
+
+	.basket-opened {
+		background: rgba(32, 149, 206, 1);
+
+		.basket-count {
+			color: #1a1d20;
+			background-color: #ffffff;
+		}
+		.basket-goods-panel {
+			visibility: visible;
+			opacity: 1;
 		}
 	}
 

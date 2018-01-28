@@ -81,12 +81,15 @@ html(lang="ru")
 			});
 		script.
 			$(".link-more-info").hover(
+				function () {
+					$(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
+				},
 			    function () {
-			        $(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
-			    },
-			    function () {
-			        $(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
-			    }
+					$(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
+				}
 			);
-
+		script.
+			$('.basket').on('click', function() {
+			    $(this).toggleClass('basket-opened');
+			});
 		block appScripts
