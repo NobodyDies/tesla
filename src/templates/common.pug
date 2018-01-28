@@ -79,5 +79,14 @@ html(lang="ru")
 				}, 500);
 			*/
 			});
+		script.
+			$(".link-more-info").hover(
+			    function () {
+			        $(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
+			    },
+			    function () {
+			        $(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
+			    }
+			);
 
 		block appScripts

@@ -226,19 +226,118 @@ ul, li {
 }
 
 .link-more-info {
-	color:#2096d0;
+	color: #2096d0;
 	text-transform: uppercase;
 	font-size: 11px;
 	margin-top: 25px;
 	letter-spacing: 1px;
+	font-weight: 300;
 
-	span {
+	&:hover {
+		text-decoration: none;
+		color: #2096d0;
+	}
+
+	div {
 		display: inline-block;
 		width: 50px;
 		height: 1px;
-		background: #fff;
 		vertical-align: 4px;
 		margin-left: 30px;
+		overflow: hidden;
+		position: relative;
+
+		span {
+			display: block;
+			position: relative;
+			width: 50px;
+			height: 1px;
+			background: #fff;
+		}
+	}
+}
+
+.link-more-over {
+	-webkit-animation: 
+		lineanim .8s;  
+	-moz-animation:
+		lineanim .8s;
+	animation-fill-mode: forwards;
+}
+
+.link-more-out {
+	-webkit-animation: 
+		lineanimback .8s;  
+	-moz-animation:
+		lineanimback .8s;
+	animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes lineanim {
+	0%
+	{
+		left: 0px;
+	}
+	50%
+	{
+		left: 51px;
+		opacity: 1;
+	}
+	51%
+	{
+		background: #ffffff;
+		opacity: 0;
+	}
+	52%
+	{
+		left: -51px;
+		background: #2096d0;
+		opacity: 0;
+	}
+	53%
+	{
+		opacity: 1;
+		background: #2096d0;
+	}
+	100%
+	{
+		left: 0px;
+		background: #2096d0;
+	}
+}
+
+@-webkit-keyframes lineanimback {
+	0%
+	{
+		left: 0px;
+		background: #2096d0;
+	}
+	50%
+	{
+		opacity: 1;
+		background: #2096d0;
+
+	}
+	51%
+	{
+		left: -51px;
+		background: #2096d0;
+		opacity: 0;
+
+	}
+	52%
+	{
+		background: #ffffff;
+		opacity: 0;
+	}
+	53%
+	{
+		left: 51px;
+		opacity: 1;
+	}
+	100%
+	{
+		left: 0px;
 	}
 }
 
