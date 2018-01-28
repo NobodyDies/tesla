@@ -1,4 +1,11 @@
 $( document ).ready(() => {
+
+
+
+});
+
+
+$(window).on('load', function(){
 	$('.index_page-catalog-content').masonry({
 		itemSelector: '.index_page-catalog-item',
 		percentPosition: true,

@@ -21,6 +21,13 @@ html(lang="ru")
 		meta(name="viewport" content="width=device-width")
 		title Title
 	body
+
+		div.page-preloader
+			div(class="preloader")
+				span(class="icon-bar")
+				span(class="icon-bar")
+				span(class="icon-bar")
+
 		.wrapper
 			include ./menu
 			block menu
@@ -49,4 +56,28 @@ html(lang="ru")
 			$('.navigation-mobile > .navbar-toggle').on('click', function() {
 				$('.navigation-mobile-panel').toggleClass('navigation-mobile-opened');
 			});
+		script.
+			/* Preloader */
+
+			$(window).on('load', function () {
+
+
+			    var $preloader = $('.page-preloader'),
+			        $spinner   = $preloader.find('.preloader');
+
+				    $spinner.fadeOut();
+				    $preloader.delay(500).fadeOut('slow');
+
+			/* Если воспроизведение анимации при 
+			загрузке страницы необходимо показать от начала и до конца:
+
+				setTimeout(function(){
+
+				    $spinner.fadeOut();
+				    $preloader.delay(2500).fadeOut('slow');
+
+				}, 500);
+			*/
+			});
+
 		block appScripts

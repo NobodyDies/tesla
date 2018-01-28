@@ -22,6 +22,149 @@ html, body {
 .wrapper {
 	min-height: 100%;
 }
+
+
+// Preloader
+
+.page-preloader {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: #000000;
+    z-index: 1011
+}
+
+.preloader {
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+
+	margin: 0;
+	border-radius: 0;
+	z-index: 1010;
+	display: block;
+	padding: 0px;
+	height: 60px;
+	width: 23px;
+	overflow: hidden;
+
+	.icon-bar {
+		background-color: #2096d0;
+		display: block;
+		position: relative;
+		width: 23px;
+		height: 2px;
+		margin-top: 6px;
+
+		&:first-child {
+			-webkit-animation: 
+				lanimone 2.5s infinite;  
+			-moz-animation:
+				lanimone 2.5s infinite;
+		}
+		&:nth-child(2) {
+			-webkit-animation: 
+				lanimtwo 2.5s infinite;  
+			-moz-animation:
+				lanimtwo 2.5s infinite;
+		}
+		&:nth-child(3) {
+			-webkit-animation: 
+				lanimthree 2.5s infinite;  
+			-moz-animation:
+				lanimthree 2.5s infinite;
+		}
+
+	}
+}
+
+@-webkit-keyframes lanimone {
+	0%
+	{
+		right: -100%;
+	}
+	14.19%
+	{
+		right: 0%;
+	}
+	57.16%
+	{
+		right: 0%;
+	}
+	71.45%
+	{
+		right: 100%;
+	}
+	85.74%
+	{
+		right: 100%;
+	}
+	100%
+	{
+		right: 100%;
+	}
+}
+
+@-webkit-keyframes lanimtwo {
+	0%
+	{
+		right: -100%;
+	}
+	14.19%
+	{
+		right: -100%;
+	}
+	28.58%
+	{
+		right: 0%;
+	}
+	71.45%
+	{
+		right: 0%;
+	}
+	85.74%
+	{
+		right: 100%;
+	}
+	100%
+	{
+		right: 100%;
+	}
+}
+
+@-webkit-keyframes lanimthree {
+	0%
+	{
+		right: -100%;
+	}
+	14.19%
+	{
+		right: -100%;
+	}
+	28.58%
+	{
+		right: -100%;
+	}
+	42.87%
+	{
+		right: 0%;
+	}
+	85.74%
+	{
+		right: 0%;
+	}
+	100%
+	{
+		right: 100%;
+	}
+}
+
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Roboto', sans-serif;
 }

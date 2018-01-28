@@ -1,3 +1,21 @@
+$(window).on('load', function(){
+
+	$('.item_page-gallery-content').masonry({
+		itemSelector: '.item_page-gallery-item',
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
+	});
+
+	$('.item_page-slider-thumbs').masonry({
+		itemSelector: '.item_page-slider-thumbs-img',
+		percentPosition: true,
+		gutter: 1,
+		//columnWidth: '.gallery-sizer'
+	});
+
+});
+
+
 $( document ).ready(() => {
 
     var mySwiper = new Swiper('.item_page-slider-wrapper', {
@@ -23,23 +41,10 @@ $( document ).ready(() => {
     	$(this).toggleClass('star-set');
     });
 
-	$('.item_page-gallery-content').masonry({
-		itemSelector: '.item_page-gallery-item',
-		percentPosition: true,
-		columnWidth: '.grid-sizer'
-	});
-
 	$('.item_page-slider-thumbs-img').on('click', function() {
 		$('.item_page-slider-thumbs .item_page-slider-thumbs-img').removeClass('is-active');
     	$(this).addClass('is-active');
     });
-
-	$('.item_page-slider-thumbs').masonry({
-		itemSelector: '.item_page-slider-thumbs-img',
-		percentPosition: true,
-		gutter: 1,
-		//columnWidth: '.gallery-sizer'
-	});
 
 	var breakpoint = window.matchMedia('(max-width:767px)');
 
