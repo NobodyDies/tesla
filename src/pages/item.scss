@@ -596,107 +596,123 @@
 			padding: 0px 20px 40px;
 		}
 
-		a {
-			text-decoration: none;
-			transition: color .2s ease-out;
-			-moz-transition: color .2s ease-out;
-			-webkit-transition: color .2s ease-out;
-			-o-transition: color .2s ease-out;
+		.panel {
+			border: none;
+			box-shadow: none;
 
-			&:visited,
-			&:focus,
-			&:active {
+			> a {
+				position: relative;
+				display: block;
+				width: 100%;
+				padding: 31px 31px 31px 0px;
+				border-top: 1px solid #e2e0e0;
+				border-bottom: 1px solid #e2e0e0;
+				margin-top: -1px;
+				font-size: 30px;
+				font-weight: 300;
 				text-decoration: none;
 				color: #333333;
-			}
+				transition: color .2s ease-out;
+				-moz-transition: color .2s ease-out;
+				-webkit-transition: color .2s ease-out;
+				-o-transition: color .2s ease-out;
 
-			&:hover {
-				text-decoration: none;
-				color: #2096d0;
-			}
-		}
+				&:visited,
+				&:focus,
+				&:active {
+					text-decoration: none;
+					color: #333333;
+				}
 
-		&-item {
-			display: block;
-			width: 100%;
-			position: relative;
-			padding: 31px 31px 31px 0px;
-			border-top: 1px solid #e2e0e0;
-			border-bottom: 1px solid #e2e0e0;
-			margin-top: -1px;
-			font-size: 30px;
-			font-weight: 300;
-			color: #333333;
+				&:hover {
+					text-decoration: none;
+					color: #2096d0;
 
-			@media screen and (max-width: 767px) {
-				font-size: 20px;
-				border-top: none;
-			}
-
-			&:hover {
-				.cross {
-					span {
-						background: #2096d0;
+					.cross {
+						span {
+							background: #2096d0;
+						}
 					}
+				}
+
+				@media screen and (max-width: 767px) {
+					font-size: 20px;
+					border-top: none;
+				}
+
+				.cross {
+					width: 21px;
+					height: 21px;
+					position: absolute;
+					right: 0px;
+					top: calc(50% - 10px);
+					transition: .2s ease;
+
+					span {
+						display: block;
+						background-color: #000000;
+						transition: background .2s ease-out;
+						-moz-transition: background .2s ease-out;
+						-webkit-transition: background .2s ease-out;
+						-o-transition: background .2s ease-out;
+					}
+					span:nth-child(1) {
+						position: absolute;
+						top: 10px;
+						width: 21px;
+						height: 1px;
+					}
+					span:nth-child(2) {
+						position: absolute;
+						left: 10px;
+						width: 1px;
+						height: 21px;
+					}
+				}
+			}
+
+			[aria-expanded="true"] {
+				border-bottom: none;
+
+				.cross {
+					transform: rotate(45deg);
+
+					span {
+						background-color: #999999;
+					}
+				}
+
+				+ .list-group {
+					border-bottom: 1px solid #e2e0e0;
 				}
 			}
 		}
 
-		.cross {
-			width: 21px;
-			height: 21px;
-			position: absolute;
-			right: 0px;
-			top: calc(50% - 10px);
-			transition: .2s ease;
-
-			span {
-				display: block;
-				background-color: #000000;
-				transition: background .2s ease-out;
-				-moz-transition: background .2s ease-out;
-				-webkit-transition: background .2s ease-out;
-				-o-transition: background .2s ease-out;
-			}
-			span:nth-child(1) {
-				position: absolute;
-				top: 10px;
-				width: 21px;
-				height: 1px;
-			}
-			span:nth-child(2) {
-				position: absolute;
-				left: 10px;
-				width: 1px;
-				height: 21px;
-			}
-		}
-
-		[aria-expanded="true"] .cross {
-			transform: rotate(45deg);
-			span {
-				background-color: #999999;
-			}
-		}
-
-		[aria-expanded="true"] {
-			border-bottom: none;
-		}
-
 		.list-group-item {
 			display: flex;
-			font-weight: 300;
 			border: none;
 			padding: 0px;
+			font-weight: 300;
+			margin-bottom: 0px;
 
 			&-heading {
 				padding: 35px 0px;
 				margin: 0px;
 				width: 20%;
 
+				h3 {
+					margin: 0px;
+					font-size: 20px;
+					font-weight: 300;
+				}
+
 				@media screen and (max-width: 767px) {
 					padding: 30px 0px 20px;
 					width: 100%;
+
+					h3 {
+						font-size: 18px;
+					}
 				}
 			}
 
@@ -709,18 +725,16 @@
 				border-bottom: 1px solid #e2e0e0;
 
 				@media screen and (max-width: 767px) {
+					border: none;
 					padding: 0px 0px 20px;
 					width: 100%;
 				}
 			}
 
-			h3 {
-				margin: 0px;
-				font-size: 20px;
-				font-weight: 300;
+			&:last-child {
 
-				@media screen and (max-width: 767px) {
-					font-size: 18px;
+				.list-group-item-text {
+					border: none;
 				}
 			}
 
@@ -739,7 +753,6 @@
 				}
 			}
 		}
-
 	}
 
 	&-gallery {
