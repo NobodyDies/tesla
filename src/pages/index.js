@@ -1,53 +1,23 @@
 $( document ).ready(() => {
 
-/*
-	$(".index_page").on("scroll", function(e) {
+	// fixed/absolute position for navigation
+	var sliderheight = $('.index_page-slider').height();
 
-		if ($(".index_page").scrollTop > 60) {
-			console.log('всё, пиздец, прошёл');
-			$(".navigation").addClass("fix-search");
-			$(".navigation").removeClass("transparent");
-		} else {
-			console.log('а вот нихуя');
-			$(".navigation").removeClass("fix-search");
+	$(window).on('resize', function(){
+		sliderheight = $('.index_page-slider').height();
+	});
+
+	$(window).scroll(function(){
+		if ($(window).scrollTop() >= (sliderheight - 60)) {
+			$('.navigation').removeClass('transparent');
+			$('.navigation').addClass('nav-fixed');
+		}
+		else {
+			$('.navigation').addClass('transparent');
+			$('.navigation').removeClass('nav-fixed');
 		}
 	});
-*/
-
-//$('.navigation').css('position', 'absolute');
-
-$(window).scroll(function(){
-	if ($(window).scrollTop() >= 300) {
-		console.log('всё, пиздец, прошёл');
-		$('.navigation').removeClass('transparent');
-		$('.navigation').addClass('nav-fixed');
-	}
-	else {
-		console.log('а вот нет');
-		$('.navigation').addClass('transparent');
-		$('.navigation').removeClass('nav-fixed');
-	}
-});
-
-
-
-/*
-	//navigation background transparency
-	if($(window).scrollTop() > 60) {
-		$(".navigation").removeClass("transparent");
-	} else {
-		$(".navigation").addClass("transparent");
-	}
-
-	$(window).on("scroll", function() {
-		if($(window).scrollTop() > 60) {
-			$(".navigation").removeClass("transparent");
-		} else {
-			$(".navigation").addClass("transparent");
-		}
-	});
-*/
-
+	//---------------------------------------//
 
 });
 
