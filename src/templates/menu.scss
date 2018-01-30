@@ -544,12 +544,6 @@ width: 100%;
 			flex-shrink: 0;
 		}
 		.item-bottom {
-
-display: flex;
-justify-content: flex-start;
-align-items: flex-start;
-
-
 			font-size: 0;
 			text-align: left;
 			padding-top: 15px;
@@ -557,7 +551,7 @@ align-items: flex-start;
 			> * {
 				font-size: 14px;
 				line-height: 30px;
-//display: inline-block;
+				display: inline-block;
 				color: #666666;
 			}
 			.item-quantity {
@@ -571,21 +565,17 @@ align-items: flex-start;
 				line-height: 27px;
 				border: 1px solid #e8e8e8;
 
-display: flex;
-
 				> button {
 					width: 50%;
-					background-color: #ffffff;
+					padding: 0;
 					border: none;
+					background-color: #ffffff;
 					font-size: 16px;
 					outline: none;
 					transition: background .2s ease-out;
 					-moz-transition: background .2s ease-out;
 					-webkit-transition: background .2s ease-out;
 					-o-transition: background .2s ease-out;
-
-flex-grow: 0;
-flex-shrink: 0;
 
 					&:hover {
 						background-color: #f7f7f7;
@@ -601,9 +591,7 @@ flex-shrink: 0;
 				}
 			}
 			.item-price {
-//float: right;
-display: block;
-margin-left: auto;
+				float: right;
 
 				&-sum {
 					display: inline-block;
