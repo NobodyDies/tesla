@@ -909,7 +909,7 @@
 				width: 16px;
 				height: 16px;
 				cursor: pointer;
-				z-index: 2;
+				z-index: 3;
 
 				@media screen and (max-width: 450px) {
 					right: 13px;
@@ -920,6 +920,7 @@
 				display: block;
 				width: 100%;
 				position: relative;
+				z-index: 2;
 
 				@media screen and (max-width: 767px) {
 					border: 1px solid #f4f2f2;

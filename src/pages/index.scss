@@ -340,13 +340,14 @@
 					width: 16px;
 					height: 16px;
 					cursor: pointer;
-					z-index: 2;
+					z-index: 3;
 				}
 				.slider-item {
 					display: block;
 					width: 100%;
 					height: 280px;
 					display: flex;
+					z-index: 2;
 
 					&:hover {
 						text-decoration: none;
