@@ -1,6 +1,6 @@
 $( document ).ready(() => {
 
-
+/*
 	$(".index_page").on("scroll", function(e) {
 
 		if ($(".index_page").scrollTop > 60) {
@@ -12,6 +12,24 @@ $( document ).ready(() => {
 			$(".navigation").removeClass("fix-search");
 		}
 	});
+*/
+
+//$('.navigation').css('position', 'absolute');
+
+$(window).scroll(function(){
+	if ($(window).scrollTop() >= 300) {
+		console.log('всё, пиздец, прошёл');
+		$('.navigation').removeClass('transparent');
+		$('.navigation').addClass('nav-fixed');
+	}
+	else {
+		console.log('а вот нет');
+		$('.navigation').addClass('transparent');
+		$('.navigation').removeClass('nav-fixed');
+	}
+});
+
+
 
 /*
 	//navigation background transparency

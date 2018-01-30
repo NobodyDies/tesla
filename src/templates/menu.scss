@@ -5,6 +5,10 @@
 	position: fixed;
 	width: 100%;
 
+
+transform: translateZ(0);
+transition: all 0.5s; /* Effect for switching from .fixed to static */
+
 	background-color: #1b1e21;
 
 	.content-wrapper {
@@ -28,6 +32,7 @@
 
 	&.transparent {
 		background-color: transparent;
+		position: absolute;
 
 		.delivery-city, 
 		.language-switcher {
@@ -609,3 +614,22 @@
 		}
 	}
 }
+
+
+
+.nav-fixed {
+	position: fixed;
+	animation: slide-down 0.7s;
+}
+
+@keyframes slide-down {
+    0% {
+        opacity: 0;
+        transform: translateY(-100%);
+    } 
+    100% {
+        opacity: 0.9;
+        transform: translateY(0);
+    } 
+}
+
