@@ -41,6 +41,10 @@
 		padding: 16px 0 19px 21px;
 		display: inline-block;
 
+		img {
+			height: 30px;
+		}
+
 		@media screen and (max-width: 991px) {
 			margin: 0 auto;
 			padding: 16px 0 19px 0px;
