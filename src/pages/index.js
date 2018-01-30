@@ -1,17 +1,19 @@
 $( document ).ready(() => {
 
 
+	$(".index_page").on("scroll", function(e) {
 
-});
-
-
-$(window).on('load', function(){
-	$('.index_page-catalog-content').masonry({
-		itemSelector: '.index_page-catalog-item',
-		percentPosition: true,
-		columnWidth: '.grid-sizer'
+		if ($(".index_page").scrollTop > 60) {
+			console.log('всё, пиздец, прошёл');
+			$(".navigation").addClass("fix-search");
+			$(".navigation").removeClass("transparent");
+		} else {
+			console.log('а вот нихуя');
+			$(".navigation").removeClass("fix-search");
+		}
 	});
 
+/*
 	//navigation background transparency
 	if($(window).scrollTop() > 60) {
 		$(".navigation").removeClass("transparent");
@@ -25,6 +27,18 @@ $(window).on('load', function(){
 		} else {
 			$(".navigation").addClass("transparent");
 		}
+	});
+*/
+
+
+});
+
+
+$(window).on('load', function(){
+	$('.index_page-catalog-content').masonry({
+		itemSelector: '.index_page-catalog-item',
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
 	});
 
 	var mySwiper = new Swiper ('.swiper-container', {
