@@ -653,7 +653,7 @@
 	-moz-box-shadow: 0px 4px 66px -5px rgba(0,0,0,0.2);
 	box-shadow: 0px 4px 66px -5px rgba(0,0,0,0.2);
 
-	display: none;
+//display: none;
 }
 
 .sub-menu {
@@ -662,6 +662,22 @@
 	margin: 0 auto;
 	padding: 0px;
 	position: relative;
+
+	&-item {
+		img {
+			width: 21px;
+			height: 26px;
+		}
+		a {
+			font-size: 12px;
+			color: #333333;
+			text-transform: uppercase;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
 }
 
 
