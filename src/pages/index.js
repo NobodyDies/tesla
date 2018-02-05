@@ -29,6 +29,22 @@ $(window).on('load', function(){
 		columnWidth: '.grid-sizer'
 	});
 
+	// var mainSlider = new Swiper ('.index_page-slider', {
+	// 	// Optional parameters
+	// 	autoplay: true,
+	// 	slidesPerView: 1,
+	// 	slidesPerGroup: 1,
+	// 	speed: 1000,
+	// 	delay: 1000,
+	// 	spaceBetween: 0,
+	// 	loop: true,
+	// 	effect: 'fade',
+	// 	fadeEffect: {
+	// 		crossFade: true
+	// 	},
+	// 	// Navigation arrows
+	// });
+
 	var mySwiper = new Swiper ('.swiper-container', {
 	    // Optional parameters
 	    autoplay: true,

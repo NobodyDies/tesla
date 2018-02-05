@@ -6,16 +6,23 @@
 		height: 100vh;
 		position: relative;
 		min-height: 650px;
-
+		overflow: hidden;
 		@media screen and (max-width: 767px) {
 			min-height: 568px;
 		}
-
-		> img {
-			height: 100%;
-			width: 100%;
-			object-fit: cover;
-			font-family: 'object-fit: cover;';
+		&-wrapper {
+			width: 99999999px;
+		}
+		&-item {
+			float: left;
+			width: 100vw;
+			&--image {
+				height: 100%;
+				width: 100%;
+				object-fit: cover;
+				font-family: 'object-fit: cover;';
+				object-position: 0 top;
+			}
 		}
 
 		.center-wrapper {
@@ -99,6 +106,7 @@
 
 		&-bottom {
 			position: absolute;
+			z-index: 1;
 			bottom: 35px;
 			width: 100%;
 			left: 50%;
