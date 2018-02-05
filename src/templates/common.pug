@@ -55,6 +55,9 @@ html(lang="ru")
 		script(src='/js/script.min.js')
 		script(src='/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js')
 		script(src='/assets/js/jquery-maskedinput/jquery.maskedinput.min.js')
+		script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
+		script(src='/assets/js/scrollmagic/ScrollMagic.min.js')
+		script(src='/assets/js/scrollmagic/animation.gsap.min.js')
 		script.
 			objectFitImages();
 		script.
@@ -65,7 +68,7 @@ html(lang="ru")
 				if ( $('.navigation-mobile').hasClass('navigation-mobile-opened') ) {
 
 					$(".darkness").css({display: "block"});
-					$(".darkness").animate({opacity: "0.4"}, 200);
+					$(".darkness").animate({opacity: "0.5"}, 200);
 
 				} else {
 
@@ -89,7 +92,7 @@ html(lang="ru")
 
 					if ( $(".navigation-mobile").hasClass("navigation-mobile-opened") ) {
 
-						$(".darkness").css({display: "block", opacity: 0.4});
+						$(".darkness").css({display: "block", opacity: 0.5});
 					} else {
 						$(".darkness").css({display: "", opacity: ""});
 					}

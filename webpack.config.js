@@ -193,6 +193,18 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'src/js/jquery.maskedinput.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/jquery-maskedinput')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/scrollmagic/scrollmagic/minified/ScrollMagic.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollmagic')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollmagic')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollmagic')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),

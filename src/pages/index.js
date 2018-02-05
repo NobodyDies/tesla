@@ -90,4 +90,57 @@ $(window).on('load', function(){
 	breakpointChecker();
 
 
+
+/*
+		$(function() {
+		  // init controller
+			var controller = new ScrollMagic.Controller({
+				globalSceneOptions: {
+					triggerHook: "onEnter", 
+					duration: "80%"
+				}
+			});
+
+			// build scenes
+			new ScrollMagic.Scene({triggerElement: ".index_page-catalog"})
+							.setTween(".index_page-popular-wrapper", {
+								y: "20%", 
+								ease: Linear.easeNone
+							})
+							.addTo(controller);
+		});
+*/
+
+
+		$(function() {
+		  // init controller
+			var controller = new ScrollMagic.Controller({
+				globalSceneOptions: {
+					triggerHook: "onEnter", 
+					duration: "80%"
+				}
+			});
+
+			// build scenes
+			new ScrollMagic.Scene({triggerElement: ".index_page-popular"})
+							.setTween("#parallaxme", {
+								y: "-30px", 
+								ease: Cubic.easeIn
+							})
+							.addTo(controller);
+		});
+
+
+/*
+var controller = new ScrollMagic.Controller();
+
+// create a scene
+new ScrollMagic.Scene({
+        duration: 100,    // the scene should last for a scroll distance of 100px
+        offset: 200       // start this scene after scrolling for 50px
+    })
+    .setPin(".index_page-catalog") // pins the element for the the scene's duration
+    .addTo(controller); // assign the scene to the controller
+*/
+
 });
