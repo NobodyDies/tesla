@@ -505,6 +505,10 @@
 			border: none;
 			color: #ffffff;
 			font-size: 11px;
+			transition: background .2s ease-out;
+			-moz-transition: background .2s ease-out;
+			-webkit-transition: background .2s ease-out;
+			-o-transition: background .2s ease-out;
 
 			&:hover {
 				background: #81ba4a;
