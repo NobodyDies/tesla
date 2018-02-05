@@ -38,6 +38,8 @@ html(lang="ru")
 			include ./footer
 			block footer
 
+		.darkness
+
 
 		script(src='/assets/js/jquery/jquery.min.js')
 		script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous")
@@ -57,8 +59,47 @@ html(lang="ru")
 			objectFitImages();
 		script.
 			$('.navigation-mobile > .navbar-toggle').on('click', function() {
-				$('.navigation-mobile').toggleClass('navigation-mobile-opened');
+
+				$('.navigation-mobile').toggleClass('navigation-mobile-opened')
+
+				if ( $('.navigation-mobile').hasClass('navigation-mobile-opened') ) {
+
+					$(".darkness").css({display: "block"});
+					$(".darkness").animate({opacity: "0.4"}, 200);
+
+				} else {
+
+					$(".darkness").animate({opacity: "0"}, 200, function() {
+						$(".darkness").css({display: "none"});
+					});
+
+				}
 			});
+
+			var breakpoint = window.matchMedia('(max-width:991px)');
+
+			var breakpointChecker = function breakpointChecker() {
+
+				if (breakpoint.matches === false) {
+
+					$(".darkness").css({display: "", opacity: ""});
+					return;
+
+				} else if (breakpoint.matches === true) {
+
+					if ( $(".navigation-mobile").hasClass("navigation-mobile-opened") ) {
+
+						$(".darkness").css({display: "block", opacity: 0.4});
+					} else {
+						$(".darkness").css({display: "", opacity: ""});
+					}
+					return;
+				}
+			};
+
+			breakpoint.addListener(breakpointChecker);
+
+			breakpointChecker();
 		script.
 			/* Preloader */
 

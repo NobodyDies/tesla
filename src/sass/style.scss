@@ -27,13 +27,13 @@ html, body {
 // Preloader
 
 .page-preloader {
-    position: fixed;
-    left: 0;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    background: #000000;
-    z-index: 1011
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	z-index: 1011
 }
 
 .preloader {
@@ -685,4 +685,21 @@ ul, li {
 			bottom: 43px;
 		}
 	}
+}
+
+.darkness {
+	display: none;
+	opacity: 0;
+	transition: opacity .2s ease-out;
+	-moz-transition: opacity .2s ease-out;
+	-webkit-transition: opacity .2s ease-out;
+	-o-transition: opacity .2s ease-out;
+
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background: #000000;
+	z-index: 99;
 }
