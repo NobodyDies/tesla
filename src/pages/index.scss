@@ -4,8 +4,12 @@
 
 	&-slider {
 		height: 100vh;
-		min-height: 320px;
 		position: relative;
+		min-height: 650px;
+
+		@media screen and (max-width: 767px) {
+			min-height: 568px;
+		}
 
 		> img {
 			height: 100%;
@@ -24,26 +28,42 @@
 
 		&-content {
 			position: absolute;
-			top: 35%;
+			top: 34%;
 			left: 45%;
 			transform: translateX(-50%);
 			color: #ffffff;
 			font-weight: 100;
 
-			@media screen and (max-width: 520px) {
-				top: 35%;
+			@media screen and (max-width: 991px) {
+				.link-more-info {
+					font-size: 15px;
+				}
+			}
+
+			@media screen and (max-width: 600px) {
+				top: 39%;
 				left: 12px;
+				right: 12px;
 				transform: translateX(0%);
+			}
+
+			.link-more-info  {
+				margin-top: 15px;
 			}
 
 			h1 {
 				font-size: 60px;
 				max-width: 630px;
 				font-weight: 100;
+				margin-bottom: 15px;
+
+				@media screen and (max-width: 1090px) {
+					font-size: 50px;
+				}
 
 				@media screen and (max-width: 991px) {
 				  font-size: 30px;
-				  line-height: 35px;
+				  line-height: 50px;
 				}
 			}
 
@@ -52,8 +72,8 @@
 				line-height: 30px;
 
 				@media screen and (max-width: 991px) {
-				  font-size: 14px;
-				  line-height: 25px;
+					font-size: 15px;
+					line-height: 30px;
 				}
 			}
 		}
