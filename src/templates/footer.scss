@@ -39,12 +39,28 @@
 				display: none;
 			}
 		}
+		.footer-top-desktop {
+			@media screen and (max-width: 991px) {
+				margin-bottom: 20px;
+			}
+			@media screen and (max-width: 550px) {
+				display: none;
+			}
+		}
 		ul {
 			display: inline-block;
 			margin: 0 20px;
 
-			&:first-child {
-				margin-left: 0;
+			&:nth-child(2) {
+				@media screen and (max-width: 991px) {
+					margin-left: 0;
+				}
+			}
+
+			&:nth-child(5) {
+				@media screen and (max-width: 991px) {
+					margin-right: 0;
+				}
 			}
 
 			&:last-child {
@@ -71,9 +87,18 @@
 					li {
 						display: inline-block;
 
+						@media screen and (max-width: 550px) {
+							display: block;
+						}
+
 						&:nth-child(odd) {
 							float: right;
 							clear: right;
+
+							@media screen and (max-width: 550px) {
+								float: none;
+								clear: none;
+							}
 
 							&.footer-main {
 								display: block;
@@ -83,8 +108,14 @@
 							}
 						}
 						&:nth-child(even) {
+
 							float: left;
 							clear: right;
+
+							@media screen and (max-width: 550px) {
+								float: none;
+								clear: none;
+							}
 						}
 					}
 				}
@@ -138,10 +169,10 @@
 				display: flex;
 				justify-content: space-between;
 				flex-wrap: wrap;
-				margin: 0 20px 20px;
+				margin: 0px 0px 20px;
 				display: none;
 
-				@media screen and (max-width: 767px) {
+				@media screen and (max-width: 550px) {
 					display: block;
 
 					li {
@@ -178,16 +209,25 @@
 		justify-content: space-between;
 		margin: 0 -20px;
 		padding: 18px 0;
+
 		@media screen and (max-width: 1079px) {
 			justify-content: space-around;
 		}
 		@media screen and (max-width: 991px) {
 			margin: 0 -20px;
 		}
+		@media screen and (max-width: 550px) {
+			display: block;;
+		}
+
 		> * {
 			margin: 20px;
+
 			@media screen and (max-width: 991px) {
 				margin: 13px;
+			}
+			@media screen and (max-width: 550px) {
+				display: block;
 			}
 		}
 		a {
