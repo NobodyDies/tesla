@@ -34,8 +34,9 @@ $(window).on('load', function(){
 	    autoplay: true,
 	    slidesPerView: 3,
 	    slidesPerGroup: 3,
-	    speed: 300,
+	    speed: 700,
 	    spaceBetween: 40,
+	    loop: true,
 		breakpoints: {
 		    1160: {
 				spaceBetween: 40,

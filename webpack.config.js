@@ -181,6 +181,14 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'node_modules/masonry-layout/dist/masonry.pkgd.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/masonry')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.concat.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/mCustomScrollbar')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/mCustomScrollbar')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),

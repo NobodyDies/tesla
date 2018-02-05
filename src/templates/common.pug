@@ -16,6 +16,7 @@ html(lang="ru")
 		link(href="/assets/js/slick/slick.css" rel="stylesheet")
 		link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.0.7/css/swiper.min.css")
 		link(href="/css/script.min.css" rel="stylesheet")
+		link(href="/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.css" rel="stylesheet")
 		block appStyles
 
 		meta(name="viewport" content="width=device-width")
@@ -50,6 +51,7 @@ html(lang="ru")
 		script(src="https://cdnjs.cloudflare.com/ajax/libs/object-fit-images/3.2.3/ofi.min.js")
 		script(src="https://cdn.rawgit.com/scottjehl/picturefill/3.0.2/dist/picturefill.min.js")
 		script(src='/js/script.min.js')
+		script(src='/assets/js/mCustomScrollbar/jquery.mCustomScrollbar.concat.min.js')
 		script.
 			objectFitImages();
 		script.
@@ -92,4 +94,16 @@ html(lang="ru")
 			$('.basket').on('click', function() {
 			    $(this).toggleClass('basket-opened');
 			});
+		script.
+			(function($){
+				$(window).on("load",function(){
+					$(".navigation ul.basket-goods").mCustomScrollbar({
+						setHeight: 377,
+						scrollEasing: "linear",
+						theme:"minimal-dark"
+					});
+				});
+			})(jQuery);
 		block appScripts
+
+
