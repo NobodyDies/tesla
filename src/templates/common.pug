@@ -92,12 +92,22 @@ html(lang="ru")
 			);
 		script.
 			$('.basket').on('click', function() {
-			    $(this).toggleClass('basket-opened');
+
+				$(this).toggleClass('basket-opened');
+
+				if( $(this).hasClass('basket-opened') ) {
+
+					var basketHeight = -( $(".basket-goods-panel").height() );
+					$(".basket-goods-panel").css({bottom: basketHeight + "px", opacity: 1});
+
+				} else {
+					$(".basket-goods-panel").css({bottom: "100%", opacity: 0})
+				}
 			});
 		script.
 			(function($){
 				$(window).on("load",function(){
-					$(".navigation ul.basket-goods").mCustomScrollbar({
+					$(".basket-wrapper ul.basket-goods").mCustomScrollbar({
 						setHeight: 377,
 						scrollEasing: "linear",
 						theme:"minimal-dark"
