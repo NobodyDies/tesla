@@ -74,7 +74,7 @@
 			&.footer-top-contacts {
 				@media screen and (max-width: 991px) {
 					overflow: hidden;
-					margin: 20px 0 5px;
+					margin: 20px 0 9px;
 					width: 100%;
 					-webkit-box-flex: 0;
 					-webkit-flex-grow: 0;
@@ -169,11 +169,11 @@
 				display: flex;
 				justify-content: space-between;
 				flex-wrap: wrap;
-				margin: 0px 0px 20px;
 				display: none;
 
 				@media screen and (max-width: 550px) {
 					display: block;
+					margin: 0px 0px 10px;
 
 					li {
 						display: block;
@@ -208,13 +208,10 @@
 		flex-wrap: wrap;
 		justify-content: space-between;
 		margin: 0 -20px;
-		padding: 18px 0;
+		padding: 5px 0 18px;
 
 		@media screen and (max-width: 1079px) {
 			justify-content: space-around;
-		}
-		@media screen and (max-width: 991px) {
-			margin: 0 -20px;
 		}
 		@media screen and (max-width: 550px) {
 			display: block;;
@@ -223,9 +220,6 @@
 		> * {
 			margin: 20px;
 
-			@media screen and (max-width: 991px) {
-				margin: 13px;
-			}
 			@media screen and (max-width: 550px) {
 				display: block;
 			}
