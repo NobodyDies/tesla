@@ -189,6 +189,10 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'node_modules/malihu-custom-scrollbar-plugin/jquery.mCustomScrollbar.css'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/mCustomScrollbar')
+			},
+			{
+				from: path.resolve(__dirname, 'src/js/jquery.maskedinput.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/jquery-maskedinput')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),
