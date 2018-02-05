@@ -7,9 +7,6 @@
 		padding: 50px 130px 0px 130px;
 	}
 
-	@media screen and (max-width: 1079px) {
-		padding: 50px 0px 0 0px;
-	}
 	@media screen and (max-width: 991px) {
 		padding: 25px 20px 0;
 
@@ -23,15 +20,18 @@
 		flex-wrap: nowrap;
 		border-bottom: 1px solid #444649;
 		padding-bottom: 39px;
+
 		@media screen and (max-width: 1079px) {
 			justify-content: space-around;
 		}
 		@media screen and (max-width: 991px) {
 			padding-bottom: 0;
-			display: block;
+			flex-wrap: wrap;
+			justify-content: space-between;
 		}
 		.footer-logo {
 			img {
+				margin-top: -2px;
 				height: 30px;
 				display: block;
 			}
@@ -42,41 +42,39 @@
 		ul {
 			display: inline-block;
 			margin: 0 20px;
-			@media screen and (max-width: 991px) {
-				display: block;
-			}
+
 			&:first-child {
 				margin-left: 0;
 			}
+
 			&:last-child {
 				margin-right: 0;
+
 				@media screen and (max-width: 991px) {
 					margin-right: 20px;
-				}
-			}
-			&.footer-top-mobile {
-				display: flex;
-				justify-content: space-between;
-				flex-wrap: wrap;
-				margin: 0 -20px;
-				li {
-					margin: 0 20px;
-				}
-				&.footer-top-mobile-nav {
-					display: inline-block;
-					padding: 5px 0 15px;
+					display: block;
 				}
 			}
 			&.footer-top-contacts {
 				@media screen and (max-width: 991px) {
 					overflow: hidden;
 					margin: 20px 0 5px;
-					max-width: 320px;
+					width: 100%;
+					-webkit-box-flex: 0;
+					-webkit-flex-grow: 0;
+					-ms-flex-positive: 0;
+					flex-grow: 0;
+					-webkit-flex-shrink: 0;
+					-ms-flex-negative: 0;
+					flex-shrink: 0;
+
 					li {
 						display: inline-block;
+
 						&:nth-child(odd) {
 							float: right;
 							clear: right;
+
 							&.footer-main {
 								display: block;
 								float: none;
@@ -97,10 +95,6 @@
 				font-size: 13px;
 				color: #a8a8a8;
 				margin-bottom: 11px;
-				@media screen and (max-width: 991px) {
-					display: inline-block;
-					line-height: 30px;
-				}
 				a {
 					font-size: 13px;
 					color: #a8a8a8;
@@ -114,6 +108,7 @@
 					line-height: 12px;
 					color: #ffffff;
 					margin-bottom: 29px;
+
 					@media screen and (max-width: 991px) {
 						line-height: 30px;
 						margin-bottom: 0;
@@ -121,6 +116,7 @@
 					a {
 						font-size: 12px;
 						color: #ffffff;
+
 						&:hover {
 							color: #ffffff;
 							text-decoration: none;
@@ -136,6 +132,38 @@
 							text-decoration: none;
 						}
 					}
+				}
+			}
+			&.footer-top-mobile {
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+				margin: 0 20px 20px;
+				display: none;
+
+				@media screen and (max-width: 767px) {
+					display: block;
+
+					li {
+						display: block;
+					}
+				}
+
+				li {
+					margin: 0 0px 10px;
+					width: 50%;
+				}
+				div {
+					display: none;
+
+					a {
+						display: block;
+						color: #a8a8a8;
+					}
+				}
+				&.footer-top-mobile-nav {
+					display: inline-block;
+					padding: 5px 0 15px;
 				}
 			}
 		}
@@ -177,5 +205,13 @@
 		clear: both;
 		float: none;
 		margin: 0;
+		-webkit-box-flex: 0;
+		-webkit-flex-grow: 0;
+		-ms-flex-positive: 0;
+		flex-grow: 0;
+		-webkit-flex-shrink: 0;
+		-ms-flex-negative: 0;
+		flex-shrink: 0;
+		width: 100%;
 	}
 }

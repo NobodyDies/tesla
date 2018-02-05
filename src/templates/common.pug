@@ -114,6 +114,16 @@ html(lang="ru")
 					});
 				});
 			})(jQuery);
+		script.
+			$('ul.footer-top-mobile li > a').click(function(e){
+
+				e.preventDefault();
+
+				$(this).parent().siblings().find('div').slideUp();
+
+				$(this).siblings("div").slideToggle();
+			});
+
 		block appScripts
 
 
