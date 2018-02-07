@@ -1,3 +1,21 @@
+@keyframes slider-first-half {
+	0% {
+		transform: translateX(0)
+	}
+	100% {
+		transform: translateX(-100%)
+	}
+}
+@keyframes slider-second-half {
+	0% {
+		transform: translateX(0)
+	}
+	100% {
+		transform: translateX(100%)
+	}
+}
+
+
 .index_page {
 	background: rgba(244,242,242,1);
 	padding-bottom: 100px;
@@ -13,15 +31,21 @@
 		&-wrapper {
 			width: 99999999px;
 		}
+		canvas {
+			animation: slider-first-half 1s ease-in-out forwards;
+			&:last-child {
+				animation: slider-second-half 1s ease-in-out forwards;
+			}
+		}
 		&-item {
 			float: left;
 			width: 100vw;
+			font-size: 0;
 			&--image {
 				height: 100%;
 				width: 100%;
 				object-fit: cover;
 				font-family: 'object-fit: cover;';
-				object-position: 0 top;
 			}
 		}
 
