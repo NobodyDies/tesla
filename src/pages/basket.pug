@@ -5,6 +5,23 @@ block appScripts
 
 block append content
 	.basket_page
+		div(class="modal fade modal" tabindex="-1" role="dialog" id="exampleModal" aria-hidden="true")
+			div(class="modal-dialog" role="document")
+				div(class="modal-content")
+					div(class="modal-header")
+						h3(class="modal-title") Быстрая покупка
+						.cross(data-dismiss="modal" aria-label="Close")
+							span
+							span
+					div(class="modal-body")
+						p
+							strong Вы можете купить товар в 1 клик без регистрации! 
+							| Оставьте номер телефона и мы свяжемся с Вами для оформления заказа.
+						input(type="text" placeholder="Телефон" id="modal_phone" name="modal_phone")
+						input(type="text" placeholder="Имя" id="modal_name" name="modal_name")
+						.green-button
+							span Купить
+						p.disclaimer Нажимая на кнопку, вы даёте согласие на обработку персональных данных
 		.basket_page-content-wrapper.content-wrapper
 			.basket_page-content.row
 				.col-sm-8.col-xs-12
@@ -19,7 +36,7 @@ block append content
 								.basket_page-inputs
 									input(type="text" placeholder="Телефон" id="phone" name="phone")
 									input(type="text" placeholder="Имя" id="name" name="name")
-								.green-button
+								.green-button(data-toggle="modal" data-target="#exampleModal")
 									span Заказ в 1 клик
 
 						.basket_page-content-left-wrap.delivery
