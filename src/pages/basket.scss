@@ -487,12 +487,16 @@
 		padding-right: 0px !important;
 	}
 
+	&-open {
+		padding-right: 0px !important;
+	}
+
 	&-dialog {
 		width: 100%;
 		max-width: 420px;
 
 		@media (min-width: 500px) {
-		    margin: 15% auto;
+		    margin: 15% auto 0px;
 		}
 
 		@media screen and (max-width: 500px) {
