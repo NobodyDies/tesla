@@ -40,6 +40,8 @@ $(window).on('load', function(){
 		delay: 1000,
 		spaceBetween: 0,
 		virtualTranslate: true,
+		simulateTouch: false,
+		allowTouchMove: false,
 		loop: true,
 		effect: 'fade',
 		fadeEffect: {
