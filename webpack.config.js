@@ -39,6 +39,7 @@ module.exports = {
 		'item': './pages/item.js',
 		'catalog': './pages/catalog.js',
 		'basket': './pages/basket.js',
+		'store': './pages/store.js',
 	},
 	output: {
 		path: path.resolve(__dirname, buildFolder),
@@ -150,6 +151,12 @@ module.exports = {
 		new HtmlWebpackPlugin({
 			template: 'pages/basket.pug',
 			filename: '../dist/basket.html',
+			inject: false,
+			NODE_ENV: NODE_ENV
+		}),
+		new HtmlWebpackPlugin({
+			template: 'pages/store.pug',
+			filename: '../dist/store.html',
 			inject: false,
 			NODE_ENV: NODE_ENV
 		}),
