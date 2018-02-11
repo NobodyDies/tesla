@@ -47,8 +47,8 @@ $(window).on('load', function(){
 		},
 		// Navigation arrows
 	});
-	mainSlider.on('slideChange', () => {
-		console.log('slideChange');
+	mainSlider.on('slideChangeTransitionStart', () => {
+		console.log('slideChangeTransitionStart');
 		console.log(mainSlider.activeIndex);
 		console.log(mainSlider.previousIndex);
 		var slide = $(mainSlider.slides[mainSlider.previousIndex]);
