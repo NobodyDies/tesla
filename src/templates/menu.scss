@@ -303,13 +303,13 @@
 					flex-shrink: 0;
 					flex-grow: 0;
 					margin-right: 4px;
-					position: relative;
 				}
 				&-current {
 					color: #2096d0;
 					position: relative;
 					cursor: pointer;
 					padding-right: 14px;
+
 					&:after {
 						content: "";
 						position: absolute;
@@ -327,9 +327,9 @@
 					}
 				}
 				.dropdown-menu {
-					top: 36px;
-					right: -52px;
-					left: auto;
+					top: 58px;
+					left: 60px;
+					right: auto;
 					background: #ffffff;
 					border-radius: 0px;
 					width: 200px;
@@ -648,6 +648,10 @@
 	bottom: 0px;
 	height: 0px;
 	z-index: 0;
+
+	@media screen and (max-width: 991px) {
+		display: none;
+	}
 }
 
 .sub-menu-wrapper {

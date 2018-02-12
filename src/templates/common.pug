@@ -63,7 +63,7 @@ html(lang="ru")
 		script.
 			$('.navigation-mobile > .navbar-toggle').on('click', function() {
 
-				$('.navigation-mobile').toggleClass('navigation-mobile-opened')
+				$('.navigation-mobile').toggleClass('navigation-mobile-opened');
 
 				if ( $('.navigation-mobile').hasClass('navigation-mobile-opened') ) {
 
@@ -78,6 +78,18 @@ html(lang="ru")
 
 				}
 			});
+
+			$('.darkness').on('click', function() {
+
+				$('.navigation-mobile').removeClass('navigation-mobile-opened');
+
+				$(".darkness").animate({opacity: "0"}, 200, function() {
+					$(".darkness").css({display: "none"});
+				});
+			});
+
+
+			var mobile = false;
 
 			var breakpoint = window.matchMedia('(max-width:991px)');
 
@@ -168,7 +180,13 @@ html(lang="ru")
 
 				$(this).siblings("div").slideToggle();
 			});
+		script.
+			if ( $('.item-star').length ) {
+				$('.item-star').click(function(){
 
+					$(this).toggleClass("star-checked");
+				});
+			}
 		block appScripts
 
 
