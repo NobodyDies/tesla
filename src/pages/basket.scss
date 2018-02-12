@@ -496,7 +496,7 @@
 		max-width: 420px;
 
 		@media (min-width: 500px) {
-		    margin: 15% auto 0px;
+			margin: 15% auto 0px;
 		}
 
 		@media screen and (max-width: 500px) {
@@ -516,6 +516,10 @@
 			font-size: 30px;
 			font-weight: 300;
 			color: #333333;
+
+			@media (max-width: 500px) {
+				font-size: 20px;
+			}
 		}
 	}
 
@@ -567,6 +571,11 @@
 		p {
 			font-size: 16px;
 			line-height: 25px;
+
+			@media (max-width: 500px) {
+				font-size: 15px;
+				line-height: 20px;
+			}
 		}
 
 		input {
@@ -579,8 +588,17 @@
 			max-width: 180px;
 			min-height: 50px;
 
+			@media (max-width: 500px) {
+				max-width: 160px;
+				min-height: 40px;
+			}
+
 			span {
 				font-size: 11px;
+
+				@media (max-width: 500px) {
+					font-size: 10px;
+				}
 			}
 		}
 
@@ -591,6 +609,10 @@
 			font-weight: 300;
 			line-height: 20px;
 			color: #666666;
+
+			@media (max-width: 500px) {
+				font-size: 12px;
+			}
 		}
 	}
 
