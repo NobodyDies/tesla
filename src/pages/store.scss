@@ -1,6 +1,5 @@
 .store_page {
 	background: rgba(244,242,242,1);
-	padding-bottom: 100px;
 
 	&-heading {
 		background: #e7e7e7;
@@ -169,6 +168,7 @@
 		}
 
 		h2 {
+			color: #333333;
 			font-weight: 300;
 			position: absolute;
 			top: 24%;
@@ -370,6 +370,41 @@
 					> span {
 						color: #999999;
 					}
+				}
+			}
+		}
+	}
+
+	&-info {
+		width: 100%;
+		background: #ffffff;
+
+		.content-wrapper {
+			padding: 52px 130px 54px;
+			text-align: center;
+			color: #333333;
+
+			h2 {
+				font-weight: 300;
+				margin-bottom: 17px;
+			}
+
+			p {
+				font-size: 18px;
+				font-weight: 300;
+				margin: 0 0 8px;
+			}
+
+			a {
+				text-transform: uppercase;
+				font-size: 12px;
+				cursor: pointer;
+
+				&:link,
+				&:visited,
+				&:hover,
+				&:active {
+					text-decoration: none;
 				}
 			}
 		}
