@@ -108,7 +108,7 @@
 	&-categories {
 		position: relative;
 		z-index: 2;
-		background: #ffffff;
+		margin-top: -100px;
 
 		.content-wrapper {
 			display: flex;
@@ -119,7 +119,6 @@
 
 		&-link {
 			position: relative;
-			margin-top: -100px;
 
 			img {
 				height: auto;
