@@ -447,6 +447,46 @@
 		.grid-40 {
 			width: 40%;
 		}
+
+		&-loadmore {
+			width: 100%;
+			padding: 28px 20px;
+
+			.cross {
+				width: 27px;
+				height: 27px;
+				position: relative;
+				opacity: 0.4;
+				cursor: pointer;
+				margin: 0 auto;
+
+				span {
+					display: block;
+					background-color: #000000;
+					transition: background .12s ease-out;
+					-moz-transition: background .12s ease-out;
+					-webkit-transition: background .12s ease-out;
+					-o-transition: background .12s ease-out;
+				}
+				span:nth-child(1) {
+					position: absolute;
+					top: 13px;
+					width: 27px;
+					height: 1px;
+				}
+				span:nth-child(2) {
+					position: absolute;
+					left: 13px;
+					width: 1px;
+					height: 27px;
+				}
+				&:hover {
+					span {
+						background-color: #2096d0;
+					}
+				}
+			}
+		}
 	}
 
 }
