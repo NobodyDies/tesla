@@ -4,6 +4,8 @@
 
 	&-heading {
 		background: #e7e7e7;
+		position: relative;
+		z-index: 1;
 
 		&-content {
 			min-height: 360px;
@@ -103,11 +105,61 @@
 		}
 	}
 
+	&-categories {
+		position: relative;
+		z-index: 2;
+		background: #ffffff;
+
+		.content-wrapper {
+			display: flex;
+			flex-direction: row;
+			padding-bottom: 80px;
+		}
 
 
+		&-link {
+			position: relative;
+			margin-top: -100px;
+
+			img {
+				height: auto;
+				max-width: 100%;
+			}
+
+			> div {
+				position: absolute;
+				bottom: 10%;
+				width: 100%;
+				padding: 0px 20px;
+
+				p {
+					font-size: 22px;
+					line-height: 22px;
+					font-weight: 300;
+					color: #333333;
+					text-align: center;
+					margin: 0px;
+
+					transition: color .2s ease-out;
+					-moz-transition: color .2s ease-out;
+					-webkit-transition: color .2s ease-out;
+					-o-transition: color .2s ease-out;
+				}
+			}
+
+			&:hover {
+				text-decoration: none;
+
+				p {
+					color: #2096d0;
+				}
+			}
+
+		}
+	}
 
 	&-store {
-		margin-top: -140px;
+		//margin-top: -100px;
 
 		.dark-image {
 			.store-item-title {
