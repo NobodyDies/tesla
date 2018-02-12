@@ -36,8 +36,6 @@ $( document ).ready(() => {
 	}
 
 
-
-
 	$(function() {
 	  // init controller
 		var controller = new ScrollMagic.Controller({
