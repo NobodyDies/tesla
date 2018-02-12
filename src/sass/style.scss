@@ -368,17 +368,17 @@ ul, li {
 
 		&:hover {
 			opacity: 0.5;
-			fill: #E8A544;
-			stroke: #E8A544;
+			fill: #f7c100;
+			stroke: #f7c100;
 		}
 	}
 
 	&.star-checked {
 
 		svg {
-			opacity: 1;
-			fill: #E8A544;
-			stroke: #E8A544;
+			opacity: 0.85;
+			fill: #f7c100;
+			stroke: #f7c100;
 		}
 	}
 }
