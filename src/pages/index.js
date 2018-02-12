@@ -47,26 +47,35 @@ $(window).on('load', function(){
 		fadeEffect: {
 			crossFade: true
 		},
+		breakpoints: {
+			767: {
+				allowTouchMove: true,
+				effect: 'slide',
+			}
+		}
 		// Navigation arrows
 	});
 	mainSlider.on('slideChangeTransitionStart', () => {
-		console.log('slideChangeTransitionStart');
-		console.log(mainSlider.activeIndex);
-		console.log(mainSlider.previousIndex);
-		var slide = $(mainSlider.slides[mainSlider.previousIndex]);
+		if(document.body.clientWidth < 768) {
+			return
+		}
+		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
+		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+		slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
 		var image = slide.find('.index_page-slider-item--image')[0];
 
-		let { width, height, x, y } = cover(window.innerWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
+		let { width, height, x, y } = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
 
 		var canvas = document.createElement('canvas');
-		canvas.width = window.innerWidth;
+		canvas.width = document.body.clientWidth;
 		canvas.height = window.innerHeight/2;
 		var ctx = canvas.getContext('2d');
 		ctx.drawImage(image, x, y, width, height);
 		slide.append(canvas);
 
 		var canvas2 = document.createElement('canvas');
-		canvas2.width = window.innerWidth;
+		canvas2.width = document.body.clientWidth;
 		canvas2.height = window.innerHeight/2;
 		var ctx2 = canvas2.getContext('2d');
 		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
@@ -76,10 +85,13 @@ $(window).on('load', function(){
 	})
 
 	mainSlider.on('slideChangeTransitionEnd', () => {
-		console.log('slideChangeTransitionEnd');
-		console.log(mainSlider.activeIndex);
-		console.log(mainSlider.previousIndex);
-		var slide = $(mainSlider.slides[mainSlider.previousIndex]);
+		if(document.body.clientWidth < 768) {
+			return
+		}
+		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+		prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
+		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+		slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
 		var image = slide.find('.index_page-slider-item--image')[0];
 		$(image).css({display: 'block'})
 		slide.find('canvas').remove();
