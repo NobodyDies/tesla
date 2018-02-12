@@ -1,3 +1,14 @@
+$(window).on('load', function(){
+
+	$('.store_page-gallery-content').masonry({
+		itemSelector: '.store_page-gallery-item',
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
+	});
+
+});
+
+
 $( document ).ready(() => {
 
 	window.mobilecheck = function() {
@@ -34,5 +45,4 @@ $( document ).ready(() => {
 			return true;
 		});
 	}
-
 });

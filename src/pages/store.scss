@@ -409,4 +409,44 @@
 			}
 		}
 	}
+
+	&-gallery {
+
+		.grid-sizer {
+			width: 20%;
+		}
+
+		@media screen and (max-width: 991px) {
+			margin: 0;
+		}
+
+		&-content {
+			margin: 0;
+			width: 100%;
+			position: relative;
+		}
+
+		&-item {
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			position: relative;
+
+			img {
+				object-fit: cover;
+				font-family: 'object-fit: cover;';
+				width: 100%;
+				height: 100%;
+			}
+		}
+
+		.grid-20 {
+			width: 20%;
+		}
+
+		.grid-40 {
+			width: 40%;
+		}
+	}
+
 }
