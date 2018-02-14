@@ -1,5 +1,6 @@
 $( document ).ready((e) => {
 
+	// "Этапы" оплаты. Делаем всё как в макете.
 	$('#next-step').click(function (e) {
 		$('.basket_page-content-right').slideUp();
 		$('.basket_page-content-left').slideDown();

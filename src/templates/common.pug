@@ -61,6 +61,7 @@ html(lang="ru")
 		script.
 			objectFitImages();
 		script.
+			// Мобильное меню (открытие и затемнение остального контента)
 			$('.navigation-mobile > .navbar-toggle').on('click', function() {
 
 				$('.navigation-mobile').toggleClass('navigation-mobile-opened');
@@ -79,6 +80,7 @@ html(lang="ru")
 				}
 			});
 
+			// Закрытие меню по клику в область затемнённого контента
 			$('.darkness').on('click', function() {
 
 				$('.navigation-mobile').removeClass('navigation-mobile-opened');
@@ -89,8 +91,8 @@ html(lang="ru")
 			});
 
 
-			var mobile = false;
-
+			// Насильно убираем затемнение контента 
+			// на десктопах (опираемся на media)
 			var breakpoint = window.matchMedia('(max-width:991px)');
 
 			var breakpointChecker = function breakpointChecker() {
@@ -126,28 +128,24 @@ html(lang="ru")
 
 				    $spinner.fadeOut();
 				    $preloader.delay(500).fadeOut('slow');
-
-			/* Если воспроизведение анимации при 
-			загрузке страницы необходимо показать от начала и до конца:
-
-				setTimeout(function(){
-
-				    $spinner.fadeOut();
-				    $preloader.delay(2500).fadeOut('slow');
-
-				}, 500);
-			*/
 			});
 		script.
-			$(".link-more-info").hover(
-				function () {
-					$(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
-				},
-			    function () {
-					$(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
-				}
-			);
+			// Анимация полоски для кнопки "Подробнее"
+			// Сначала проверяем, есть ли такой блок, 
+			// затем - вешаем класс для анимации
+
+			if( $(".link-more-info").length ) {
+				$(".link-more-info").hover(
+					function () {
+						$(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
+					},
+				    function () {
+						$(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
+					}
+				);
+			}
 		script.
+			// Анимация открытия корзины
 			$('.basket').on('click', function() {
 
 				$(this).toggleClass('basket-opened');
@@ -162,6 +160,7 @@ html(lang="ru")
 				}
 			});
 		script.
+			// Скроллбар внутри корзины (корзина в меню)
 			(function($){
 				$(window).on("load",function(){
 					$(".basket-wrapper ul.basket-goods").mCustomScrollbar({
@@ -172,6 +171,7 @@ html(lang="ru")
 				});
 			})(jQuery);
 		script.
+			// Раскрытие вложенных меню в футере
 			$('ul.footer-top-mobile li > a').click(function(e){
 
 				e.preventDefault();
@@ -181,6 +181,7 @@ html(lang="ru")
 				$(this).siblings("div").slideToggle();
 			});
 		script.
+			// Анимация звёздочек у товаров (добавление товара в избранное)
 			if ( $('.item-star').length ) {
 				$('.item-star').click(function(){
 

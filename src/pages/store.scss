@@ -206,6 +206,50 @@
 			}
 
 		}
+		&.sticky {
+			margin: 0;
+			position: fixed;
+			z-index: 99;
+			top: 60px;
+			width: 100%;
+			background: #3a3d41;
+
+			.content-wrapper {
+				padding: 0 17px 80px;
+				justify-content: space-between;
+				padding: 0px;
+			}
+
+			.store_page-categories-link {
+				padding: 24px 0px;
+				display: flex;
+
+				img {
+					display: none;
+				}
+
+				> div {
+						position: relative;
+						padding: 0px 17px;
+						margin: auto;
+						bottom: 0px;
+
+					p {
+						font-size: 13px;
+						line-height: 15px;
+						color: #e7e7e7;
+						font-weight: 400;
+					}
+				}
+				&:hover {
+					text-decoration: none;
+
+					p {
+						color: #2096d0;
+					}
+				}
+			}
+		}
 	}
 
 	&-category {
