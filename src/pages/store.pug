@@ -7,7 +7,11 @@ block append content
 	.store_page
 		.store_page-heading
 			.store_page-heading-content
-				img(src="/assets/img/store/store_bg.png")
+				picture
+					source(srcset="/assets/img/store/store_bg.png" media="(min-width: 500px)")
+					source(srcset="/assets/img/store/store_bg_mob.png" media="(min-width: 300px)")
+					img(src="/assets/img/store/store_bg.png")
+
 
 				.content-wrapper
 					.store_page-heading-content-text
@@ -28,14 +32,11 @@ block append content
 				a(href="#").store_page-categories-link
 					img(src="/assets/img/store/adapters_h.png")
 					div
-						p Сетевые
-						p адаптеры
+						p Сетевые адаптеры
 				a(href="#").store_page-categories-link
 					img(src="/assets/img/store/auto_h.png")
 					div
-						p Для
-						p автомобиля
-					
+						p Для автомобиля
 
 		.store_page-category
 			img(src="/assets/img/store/cables_bg.png")
