@@ -45,4 +45,12 @@ $( document ).ready(() => {
 			return true;
 		});
 	}
+
+	//Плавный скролл к блоку
+    $('.store_page-categories a').click(function(){
+      var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top - 60}, 900);  
+      return false;
+    }); 
+
 });
