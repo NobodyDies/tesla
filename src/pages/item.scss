@@ -845,6 +845,11 @@
 		.row {
 			margin-right: -15px;
 			margin-left: -15px;
+
+			@media screen and (max-width: 767px) {
+				margin-right: 0px;
+				margin-left: 0px;
+			}
 		}
 
 		h2 {
@@ -900,19 +905,6 @@
 			&:hover {
 				.rec-item-text {
 					border-color: #e7e7e7;
-				}
-			}
-			.rec-item-star {
-				position: absolute;
-				top: 15px;
-				right: 25px;
-				width: 16px;
-				height: 16px;
-				cursor: pointer;
-				z-index: 3;
-
-				@media screen and (max-width: 450px) {
-					right: 13px;
 				}
 			}
 			.rec-item {

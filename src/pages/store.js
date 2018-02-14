@@ -1,3 +1,14 @@
+$(window).on('load', function(){
+
+	$('.store_page-gallery-content').masonry({
+		itemSelector: '.store_page-gallery-item',
+		percentPosition: true,
+		columnWidth: '.grid-sizer'
+	});
+
+});
+
+
 $( document ).ready(() => {
 
 	window.mobilecheck = function() {
@@ -14,7 +25,7 @@ $( document ).ready(() => {
 	// переход на страницу товара выполнится моментально.
 	if (mobcheck == true) {
 
-		$('.catalog-item-text-wrap a').on('click', function (e) {
+		$('.store-item-text-wrap a').on('click', function (e) {
 			'use strict'; //satisfy code inspectors
 			var link = $(this); //preselect the link
 
@@ -22,7 +33,7 @@ $( document ).ready(() => {
 				return true;
 			} else {
 				link.addClass('hover');
-				$('.catalog-item-text-wrap a').not(this).removeClass('hover');
+				$('.store-item-text-wrap a').not(this).removeClass('hover');
 				e.preventDefault();
 				return false; //extra, and to make sure the function has consistent return points
 			}
@@ -30,44 +41,16 @@ $( document ).ready(() => {
 
 	} else if (mobcheck == false) {
 
-		$('.catalog-item-text-wrap a').on('click', function (e) {
+		$('.store-item-text-wrap a').on('click', function (e) {
 			return true;
 		});
 	}
 
-
-	$(function() {
-	  // init controller
-		var controller = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: "onEnter", 
-				duration: "80%"
-			}
-		});
-
-		// build scenes
-/*
-		new ScrollMagic.Scene({triggerElement: ".catalog_page-catalog .content-wrapper"})
-						.setTween(".catalog_page-catalog-content", {
-							y: "-30%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-/*
-		new ScrollMagic.Scene({triggerElement: ".table2"})
-						.setTween(".ref-pic2", {
-							y: "20%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-
-		new ScrollMagic.Scene({triggerElement: ".table3"})
-						.setTween(".ref-pic3", {
-							y: "20%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-*/
-	});
+	//Плавный скролл к блоку
+    $('.store_page-categories a').click(function(){
+      var target = $(this).attr('href');
+        $('html, body').animate({scrollTop: $(target).offset().top - 60}, 900);  
+      return false;
+    }); 
 
 });
