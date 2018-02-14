@@ -20,9 +20,19 @@
 			}
 
 			.content-wrapper {
+				max-width: 750px;
 				margin: 0 auto;
 				width: 100%;
-				padding: 0 40px;
+				position: absolute;
+				top: 60px;
+				left: 0px;
+				bottom: 60px;
+				right: 0px;
+				padding: 0px 17px 0px;
+
+				@media screen and (max-width: 767px) {
+					bottom: 0px;
+				}
 
 				.blue-line {
 					width: 50px;
@@ -30,12 +40,6 @@
 					background: #2096d0;
 					display: inline-block;
 					vertical-align: top;
-				}
-
-				@media screen and (max-width: 991px) {
-					max-width: 750px;
-					margin: 0 auto;
-					width: 100%;
 				}
 			}
 
@@ -52,10 +56,11 @@
 			}
 			&-text {
 				position: absolute;
-				top: 36%;
+				top: 50%;
 				width: 100%;
 				left: 50%;
-				transform: translateX(-50%);
+				-webkit-transform: translateX(-50%);
+				transform: translate(-50%, -50%);
 				text-align: center;
 				padding: 0 40px;
 				color: #ffffff;
@@ -157,6 +162,7 @@
 					position: relative;
 					padding: 0px 17px;
 					margin: auto;
+					bottom: 0px;
 				}
 
 				p {
