@@ -9,23 +9,57 @@ $(window).on('load', function(){
 	});
 
 
-	// Прилипающее меню с "разделами" страницы
-	// Высота блока прилипающего меню
-	var categoriesHeight = $(".store_page-categories").height() - 100;
 
-	// grab the initial top offset of the navigation 
+
+
+
+
+	// Прилипающее меню с "разделами" страницы
+	// Высота от верхнего края страницы до верхнего края блока-обёртки меню
 	var stickyNavTop = $('.store_page-categories').offset().top;
 
+	// Высота меню для добавления отступа (чтобы страница не "скакала")
+	var categoriesHeight = $(".store_page-categories").height() - 100;
+
+	// Высота блока-ссылки в блоке меню
 	var stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
+
+	// Суммарная высота, при прокрутке ниже которой сработает фиксация менюшки
+	var summaryHeight = stickyNavTop + stickyNavHeight;
+
+
+/*
+	$(window).on('resize', function(){
+		stickyNavTop = $('.store_page-categories').offset().top;
+		stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
+		summaryHeight = stickyNavTop + stickyNavHeight;
+		console.log(summaryHeight);
+	});
+*/
+
+
+	// Обновляем переменные на ресайзе окна и вызываем функцию фиксации меню
+	$(window).on('resize', function(){
+		stickyNavTop = $('.store_page-categories').offset().top;
+		stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
+		summaryHeight = stickyNavTop + stickyNavHeight;
+		categoriesHeight = $(".store_page-categories").height() - 100;
+
+		categoriesHeight = Math.round(categoriesHeight);
+		summaryHeight = Math.round(summaryHeight);
+
+		//stickyNav();
+	});
+
 
 	// our function that decides weather the navigation bar should have "fixed" css position or not.
 	var stickyNav = function(){
 		var scrollTop = $(window).scrollTop(); // our current vertical position from the top
-			 
+
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top,
 		// otherwise change it back to relative
-		if (scrollTop > (stickyNavTop + stickyNavHeight)) {
-			$(".store_page-heading").css("padding-bottom", categoriesHeight);
+		if (scrollTop >= (summaryHeight - 60)) {
+			$(".store_page-heading").css("padding-bottom", (categoriesHeight));
 			$('.store_page-categories').addClass('sticky');
 		} else {
 			$(".store_page-heading").css("padding-bottom", "");
@@ -41,6 +75,7 @@ $(window).on('load', function(){
 
 
 });
+
 
 
 $( document ).ready(() => {
