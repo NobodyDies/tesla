@@ -9,47 +9,14 @@ $(window).on('load', function(){
 	});
 
 
-
-
-
-
-
 	// Прилипающее меню с "разделами" страницы
-	// Высота от верхнего края страницы до верхнего края блока-обёртки меню
-	var stickyNavTop = $('.store_page-categories').offset().top;
+	// Где срабатывает
+	var stickyNavStart = $('.store_page-category').first().offset().top;
 
-	// Высота меню для добавления отступа (чтобы страница не "скакала")
-	var categoriesHeight = $(".store_page-categories").height() - 100;
-
-	// Высота блока-ссылки в блоке меню
-	var stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
-
-	// Суммарная высота, при прокрутке ниже которой сработает фиксация менюшки
-	var summaryHeight = stickyNavTop + stickyNavHeight;
-
-
-/*
 	$(window).on('resize', function(){
-		stickyNavTop = $('.store_page-categories').offset().top;
-		stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
-		summaryHeight = stickyNavTop + stickyNavHeight;
-		console.log(summaryHeight);
+		stickyNavStart = $('.store_page-category').first().offset().top;
+		stickyNav();
 	});
-*/
-
-	// Обновляем переменные на ресайзе окна и вызываем функцию фиксации меню
-	$(window).on('resize', function(){
-		stickyNavTop = $('.store_page-categories').offset().top;
-		stickyNavHeight = $('.store_page-categories .content-wrapper > .store_page-categories-link').height();
-		summaryHeight = stickyNavTop + stickyNavHeight;
-		categoriesHeight = $(".store_page-categories").height() - 100;
-
-		categoriesHeight = Math.round(categoriesHeight);
-		summaryHeight = Math.round(summaryHeight);
-
-		//stickyNav();
-	});
-
 
 	// our function that decides weather the navigation bar should have "fixed" css position or not.
 	var stickyNav = function(){
@@ -57,24 +24,21 @@ $(window).on('load', function(){
 
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top,
 		// otherwise change it back to relative
-		if (scrollTop >= (summaryHeight - 30)) {
-			$(".store_page-heading").css("padding-bottom", categoriesHeight);
-			$('.store_page-categories').addClass('sticky');
+		if (scrollTop >= stickyNavStart) {
+			$('.store_page-sticky').addClass('sticky-nav');
 		} else {
-			$(".store_page-heading").css("padding-bottom", "");
-			$('.store_page-categories').removeClass('sticky');
+			$('.store_page-sticky').removeClass('sticky-nav');
 		}
 	};
 
 	stickyNav();
+
 	// and run it again every time you scroll
 	$(window).scroll(function() {
 		stickyNav();
 	});
 
-
 });
-
 
 
 $( document ).ready(() => {
