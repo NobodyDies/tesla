@@ -37,7 +37,6 @@ $(window).on('load', function(){
 	});
 */
 
-
 	// Обновляем переменные на ресайзе окна и вызываем функцию фиксации меню
 	$(window).on('resize', function(){
 		stickyNavTop = $('.store_page-categories').offset().top;
@@ -58,8 +57,8 @@ $(window).on('load', function(){
 
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top,
 		// otherwise change it back to relative
-		if (scrollTop >= (summaryHeight - 60)) {
-			$(".store_page-heading").css("padding-bottom", (categoriesHeight));
+		if (scrollTop >= (summaryHeight - 30)) {
+			$(".store_page-heading").css("padding-bottom", categoriesHeight);
 			$('.store_page-categories').addClass('sticky');
 		} else {
 			$(".store_page-heading").css("padding-bottom", "");
