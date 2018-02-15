@@ -46,19 +46,10 @@ $(window).on('load', function(){
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true
-		},
-		breakpoints: {
-			767: {
-				allowTouchMove: true,
-				effect: 'slide',
-			}
 		}
 		// Navigation arrows
 	});
 	mainSlider.on('slideChangeTransitionStart', () => {
-		if(document.body.clientWidth < 768) {
-			return
-		}
 		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
 		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
 		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
@@ -85,9 +76,6 @@ $(window).on('load', function(){
 	})
 
 	mainSlider.on('slideChangeTransitionEnd', () => {
-		if(document.body.clientWidth < 768) {
-			return
-		}
 		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
 		prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
 		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
