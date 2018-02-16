@@ -116,7 +116,11 @@ $( document ).ready(() => {
 				if (!controller.enabled()) {
 					controller.enabled(true);
 				}
+				if (!controller2.enabled()) {
+					controller2.enabled(true);
+				}
 				controller.update(true);
+				controller2.update(true);
 				return;
 
 			} else if ( breakpoint.matches === true ) {
@@ -124,7 +128,11 @@ $( document ).ready(() => {
 				if (controller.enabled()) {
 					controller.enabled(false);
 				}
+				if (controller2.enabled()) {
+					controller2.enabled(false);
+				}
 				controller.update(true);
+				controller2.update(true);
 				return;
 			}
 		};
