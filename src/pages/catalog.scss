@@ -1,6 +1,7 @@
+#parallaxanchor {position: absolute; top: 100%;}
+
 .catalog_page {
 	background: rgba(244,242,242,1);
-	padding-bottom: 100px;
 
 	&-heading {
 		padding-bottom: 140px;
@@ -88,7 +89,8 @@
 	}
 
 	&-catalog {
-		margin-top: -140px;
+//margin-top: -140px;
+background: #f4f2f2;
 
 		.dark-image {
 			.catalog-item-title {
@@ -98,9 +100,20 @@
 				color: #f4f2f2;
 			}
 		}
+		.content-wrapper {
+			@media screen and (max-width: 991px) {
+				padding: 0 17px;
+			}
+			@media screen and (max-width: 767px) {
+				padding: 0px;
+			}
+		}
 		&-content {
 			margin: 0 -10px;
-			padding: 0;
+			padding: 0;	
+
+position: relative;
+top: -140px;
 
 			@media screen and (max-width: 767px) {
 				padding: 0;

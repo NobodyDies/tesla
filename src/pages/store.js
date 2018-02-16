@@ -24,7 +24,7 @@ $(window).on('load', function(){
 
 		// if we've scrolled more than the navigation, change its position to fixed to stick to top,
 		// otherwise change it back to relative
-		if (scrollTop >= stickyNavStart) {
+		if (scrollTop >= (stickyNavStart - 30)) {
 			$('.store_page-sticky').addClass('sticky-nav');
 		} else {
 			$('.store_page-sticky').removeClass('sticky-nav');

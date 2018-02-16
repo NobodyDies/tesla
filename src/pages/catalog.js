@@ -38,19 +38,52 @@ $( document ).ready(() => {
 	}
 
 
+
+
+
+
 	// Параллакс-эффект
 	$(function() {
 	  // init controller
 		var controller = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: "onEnter", 
-				duration: "80%"
+				duration: "30%"
 			}
 		});
 
 		// build scenes
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".catalog_page-catalog-content", {
+							y: "20%", 
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".catalog_page-catalog", {
+							y: "-60%",
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+
+
+
+		$(window).on('resize', function(){
+			if ($('html').width() < 991) {
+				if (controller.enabled()) {
+					controller.enabled(false);
+				}
+			} else if (!controller.enabled()) {
+				controller.enabled(true);
+			}
+			controller.update(true);
+		});
+
 /*
-		new ScrollMagic.Scene({triggerElement: ".catalog_page-catalog .content-wrapper"})
+		new ScrollMagic.Scene({triggerElement: ".catalog_page-heading-content-text"})
 						.setTween(".catalog_page-catalog-content", {
 							y: "-30%", 
 							ease: Linear.easeNone
