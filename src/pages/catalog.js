@@ -52,8 +52,8 @@ $( document ).ready(() => {
 			}
 		});
 
-		// build scenes
 
+		// build scenes
 		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
 						.setTween(".catalog_page-catalog-content", {
 							y: "20%", 
@@ -67,6 +67,30 @@ $( document ).ready(() => {
 							ease: Linear.easeNone
 						})
 						.addTo(controller);
+
+
+
+
+
+		var controller2 = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: "onEnter", 
+				duration: "20%"
+			}
+		});
+
+
+		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
+									opacity: 0,
+									y: "-140%",
+									ease: Linear.easeNone
+								});
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(makeOpaque)
+						.addTo(controller2);
+
+
 
 
 /*
