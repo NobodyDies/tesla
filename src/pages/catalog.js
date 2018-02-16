@@ -69,7 +69,7 @@ $( document ).ready(() => {
 						.addTo(controller);
 
 
-
+/*
 
 		$(window).on('resize', function(){
 			if ($('html').width() < 991) {
@@ -81,6 +81,35 @@ $( document ).ready(() => {
 			}
 			controller.update(true);
 		});
+
+*/
+		var breakpoint = window.matchMedia('(max-width:991px)');
+
+		var breakpointChecker = function breakpointChecker() {
+
+			if (breakpoint.matches === false) {
+
+				if (!controller.enabled()) {
+					controller.enabled(true);
+				}
+				controller.update(true);
+				return;
+
+			} else if ( breakpoint.matches === true ) {
+
+				if (controller.enabled()) {
+					controller.enabled(false);
+				}
+				controller.update(true);
+				return;
+			}
+		};
+
+		breakpoint.addListener(breakpointChecker);
+
+		breakpointChecker();
+
+
 
 /*
 		new ScrollMagic.Scene({triggerElement: ".catalog_page-heading-content-text"})
