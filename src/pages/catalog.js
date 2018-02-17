@@ -38,10 +38,6 @@ $( document ).ready(() => {
 	}
 
 
-
-
-
-
 	// Параллакс-эффект
 	$(function() {
 	  // init controller
@@ -69,9 +65,7 @@ $( document ).ready(() => {
 						.addTo(controller);
 
 
-
-
-
+		// init controller
 		var controller2 = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: "onEnter", 
@@ -79,6 +73,7 @@ $( document ).ready(() => {
 			}
 		});
 
+		//text animation with opacity
 		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
 									opacity: 0,
 									y: "-100%",
@@ -90,74 +85,7 @@ $( document ).ready(() => {
 						.addTo(controller2);
 
 
-/*
-		// build scenes
-		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
-						.setTween(".catalog_page-catalog-content", {
-							y: "20%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-
-		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
-						.setTween(".catalog_page-catalog", {
-							y: "-60%",
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-
-
-
-
-
-		var controller2 = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: "onEnter", 
-				duration: "15%"
-			}
-		});
-
-
-		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
-									opacity: 0,
-									y: "-140%",
-									ease: Linear.easeNone
-								});
-
-		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
-						.setTween(makeOpaque)
-						.addTo(controller2);
-
-
-
-
-
-
-
-
-/*
-
-		$(window).on('resize', function(){
-			if ($('html').width() < 991) {
-				if (controller.enabled()) {
-					controller.enabled(false);
-				}
-			} else if (!controller.enabled()) {
-				controller.enabled(true);
-			}
-			controller.update(true);
-		});
-
-*/
-
-/*
-$(".catalog_page-catalog-content").removeAttr('style');
-$(".catalog_page-heading").removeAttr('style');
-$(".catalog_page-heading-content-text").removeAttr('style');
-*/
-
-
-
+		//включение и выключение параллакса в зависимости от размера экрана (опираемся на media)
 		var breakpoint = window.matchMedia('(max-width:991px)');
 
 		var breakpointChecker = function breakpointChecker() {
@@ -195,30 +123,6 @@ $(".catalog_page-heading-content-text").removeAttr('style');
 
 		breakpointChecker();
 
-
-
-/*
-		new ScrollMagic.Scene({triggerElement: ".catalog_page-heading-content-text"})
-						.setTween(".catalog_page-catalog-content", {
-							y: "-30%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-/*
-		new ScrollMagic.Scene({triggerElement: ".table2"})
-						.setTween(".ref-pic2", {
-							y: "20%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-
-		new ScrollMagic.Scene({triggerElement: ".table3"})
-						.setTween(".ref-pic3", {
-							y: "20%", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-*/
 	});
 
 });

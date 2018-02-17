@@ -6,17 +6,15 @@
 	&-heading {
 		padding-bottom: 140px;
 		background: #e7e7e7;
-
-max-height: 80%;
-display: flex;
-z-index: 1;
+		max-height: 80%;
+		display: flex;
+		z-index: 1;
 
 		&-content {
 			min-height: 360px;
 			position: relative;
 			color: #333333;
-
-width: 100%;
+			width: 100%;
 
 			@media screen and (max-width: 991px) {
 				min-height: 420px;
@@ -31,9 +29,9 @@ width: 100%;
 				width: 100%;
 				height: auto;
 				margin-top: 60px;
-object-fit: cover;
-font-family: 'object-fit: cover;';
-max-height: 560px;
+				object-fit: cover;
+				font-family: 'object-fit: cover;';
+				max-height: 560px;
 
 				@media screen and (max-width: 991px) {
 					width: 100%;
@@ -98,16 +96,15 @@ max-height: 560px;
 	}
 
 	&-catalog {
-//margin-top: -140px;
-background: #f4f2f2;
-//margin-bottom: -20%;
-padding-bottom: 100px;
-position: relative;
-z-index: 2;
 
-@media screen and (max-width: 991px) {
-	padding-bottom: 0px;
-}
+		background: #f4f2f2;
+		padding-bottom: 100px;
+		position: relative;
+		z-index: 2;
+
+		@media screen and (max-width: 991px) {
+			padding-bottom: 0px;
+		}
 
 		.dark-image {
 			.catalog-item-title {
@@ -127,10 +124,9 @@ z-index: 2;
 		}
 		&-content {
 			margin: 0 -10px;
-			padding: 0;	
-
-position: relative;
-top: -140px;
+			padding: 0;
+			position: relative;
+			top: -140px;
 
 			@media screen and (max-width: 767px) {
 				padding: 0;
