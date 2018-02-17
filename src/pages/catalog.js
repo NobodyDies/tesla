@@ -75,7 +75,7 @@ $( document ).ready(() => {
 		var controller2 = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: "onEnter", 
-				duration: "20%"
+				duration: "15%"
 			}
 		});
 
