@@ -48,11 +48,49 @@ $( document ).ready(() => {
 		var controller = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: "onEnter", 
-				duration: "30%"
+				duration: "70%"
 			}
 		});
 
 
+		// build scenes
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".catalog_page-catalog-content", {
+							y: "200px", 
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".catalog_page-heading", {
+							y: "40%", 
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+
+
+
+
+		var controller2 = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: "onEnter", 
+				duration: "35%"
+			}
+		});
+
+		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
+									opacity: 0,
+									y: "-100%",
+									ease: Linear.easeNone
+								});
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(makeOpaque)
+						.addTo(controller2);
+
+
+/*
 		// build scenes
 		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
 						.setTween(".catalog_page-catalog-content", {
@@ -93,6 +131,10 @@ $( document ).ready(() => {
 
 
 
+
+
+
+
 /*
 
 		$(window).on('resize', function(){
@@ -107,6 +149,8 @@ $( document ).ready(() => {
 		});
 
 */
+
+
 		var breakpoint = window.matchMedia('(max-width:991px)');
 
 		var breakpointChecker = function breakpointChecker() {
