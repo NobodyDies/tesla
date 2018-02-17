@@ -86,4 +86,11 @@ $( document ).ready(() => {
 	  return false;
 	}); 
 
+	$('.store_page-sticky a').click(function(){
+	  var target = $(this).attr('href');
+		$('html, body').animate({scrollTop: $(target).offset().top - 60}, 900);  
+	  return false;
+	}); 
+
+
 });

@@ -241,8 +241,13 @@
 					font-weight: 400;
 				}
 
-				&:hover {
+				&:link,
+				&:visited,
+				&:hover,
+				&:active {
 					text-decoration: none;
+				}
+				&:hover {
 					color: #2096d0;
 				}
 			}
