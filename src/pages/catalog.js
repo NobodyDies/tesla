@@ -150,6 +150,13 @@ $( document ).ready(() => {
 
 */
 
+/*
+$(".catalog_page-catalog-content").removeAttr('style');
+$(".catalog_page-heading").removeAttr('style');
+$(".catalog_page-heading-content-text").removeAttr('style');
+*/
+
+
 
 		var breakpoint = window.matchMedia('(max-width:991px)');
 
@@ -171,9 +178,12 @@ $( document ).ready(() => {
 
 				if (controller.enabled()) {
 					controller.enabled(false);
+					$(".catalog_page-catalog-content").removeAttr('style');
+					$(".catalog_page-heading").removeAttr('style');
 				}
 				if (controller2.enabled()) {
 					controller2.enabled(false);
+					$(".catalog_page-heading-content-text").removeAttr('style');
 				}
 				controller.update(true);
 				controller2.update(true);
