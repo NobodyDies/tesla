@@ -19,12 +19,12 @@ $( document ).ready(() => {
 			$('.navigation').removeClass('nav-fixed');
 		}
 	});
-	//---------------------------------------//
 
 });
 
 
 $(window).on('load', function(){
+
 	$('.index_page-catalog-content').masonry({
 		itemSelector: '.index_page-catalog-item',
 		percentPosition: true,
@@ -80,9 +80,9 @@ $(window).on('load', function(){
 		canvas2.height = window.innerHeight/2;
 		var ctx2 = canvas2.getContext('2d');
 		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
-		slide.append(canvas2)
+		slide.append(canvas2);
 
-		$(image).css({display: 'none'})
+		$(image).css({display: 'none'});
 	})
 
 	mainSlider.on('slideChangeTransitionEnd', () => {
@@ -91,7 +91,7 @@ $(window).on('load', function(){
 		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
 		slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
 		var image = slide.find('.index_page-slider-item--image')[0];
-		$(image).css({display: 'block'})
+		$(image).css({display: 'block'});
 		slide.find('canvas').remove();
 	})
 
@@ -100,12 +100,9 @@ $(window).on('load', function(){
 	var p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
 	$(".swiper-pagination").css( "left", (p - 36) );
 
-	console.log(p);
-
 	$(window).on('resize', function(){
 		p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
 		$(".swiper-pagination").css( "left", (p - 36) );
-		console.log(p);
 	});
 
 
