@@ -41,10 +41,11 @@
 	&-slider {
 		height: 100vh;
 		position: relative;
-		min-height: 320px;
+		min-height: 530px;
 		overflow: hidden;
 
 		&-wrapper {
+			min-height: 530px;
 			width: 99999999px;
 		}
 		canvas {
@@ -169,6 +170,17 @@
 			bottom: auto;
 			transform: translateY(-50%);
 
+			@media screen and (max-width: 991px) {
+				width: auto;
+				display: flex;
+				justify-content: center;
+				top: auto;
+				bottom: 45px;
+				left: 50% !important;
+				transform: translateX(-50%);
+			}
+
+
 			&-bullet{
 				display: block;
 				width: 10px;
@@ -179,6 +191,10 @@
 				border-radius: 50%;
 				margin: 22px 0px 0px !important;
 				opacity: 1;
+
+				@media screen and (max-width: 991px) {
+					margin: 0px 13px 0px !important;
+				}
 			}
 
 			&-bullet-active {
