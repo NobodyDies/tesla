@@ -53,6 +53,10 @@ $(window).on('load', function(){
 			el: ".swiper-pagination",
 			clickable: false,
 		},
+		navigation: {
+			nextEl: '.icon-main-arrow-left',
+			prevEl: '.icon-main-arrow-right',
+		},
 		// Navigation arrows
 	});
 	mainSlider.on('slideChangeTransitionStart', () => {

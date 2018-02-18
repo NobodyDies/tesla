@@ -44,9 +44,17 @@
 		min-height: 530px;
 		overflow: hidden;
 
+		@media screen and (max-width: 991px) {
+			min-height: 370px;
+		}
+
 		&-wrapper {
 			min-height: 530px;
 			width: 99999999px;
+
+			@media screen and (max-width: 991px) {
+				min-height: 370px;
+			}
 		}
 		canvas {
 			animation: slider-first-half 1s ease-in-out forwards;
@@ -204,6 +212,29 @@
 				background: transparent;
 				border: 1px solid #2096d0;
 				border-radius: 50%;
+			}
+		}
+
+		.mainslider-controls {
+			right: 0px;
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 10;
+
+			svg {
+				width: 52px;
+				height: 26px;
+				fill: #ffffff;
+				cursor: pointer;
+				transition: all .2s ease-out;
+				-moz-transition: all .2s ease-out;
+				-webkit-transition: all .2s ease-out;
+				-o-transition: all .2s ease-out;
+
+				&:hover {
+					fill: #2096d0;
+				}
 			}
 		}
 
