@@ -33,7 +33,9 @@ $(window).on('load', function(){
 
 	window.mainSlider = new Swiper ('.index_page-slider', {
 		// Optional parameters
-		//autoplay: true,
+		autoplay: {
+			delay: 5000,
+		},
 		slidesPerView: 1,
 		slidesPerGroup: 1,
 		speed: 1000,
@@ -46,7 +48,11 @@ $(window).on('load', function(){
 		effect: 'fade',
 		fadeEffect: {
 			crossFade: true
-		}
+		},
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
+		},
 		// Navigation arrows
 	});
 	mainSlider.on('slideChangeTransitionStart', () => {
@@ -123,7 +129,6 @@ $(window).on('load', function(){
 	    	prevEl: '.popular-controls-controls-left',
 	    }
 	});
-
 
 	var breakpoint = window.matchMedia('(max-width:991px)');
 
