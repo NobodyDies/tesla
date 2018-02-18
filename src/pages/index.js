@@ -51,7 +51,7 @@ $(window).on('load', function(){
 		},
 		pagination: {
 			el: ".swiper-pagination",
-			clickable: true,
+			clickable: false,
 		},
 		// Navigation arrows
 	});
@@ -90,6 +90,20 @@ $(window).on('load', function(){
 		$(image).css({display: 'block'})
 		slide.find('canvas').remove();
 	})
+
+
+	// pagination position
+	var p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
+	$(".swiper-pagination").css( "left", (p - 36) );
+
+	console.log(p);
+
+	$(window).on('resize', function(){
+		p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
+		$(".swiper-pagination").css( "left", (p - 36) );
+		console.log(p);
+	});
+
 
 	var mySwiper = new Swiper ('.swiper-container', {
 	    // Optional parameters
