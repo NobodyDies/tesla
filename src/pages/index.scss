@@ -15,6 +15,30 @@
 	}
 }
 
+
+
+//next slide animation
+@keyframes next-first-half {
+	0% {
+		transform: translateX(100%)
+	}
+	100% {
+		transform: translateX(0%)
+	}
+}
+@keyframes next-second-half {
+	0% {
+		transform: translateX(-100%)
+	}
+	100% {
+		transform: translateX(0)
+	}
+}
+
+// 1) ADD NEXT SLIDE APPEARANCE ANIMATION (see above)
+
+
+
 .myinner {
 	position: absolute;
 	height: 100%;
