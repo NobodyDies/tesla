@@ -82,67 +82,7 @@ $(window).on('load', function(){
 		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
 		slide.append(canvas2);
 
-
-
-
-
-var allSl = (mainSlider.slides.length - 3);
-console.log(
-	"Всего слайдов: " + allSl
-);
-
-var weAt = mainSlider.realIndex;
-console.log( 
-	"Где находимся: " + weAt
-);
-
-var slPrev = (mainSlider.realIndex - 1);
-if ( slPrev < 0 ) {
-	slPrev = (mainSlider.slides.length - 3);
-}
-console.log( 
-	"Предыдущий: " + slPrev
-);
-
-var nextSl = (mainSlider.realIndex + 1);
-if ( nextSl > (mainSlider.slides.length - 3) ) {
-	nextSl = 0;
-}
-console.log( 
-	"Следующий: " + nextSl
-);
-console.log( 
-	$("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]
-);
-
-console.log( 
-	"//--------------------------//"
-);
-
-
-
-//-------------------NEXT----------------------//
-// Забираем изображение из следующего слайда
-// Сначала удаляем старый следующий слайд
-$(".nextSlideMin").remove();
-
-// Затем ставим слайд, который теперь будет новым предыдущим
-$(".mainslider-controls-next").append( 
-	$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone().addClass("nextSlideMin")
-);
-//-------------------------------------------------//
-
-
-//-------------------PREVIOUS----------------------//
-// Забираем изображение из предыдущего слайда
-// Сначала удаляем старый предыдущий слайд
-$(".prevSlideMin").remove();
-
-// Затем ставим слайд, который теперь будет новым предыдущим
-$(".mainslider-controls-prev").append( 
-	$(prev.find('.index_page-slider-item--image')[0]).clone().addClass("prevSlideMin")
-);
-//-------------------------------------------------//
+		controlSlides();
 
 		$(image).css({display: 'none'});
 	})
@@ -160,6 +100,62 @@ $(".mainslider-controls-prev").append(
 		slide.find('canvas').remove();
 	})
 
+
+	// Слайды в стрелках управления главным слайдером
+	function controlSlides() {
+
+		$(".nextSlideMin").remove();
+		$(".prevSlideMin").remove();
+
+		//-------------------NEXT----------------------//
+		var nextSl = (mainSlider.realIndex + 1);
+		if ( nextSl > (mainSlider.slides.length - 3) ) {
+			nextSl = 0;
+		}
+		$(".mainslider-controls-next").append( 
+			$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone().addClass("nextSlideMin")
+		);
+		//-------------------------------------------------//
+
+
+		//-------------------PREVIOUS----------------------//
+		var slPrev = (mainSlider.realIndex - 1);
+		if ( slPrev < 0 ) {
+			slPrev = (mainSlider.slides.length - 3);
+		}
+		$(".mainslider-controls-prev").append( 
+			$($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone().addClass("prevSlideMin")
+		);
+		//-------------------------------------------------//
+
+
+		var allSl = (mainSlider.slides.length - 3);
+		console.log(
+			"Всего слайдов: " + allSl
+		);
+
+		var weAt = mainSlider.realIndex;
+		console.log( 
+			"Где находимся: " + weAt
+		);
+		console.log( 
+			"Предыдущий: " + slPrev
+		);
+		console.log( 
+			"Следующий: " + nextSl
+		);
+		console.log( 
+			$("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]
+		);
+
+		console.log( 
+			"//--------------------------//"
+		);
+
+	}
+
+	// Кидаем картинки слайдов в контролы при загрузке страницы
+	controlSlides();
 
 	// pagination position
 	var p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
