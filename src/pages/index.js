@@ -83,55 +83,58 @@ $(window).on('load', function(){
 		slide.append(canvas2);
 
 
-/*
-//РАЗРАБАТЫВАЮ - следующий слайд
-$(".mainslider-controls-next").append(
-	$(".swiper-slide-next").find('.index_page-slider-item--image')[0]
+
+
+
+var allSl = (mainSlider.slides.length - 3);
+console.log(
+	"Всего слайдов: " + allSl
 );
-*/
 
-
-/*
-//НЕНУЖНО - ТЕКУЩИЙ СЛАЙД
-$(".mainslider-controls-next").append( 
-	$(image).clone().addClass("nextSlideMin")
+var weAt = mainSlider.realIndex;
+console.log( 
+	"Где находимся: " + weAt
 );
-*/
 
-
-
-/*
-Реальное количество слайдов = mainSlider.slides.length - 2.
-Двойка вычитается из mainSlider.slides.length из-за того, 
-что слайдер создаёт 2 дубликата слайдов для анимации.
-
-Т.к. в слайдере нумерация слайдов идёт от нуля (считай, массив - первый слайд лежит в ячейке [0]),
-то для того, чтобы получить количество слайдов, считая как массивах, нужно вычесть ещё единицу:
-mainSlider.slides.length - 3.
-
-mainSlider.realIndex, слава богу, показывает реальный индекс слайда из массива.
-
-Исходя из вышенаписанного следует логика:
-Всего слайдов (учитывая нулевой индекс): mainSlider.slides.length - 3
-Текущий слайд: mainSlider.realIndex
-
-Очевидно, что для получения индекса следующего слайда необходимо к mainSlider.realIndex
-прибавить единицу, но она прибавится и на последнем слайде, а значит, номер следующего слайда
-будет неправильным. Следующий должен иметь индекс [0], что мы и делаем:
-*/
-//console.log("Всего слайдов: " + (mainSlider.slides.length - 3) + " Текущий слайд: " + mainSlider.realIndex );
-
-if ( (mainSlider.realIndex + 1) > (mainSlider.slides.length - 3) ) {
-	var nextSlideNum = 0;
-} else {
-	var nextSlideNum = mainSlider.realIndex + 1;
+var slPrev = (mainSlider.realIndex - 1);
+if ( slPrev < 0 ) {
+	slPrev = (mainSlider.slides.length - 3);
 }
+console.log( 
+	"Предыдущий: " + slPrev
+);
 
-//console.log( "Номер следующего слайда: " + nextSlideNum );
+var nextSl = (mainSlider.realIndex + 1);
+if ( nextSl > (mainSlider.slides.length - 3) ) {
+	nextSl = 0;
+}
+console.log( 
+	"Следующий: " + nextSl
+);
+console.log( 
+	$("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]
+);
+
+console.log( 
+	"//--------------------------//"
+);
 
 
 
-//НУЖНО - предыдущий слайд
+//-------------------NEXT----------------------//
+// Забираем изображение из следующего слайда
+// Сначала удаляем старый следующий слайд
+$(".nextSlideMin").remove();
+
+// Затем ставим слайд, который теперь будет новым предыдущим
+$(".mainslider-controls-next").append( 
+	$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone().addClass("nextSlideMin")
+);
+//-------------------------------------------------//
+
+
+//-------------------PREVIOUS----------------------//
+// Забираем изображение из предыдущего слайда
 // Сначала удаляем старый предыдущий слайд
 $(".prevSlideMin").remove();
 
@@ -139,11 +142,10 @@ $(".prevSlideMin").remove();
 $(".mainslider-controls-prev").append( 
 	$(prev.find('.index_page-slider-item--image')[0]).clone().addClass("prevSlideMin")
 );
-
+//-------------------------------------------------//
 
 		$(image).css({display: 'none'});
 	})
-
 
 
 
