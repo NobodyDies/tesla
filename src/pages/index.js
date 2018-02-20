@@ -114,12 +114,9 @@ $(window).on('load', function(){
 
 		function addNewCtrlImg(firstRun) {
 			if (firstRun) {
-				console.log("First run!");
 				$(newNextImgWrap).append(newNext);
 				$(newPrevImgWrap).append(newPrev);
 			} else {
-				console.log("Эу!");
-
 				var elem1 = document.createElement("div")
 				var elem2 = document.createElement("div")
 				elem1.className = "mainslider-controls-next-img--wrap";
