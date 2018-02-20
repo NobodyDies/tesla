@@ -222,23 +222,49 @@
 			transform: translateY(-50%);
 			z-index: 10;
 
-			> div img {
-				width: 100px;
-				height: 100px;
+			&-next, &-prev {
+
+				display: flex;
+
+				&-img {
+					position: relative;
+					z-index: 1;
+					width: 100px;
+					height: 100px;
+					overflow: hidden;
+
+					img {
+						width: 100px;
+						height: 100px;
+						display: block;
+					}
+				}
+				svg {
+					position: relative;
+					z-index: 2;
+					margin: auto 0px;
+					width: 52px;
+					height: 26px;
+					fill: #ffffff;
+					cursor: pointer;
+					transition: all .2s ease-out;
+					-moz-transition: all .2s ease-out;
+					-webkit-transition: all .2s ease-out;
+					-o-transition: all .2s ease-out;
+
+					&:hover {
+						fill: #2096d0;
+					}
+				}
 			}
-
-			svg {
-				width: 52px;
-				height: 26px;
-				fill: #ffffff;
-				cursor: pointer;
-				transition: all .2s ease-out;
-				-moz-transition: all .2s ease-out;
-				-webkit-transition: all .2s ease-out;
-				-o-transition: all .2s ease-out;
-
-				&:hover {
-					fill: #2096d0;
+			&-next {
+				svg {
+					margin-right: -15px;
+				}
+			}
+			&-prev {
+				svg {
+					margin-left: -15px;
 				}
 			}
 		}

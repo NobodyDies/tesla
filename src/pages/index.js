@@ -105,12 +105,12 @@ $(window).on('load', function(){
 	function controlSlides() {
 
 		// Удаляем старые картинки следующего и предыдущего слайдов
-		$('.nextSlideMin').animate({ width: 0 }, 1000, 
+		$('.nextSlideMin').animate({ width: 0 }, 500, 
 			function() {
 				$(this).remove();
 		});
 
-		$('.prevSlideMin').animate({ width: 0 }, 1000, 
+		$('.prevSlideMin').animate({ width: 0 }, 500, 
 			function() {
 				$(this).remove();
 		});
@@ -125,7 +125,7 @@ $(window).on('load', function(){
 		if ( nextSl > (mainSlider.slides.length - 3) ) {
 			nextSl = 0;
 		}
-		$(".mainslider-controls-next").append( 
+		$(".mainslider-controls-next-img").append( 
 			$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone().addClass("nextSlideMin")
 		);
 		//-------------------------------------------------//
@@ -136,7 +136,7 @@ $(window).on('load', function(){
 		if ( slPrev < 0 ) {
 			slPrev = (mainSlider.slides.length - 3);
 		}
-		$(".mainslider-controls-prev").append( 
+		$(".mainslider-controls-prev-img").append( 
 			$($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone().addClass("prevSlideMin")
 		);
 		//-------------------------------------------------//
