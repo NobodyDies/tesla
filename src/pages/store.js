@@ -93,4 +93,115 @@ $( document ).ready(() => {
 	}); 
 
 
+	// Параллакс-эффект
+	$(function() {
+	  // init controller
+		var controller = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: "onEnter", 
+				duration: "70%"
+			}
+		});
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".store_page-heading", {
+							y: "40%", 
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+
+
+		// init controller
+		var controller2 = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: "onEnter", 
+				duration: "35%"
+			}
+		});
+
+		var makeOpaque = TweenMax.to(".store_page-heading-content-text", 1, {
+									opacity: 0,
+									y: "-100%",
+									ease: Linear.easeNone
+								});
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(makeOpaque)
+						.addTo(controller2);
+
+
+/*
+
+		// build scenes
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(".catalog_page-catalog-content", {
+							y: "200px", 
+							ease: Linear.easeNone
+						})
+						.addTo(controller);
+
+		// init controller
+		var controller2 = new ScrollMagic.Controller({
+			globalSceneOptions: {
+				triggerHook: "onEnter", 
+				duration: "35%"
+			}
+		});
+
+		//text animation with opacity
+		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
+									opacity: 0,
+									y: "-100%",
+									ease: Linear.easeNone
+								});
+
+		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
+						.setTween(makeOpaque)
+						.addTo(controller2);
+
+*/
+
+		//включение и выключение параллакса в зависимости от размера экрана (опираемся на media)
+		var breakpoint = window.matchMedia('(max-width:991px)');
+
+		var breakpointChecker = function breakpointChecker() {
+
+			if (breakpoint.matches === false) {
+
+				if (!controller.enabled()) {
+					controller.enabled(true);
+				}
+				if (!controller2.enabled()) {
+					controller2.enabled(true);
+				}
+				controller.update(true);
+				controller2.update(true);
+				return;
+
+			} else if ( breakpoint.matches === true ) {
+
+				if (controller.enabled()) {
+					controller.enabled(false);
+					//$(".catalog_page-catalog-content").removeAttr('style');
+					$(".store_page-heading").removeAttr('style');
+				}
+				if (controller2.enabled()) {
+					controller2.enabled(false);
+					$(".store_page-heading-content-text").removeAttr('style');
+				}
+				controller.update(true);
+				controller2.update(true);
+				return;
+			}
+		};
+
+		breakpoint.addListener(breakpointChecker);
+
+		breakpointChecker();
+
+	});
+
+
+
 });
