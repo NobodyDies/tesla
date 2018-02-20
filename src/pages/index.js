@@ -59,6 +59,7 @@ $(window).on('load', function(){
 		},
 		// Navigation arrows
 	});
+
 	mainSlider.on('slideChangeTransitionStart', () => {
 		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
 		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
@@ -102,16 +103,9 @@ $(window).on('load', function(){
 	// Слайды в стрелках управления главным слайдером
 	function controlSlides() {
 
-		// Удаляем старые картинки следующего и предыдущего слайдов
-		$('.nextSlideMin').animate({ width: 0 }, 500, 
-			function() {
-				$(this).remove();
-		});
-
-		$('.prevSlideMin').animate({ width: 0 }, 500, 
-			function() {
-				$(this).remove();
-		});
+		//Новый следующий и новый предыдущий слайды
+		var newNext = 0,
+			newPrev = 0;
 
 		// Всё нижеследующее опирается на то, что
 		// mainSlider.slides.length не показывает реального количества слайдов
@@ -123,9 +117,7 @@ $(window).on('load', function(){
 		if ( nextSl > (mainSlider.slides.length - 3) ) {
 			nextSl = 0;
 		}
-		$(".mainslider-controls-next-img").append( 
-			$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone().addClass("nextSlideMin")
-		);
+		newNext = $($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone();
 		//-------------------------------------------------//
 
 
@@ -134,10 +126,83 @@ $(window).on('load', function(){
 		if ( slPrev < 0 ) {
 			slPrev = (mainSlider.slides.length - 3);
 		}
-		$(".mainslider-controls-prev-img").append( 
-			$($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone().addClass("prevSlideMin")
-		);
+		newPrev = $($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone();
 		//-------------------------------------------------//
+
+
+		if ( $(".mainslider-controls-next-img-crnt img").length == 0 ) {
+			removeOldCtrlImg(true);
+		} else {
+			removeOldCtrlImg(false);
+		}
+
+
+
+
+function removeOldCtrlImg(firstRun) {
+	if (firstRun) {
+		console.log("First run!");
+		$(".mainslider-controls-next-img-wrap").append(newNext);
+		$(".mainslider-controls-prev-img-wrap").append(newPrev);
+	} else {
+		console.log("New!");
+
+
+
+
+
+
+	}
+}
+
+
+// Обёртки:
+// 1, 2) обёртки текущих изображений следующего и предыдущего слайда
+// 3, 4) обёртки новых изображений следующего и предыдущего слайда
+var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
+	currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
+	newNextImgWrap = ".mainslider-controls-next-img--wrap",
+	newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+
+
+
+var nextContainer = $(".mainslider-controls-next-img"),
+	prevContainer = $(".mainslider-controls-prev-img");
+
+
+
+
+// Убираем текущие картинки
+$(".mainslider-controls-next-img--wrap:first-child img").remove();
+$(".mainslider-controls-prev-img--wrap:first-child img").remove();
+
+
+// Двигаем текущие картинки
+$(".mainslider-controls-next-img--wrap:first-child").addClass("changeCtrlImg");
+$(".mainslider-controls-prev-img--wrap:first-child").addClass("changeCtrlImg");
+
+
+
+// Добавляем новые контейнеры для картинок
+$(".mainslider-controls-next-img").append(".mainslider-controls-next-img--wrap");
+$(".mainslider-controls-prev-img").append(".mainslider-controls-next-img--wrap");
+// Добавляем новые картинки
+$(".mainslider-controls-next-img--wrap:nth-child(2)").append(newNext);
+$(".mainslider-controls-prev-img--wrap:nth-child(2)").append(newPrev);
+
+
+
+
+
+/*
+$('.mainslider-controls-next-img-new').on('remOld', function() {
+	// Удаляем старые картинки следующего и предыдущего слайдов
+	$('.mainslider-controls-next-img-crnt img').remove();
+	$('.mainslider-controls-prev-img-crnt img').remove();
+});
+*/
+
+
 
 
 		//-----------------Всего слайдов-------------------//
