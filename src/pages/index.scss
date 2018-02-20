@@ -234,11 +234,27 @@
 					width: 100px;
 					height: 100px;
 					overflow: hidden;
+					display: flex;
 
-					img {
+					&-wrap {
+
 						width: 100px;
 						height: 100px;
-						display: block;
+
+						transition: all .2s ease-out;
+						-moz-transition: all .2s ease-out;
+						-webkit-transition: all .2s ease-out;
+						-o-transition: all .2s ease-out;
+
+						&.changeCtrlImg {
+							transform: translateX(-100%);
+						}
+
+						img {
+							width: 100px;
+							height: 100px;
+							display: block;
+						}
 					}
 				}
 				svg {
