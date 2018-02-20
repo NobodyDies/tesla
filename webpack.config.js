@@ -52,10 +52,7 @@ module.exports = {
 		loaders: [
 			{
 				test: /\.js$/,
-				include: [
-					path.resolve(__dirname, "src"),
-					path.resolve(__dirname, "node_modules/contain-cover")
-				],
+				exclude: /node_modules/,
 				use: [
 					{
 						loader: 'babel-loader',

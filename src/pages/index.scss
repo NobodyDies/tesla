@@ -236,10 +236,11 @@
 					overflow: hidden;
 					display: flex;
 
-					&-wrap {
+					&--wrap {
 
 						width: 100px;
 						height: 100px;
+						position: relative;
 
 						transition: all .2s ease-out;
 						-moz-transition: all .2s ease-out;
@@ -247,7 +248,7 @@
 						-o-transition: all .2s ease-out;
 
 						&.changeCtrlImg {
-							transform: translateX(-100%);
+							margin-left: -100px;
 						}
 
 						img {

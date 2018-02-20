@@ -63,6 +63,7 @@ $(window).on('load', function(){
 			nextEl: '.mainslider-controls-next',
 			prevEl: '.mainslider-controls-prev',
 		},
+		init: false
 		// Navigation arrows
 	});
 
@@ -103,7 +104,9 @@ $(window).on('load', function(){
 		var image = slide.find('.index_page-slider-item--image')[0];
 		$(image).css({display: 'block'});
 		slide.find('canvas').remove();
+		removeOldCtrlImg();
 	})
+
 
 
 	// Слайды в стрелках управления главным слайдером
@@ -138,116 +141,53 @@ $(window).on('load', function(){
 			$($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone();
 		//-------------------------------------------------//
 
-
-		if ( $(".mainslider-controls-next-img-crnt img").length == 0 ) {
-			removeOldCtrlImg(true);
+		if ( $(".mainslider-controls-next-img--wrap img").length == 0 ) {
+			addNewCtrlImg(true);
 		} else {
-			removeOldCtrlImg(false);
+			addNewCtrlImg(false);
 		}
 
+	var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
+		currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
+		newNextImgWrap = ".mainslider-controls-next-img--wrap",
+		newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+		nextContainer = ".mainslider-controls-next-img",
+		prevContainer = ".mainslider-controls-prev-img";
 
+		function addNewCtrlImg(firstRun) {
+			if (firstRun) {
+				console.log("First run!");
+				$(newNextImgWrap).append(newNext);
+				$(newPrevImgWrap).append(newPrev);
+			} else {
+				console.log("Эу!");
 
+				var elem1 = document.createElement("div")
+				var elem2 = document.createElement("div")
+				elem1.className = "mainslider-controls-next-img--wrap";
+				elem2.className = "mainslider-controls-prev-img--wrap";
 
-function removeOldCtrlImg(firstRun) {
-	if (firstRun) {
-		console.log("First run!");
-		$(".mainslider-controls-next-img-wrap").append(newNext);
-		$(".mainslider-controls-prev-img-wrap").append(newPrev);
-	} else {
-		console.log("New!");
+				$(elem1).append(newNext);
+				$(elem2).append(newPrev);
 
+				$(nextContainer).append(elem1);
+				$(prevContainer).append(elem2);
 
-
-
-
-
+				$(currentNextImgWrap).addClass("changeCtrlImg");
+				$(currentPrevImgWrap).addClass("changeCtrlImg");
+			}
+		}
 	}
-}
 
-
-// Обёртки:
-// 1, 2) обёртки текущих изображений следующего и предыдущего слайда
-// 3, 4) обёртки новых изображений следующего и предыдущего слайда
-var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
-	currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
-	newNextImgWrap = ".mainslider-controls-next-img--wrap",
-	newPrevImgWrap = ".mainslider-controls-prev-img--wrap";
-
-
-
-var nextContainer = $(".mainslider-controls-next-img"),
-	prevContainer = $(".mainslider-controls-prev-img");
-
-
-
-
-// Убираем текущие картинки
-$(".mainslider-controls-next-img--wrap:first-child img").remove();
-$(".mainslider-controls-prev-img--wrap:first-child img").remove();
-
-
-// Двигаем текущие картинки
-$(".mainslider-controls-next-img--wrap:first-child").addClass("changeCtrlImg");
-$(".mainslider-controls-prev-img--wrap:first-child").addClass("changeCtrlImg");
-
-
-
-// Добавляем новые контейнеры для картинок
-$(".mainslider-controls-next-img").append(".mainslider-controls-next-img--wrap");
-$(".mainslider-controls-prev-img").append(".mainslider-controls-next-img--wrap");
-// Добавляем новые картинки
-$(".mainslider-controls-next-img--wrap:nth-child(2)").append(newNext);
-$(".mainslider-controls-prev-img--wrap:nth-child(2)").append(newPrev);
-
-
-
-
-
-/*
-$('.mainslider-controls-next-img-new').on('remOld', function() {
-	// Удаляем старые картинки следующего и предыдущего слайдов
-	$('.mainslider-controls-next-img-crnt img').remove();
-	$('.mainslider-controls-prev-img-crnt img').remove();
-});
-*/
-
-
-
-
-		//-----------------Всего слайдов-------------------//
-		var allSl = (mainSlider.slides.length - 3);
-		console.log(
-			"Всего слайдов: " + allSl
-		);
-		//-------------------------------------------------//
-
-
-		//-----------------Мы на слайде N------------------//
-		var weAt = mainSlider.realIndex;
-		console.log(
-			"Где находимся: " + weAt
-		);
-		//-------------------------------------------------//
-
-		console.log(
-			"Предыдущий: " + slPrev
-		);
-		console.log(
-			"Следующий: " + nextSl
-		);
-		console.log(
-			$("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]
-		);
-
-		console.log(
-			"//--------------------------//"
-		);
-
+	function removeOldCtrlImg() {
+		$(currentNextImgWrap).remove();
+		$(currentPrevImgWrap).remove();
 	}
 
 	// Кидаем картинки слайдов в контролы при загрузке страницы
-	controlSlides();
+	mainSlider.on('init', controlSlides);
 
+	mainSlider.init();
 
 	// pagination position
 	var paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;
