@@ -171,7 +171,7 @@ function removeOldCtrlImg(firstRun) {
 var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
 	currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
 	newNextImgWrap = ".mainslider-controls-next-img--wrap",
-	newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+	newPrevImgWrap = ".mainslider-controls-prev-img--wrap";
 
 
 
