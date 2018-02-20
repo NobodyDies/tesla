@@ -219,6 +219,10 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'node_modules/scrollreveal/dist/scrollreveal.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollreveal')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/current-device/umd/current-device.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/current-device')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),

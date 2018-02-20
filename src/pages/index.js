@@ -1,6 +1,6 @@
-import { contain, cover } from "contain-cover";
+import {contain, cover} from "contain-cover";
 
-$( document ).ready(() => {
+$(document).ready(() => {
 
 	// Прилипание и прозрачность главного меню: переменные
 	// При загрузке страницы считаем высоту контейнера слайдера
@@ -8,12 +8,12 @@ $( document ).ready(() => {
 	var sliderheight = $('.index_page-slider').height();
 
 	// На ресайзе окна меняется и высота контейнера слайдера, учитываем это
-	$(window).on('resize', function(){
+	$(window).on('resize', function () {
 		sliderheight = $('.index_page-slider').height();
 	});
 
 	//Прилипание и прозрачность главного меню
-	$(window).scroll(function(){
+	$(window).scroll(function () {
 		if ($(window).scrollTop() >= (sliderheight - 60)) {
 			$('.navigation').removeClass('transparent');
 			$('.navigation').addClass('nav-fixed');
@@ -27,7 +27,7 @@ $( document ).ready(() => {
 });
 
 
-$(window).on('load', function(){
+$(window).on('load', function () {
 
 	// Masonry должен срабатывать только тогда, когда
 	// загружен контент, с которым он будет работать
@@ -36,177 +36,201 @@ $(window).on('load', function(){
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
+	var mainSlider;
+	if (device.default.mobile() || device.default.tablet()) {
+		mainSlider = new Swiper('.index_page-slider', {
+			// Optional parameters
+			autoplay: {
+				delay: 5000,
+			},
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			speed: 1000,
+			delay: 1000,
+			spaceBetween: 0,
+			simulateTouch: true,
+			allowTouchMove: true,
+			loop: true,
+			effect: 'slide',
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: false,
+			},
+		});
+	} else {
+		mainSlider = new Swiper('.index_page-slider', {
+			// Optional parameters
+			autoplay: {
+				delay: 5000,
+			},
+			slidesPerView: 1,
+			slidesPerGroup: 1,
+			speed: 1000,
+			delay: 1000,
+			spaceBetween: 0,
+			virtualTranslate: true,
+			simulateTouch: false,
+			allowTouchMove: false,
+			loop: true,
+			effect: 'fade',
+			fadeEffect: {
+				crossFade: true
+			},
+			pagination: {
+				el: ".swiper-pagination",
+				clickable: false,
+			},
+			navigation: {
+				nextEl: '.mainslider-controls-next',
+				prevEl: '.mainslider-controls-prev',
+			},
+			init: false
+			// Navigation arrows
+		});
 
-	window.mainSlider = new Swiper ('.index_page-slider', {
-		// Optional parameters
-		autoplay: {
-			delay: 5000,
-		},
-		slidesPerView: 1,
-		slidesPerGroup: 1,
-		speed: 1000,
-		delay: 1000,
-		spaceBetween: 0,
-		virtualTranslate: true,
-		simulateTouch: false,
-		allowTouchMove: false,
-		loop: true,
-		effect: 'fade',
-		fadeEffect: {
-			crossFade: true
-		},
-		pagination: {
-			el: ".swiper-pagination",
-			clickable: false,
-		},
-		navigation: {
-			nextEl: '.mainslider-controls-next',
-			prevEl: '.mainslider-controls-prev',
-		},
-		init: false
-		// Navigation arrows
-	});
+		var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
+			currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
+			newNextImgWrap = ".mainslider-controls-next-img--wrap",
+			newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+			nextContainer = ".mainslider-controls-next-img",
+			prevContainer = ".mainslider-controls-prev-img";
 
-	var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
-		currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
-		newNextImgWrap = ".mainslider-controls-next-img--wrap",
-		newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
-		nextContainer = ".mainslider-controls-next-img",
-		prevContainer = ".mainslider-controls-prev-img";
+		// Слайды в стрелках управления главным слайдером
+		function controlSlides() {
 
-	// Слайды в стрелках управления главным слайдером
-	function controlSlides() {
+			// Новый следующий и новый предыдущий слайды
+			var newNext = 0,
 
-		// Новый следующий и новый предыдущий слайды
-		var newNext = 0 ,
+				newPrev = 0;
 
-		newPrev = 0 ;
+			// Всё нижеследующее опирается на то, что
+			// mainSlider.slides.length не показывает реального количества слайдов
+			// и включает в себя два дубликата слайдов для анимаций и ведёт счёт слайдов
+			// не с нуля, а с единицы. Нам же нужна нумерация как в массивах, поэтому (- 3).
 
-		// Всё нижеследующее опирается на то, что
-		// mainSlider.slides.length не показывает реального количества слайдов
-		// и включает в себя два дубликата слайдов для анимаций и ведёт счёт слайдов
-		// не с нуля, а с единицы. Нам же нужна нумерация как в массивах, поэтому (- 3).
-
-		//-------------------NEXT----------------------//
-		var nextSl = (mainSlider.realIndex + 1);
-		if ( nextSl > (mainSlider.slides.length - 3) ) {
-			nextSl = 0;
-		}
-		newNext =
-			$($("[data-swiper-slide-index="+nextSl+"]").find('.index_page-slider-item--image')[0]).clone();
-		//-------------------------------------------------//
+			//-------------------NEXT----------------------//
+			var nextSl = (mainSlider.realIndex + 1);
+			if (nextSl > (mainSlider.slides.length - 3)) {
+				nextSl = 0;
+			}
+			newNext =
+				$($("[data-swiper-slide-index=" + nextSl + "]").find('.index_page-slider-item--image')[0]).clone();
+			//-------------------------------------------------//
 
 
-		//-------------------PREVIOUS----------------------//
-		var slPrev = (mainSlider.realIndex - 1);
-		if ( slPrev < 0 ) {
-			slPrev = (mainSlider.slides.length - 3);
-		}
-		newPrev =
-			$($("[data-swiper-slide-index="+slPrev+"]").find('.index_page-slider-item--image')[0]).clone();
-		//-------------------------------------------------//
+			//-------------------PREVIOUS----------------------//
+			var slPrev = (mainSlider.realIndex - 1);
+			if (slPrev < 0) {
+				slPrev = (mainSlider.slides.length - 3);
+			}
+			newPrev =
+				$($("[data-swiper-slide-index=" + slPrev + "]").find('.index_page-slider-item--image')[0]).clone();
+			//-------------------------------------------------//
 
-		if ( $(".mainslider-controls-next-img--wrap img").length == 0 ) {
-			addNewCtrlImg(true);
-		} else {
-			addNewCtrlImg(false);
-		}
+			if ($(".mainslider-controls-next-img--wrap img").length == 0) {
+				addNewCtrlImg(true);
+			} else {
+				addNewCtrlImg(false);
+			}
 
 		function addNewCtrlImg(firstRun) {
 			if (firstRun) {
+
 				$(newNextImgWrap).append(newNext);
 				$(newPrevImgWrap).append(newPrev);
 			} else {
+
+
 				var elem1 = document.createElement("div")
 				var elem2 = document.createElement("div")
 				elem1.className = "mainslider-controls-next-img--wrap";
 				elem2.className = "mainslider-controls-prev-img--wrap";
 
-				$(elem1).append(newNext);
-				$(elem2).append(newPrev);
+					$(elem1).append(newNext);
+					$(elem2).append(newPrev);
 
-				$(nextContainer).append(elem1);
-				$(prevContainer).append(elem2);
+					$(nextContainer).append(elem1);
+					$(prevContainer).append(elem2);
 
-				$(currentNextImgWrap).addClass("changeCtrlImg");
-				$(currentPrevImgWrap).addClass("changeCtrlImg");
+					$(currentNextImgWrap).addClass("changeCtrlImg");
+					$(currentPrevImgWrap).addClass("changeCtrlImg");
+				}
 			}
 		}
-	}
 
-	function removeOldCtrlImg() {
-		$(currentNextImgWrap).remove();
-		$(currentPrevImgWrap).remove();
-	}
+		function removeOldCtrlImg() {
+			$(currentNextImgWrap).remove();
+			$(currentPrevImgWrap).remove();
+		}
 
-	// Кидаем картинки слайдов в контролы при загрузке страницы
-	mainSlider.on('init', controlSlides);
+		// Кидаем картинки слайдов в контролы при загрузке страницы
+		mainSlider.on('init', controlSlides);
 //
-	mainSlider.init();
+		mainSlider.init();
 
-	mainSlider.on('slideChangeTransitionStart', () => {
-		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
-		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
-		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
-		slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
-		var image = slide.find('.index_page-slider-item--image')[0];
+		mainSlider.on('slideChangeTransitionStart', () => {
+			var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+			prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
+			var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+			slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
+			var image = slide.find('.index_page-slider-item--image')[0];
 
-		let { width, height, x, y } = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
+			let {width, height, x, y} = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
 
-		var canvas = document.createElement('canvas');
-		canvas.width = document.body.clientWidth;
-		canvas.height = window.innerHeight/2;
-		var ctx = canvas.getContext('2d');
-		ctx.drawImage(image, x, y, width, height);
-		slide.append(canvas);
+			var canvas = document.createElement('canvas');
+			canvas.width = document.body.clientWidth;
+			canvas.height = window.innerHeight / 2;
+			var ctx = canvas.getContext('2d');
+			ctx.drawImage(image, x, y, width, height);
+			slide.append(canvas);
 
-		var canvas2 = document.createElement('canvas');
-		canvas2.width = document.body.clientWidth;
-		canvas2.height = window.innerHeight/2;
-		var ctx2 = canvas2.getContext('2d');
-		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
-		slide.append(canvas2);
+			var canvas2 = document.createElement('canvas');
+			canvas2.width = document.body.clientWidth;
+			canvas2.height = window.innerHeight / 2;
+			var ctx2 = canvas2.getContext('2d');
+			ctx2.drawImage(image, x, -window.innerHeight / 2 + y, width, height);
+			slide.append(canvas2);
 
-		controlSlides();
+			controlSlides();
 
-		$(image).css({display: 'none'});
-	})
+			$(image).css({display: 'none'});
+		})
 
-
-	mainSlider.on('slideChangeTransitionEnd', () => {
-		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
-		prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
-		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
-		slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
-		var image = slide.find('.index_page-slider-item--image')[0];
-		$(image).css({display: 'block'});
-		slide.find('canvas').remove();
-		removeOldCtrlImg();
-	})
+		mainSlider.on('slideChangeTransitionEnd', () => {
+			var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+			prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
+			var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+			slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
+			var image = slide.find('.index_page-slider-item--image')[0];
+			$(image).css({display: 'block'});
+			slide.find('canvas').remove();
+			removeOldCtrlImg();
+		})
+	}
 
 	// pagination position
-	var paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;
-	$(".swiper-pagination").css( "left", (paginationPosition - 36) );
+	var paginationPosition = $(".navigation-logo")[0].getBoundingClientRect().right;
+	$(".swiper-pagination").css("left", (paginationPosition - 36));
 
 
 	// mainSlider controls position
-	var controlsPosition = $( ".basket" )[0].getBoundingClientRect().right;
-	$(".mainslider-controls").css( "left", (controlsPosition - 150) );
+	var controlsPosition = $(".basket")[0].getBoundingClientRect().right;
+	$(".mainslider-controls").css("left", (controlsPosition - 150));
 
 
-	$(window).on('resize', function(){
+	$(window).on('resize', function () {
 		// pagination position
-		paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;
-		$(".swiper-pagination").css( "left", (paginationPosition - 36) );
+		paginationPosition = $(".navigation-logo")[0].getBoundingClientRect().right;
+		$(".swiper-pagination").css("left", (paginationPosition - 36));
 
 		// mainSlider controls position
-		controlsPosition = $( ".basket" )[0].getBoundingClientRect().right;
-		$(".mainslider-controls").css( "left", (controlsPosition - 150) );
+		controlsPosition = $(".basket")[0].getBoundingClientRect().right;
+		$(".mainslider-controls").css("left", (controlsPosition - 150));
 	});
 
 
 	// Адаптивный слайдер популярных товаров
-	var mySwiper = new Swiper ('.swiper-container', {
+	var mySwiper = new Swiper('.swiper-container', {
 		// Optional parameters
 		autoplay: true,
 		slidesPerView: 3,
@@ -251,16 +275,16 @@ $(window).on('load', function(){
 
 	var breakpointChecker = function breakpointChecker() {
 
-	   if (breakpoint.matches === true) {
+		if (breakpoint.matches === true) {
 
-		  $('.catalog-link').appendTo('.index_page-popular-wrapper > .content-wrapper');
-		  return;
+			$('.catalog-link').appendTo('.index_page-popular-wrapper > .content-wrapper');
+			return;
 
-	   } else if (breakpoint.matches === false) {
+		} else if (breakpoint.matches === false) {
 
 			$('.catalog-link').appendTo('.popular-controls');
 			return;
-	   }
+		}
 	};
 
 	breakpoint.addListener(breakpointChecker);
@@ -269,8 +293,8 @@ $(window).on('load', function(){
 
 
 	// Параллакс-эффект для слайдера популярных товаров
-	$(function() {
-	  // init controller
+	$(function () {
+		// init controller
 		var controller = new ScrollMagic.Controller({
 			globalSceneOptions: {
 				triggerHook: "onEnter",
@@ -280,11 +304,11 @@ $(window).on('load', function(){
 
 		// build scenes
 		new ScrollMagic.Scene({triggerElement: ".index_page-popular"})
-						.setTween("#parallaxme", {
-							y: "-30px",
-							ease: Cubic.easeIn
-						})
-						.addTo(controller);
+			.setTween("#parallaxme", {
+				y: "-30px",
+				ease: Cubic.easeIn
+			})
+			.addTo(controller);
 	});
 
 });
