@@ -1,13 +1,13 @@
-$( document ).ready((e) => {
+$(document).ready((e) => {
 
 	// "Этапы" оплаты. Делаем всё как в макете.
 	$('#next-step').click(function (e) {
 		$('.basket_page-content-right').slideUp();
 		$('.basket_page-content-left').slideDown();
 
-		$('.basket_page-content-right').addClass( "hidden-basket" );
+		$('.basket_page-content-right').addClass("hidden-basket");
 
-		window.scrollTo(0,0);
+		window.scrollTo(0, 0);
 	});
 
 	/* Маска для ввода номера телефона */

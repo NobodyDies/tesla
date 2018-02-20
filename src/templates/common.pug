@@ -58,22 +58,23 @@ html(lang="ru")
 		script(src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js')
 		script(src='/assets/js/scrollmagic/ScrollMagic.min.js')
 		script(src='/assets/js/scrollmagic/animation.gsap.min.js')
+		script(src='/assets/js/scrollreveal/scrollreveal.min.js')
 		script.
 			objectFitImages();
 		script.
 			// Мобильное меню (открытие и затемнение остального контента)
-			$('.navigation-mobile > .navbar-toggle').on('click', function() {
+			$('.navigation-mobile > .navbar-toggle').on('click', function () {
 
 				$('.navigation-mobile').toggleClass('navigation-mobile-opened');
 
-				if ( $('.navigation-mobile').hasClass('navigation-mobile-opened') ) {
+				if ($('.navigation-mobile').hasClass('navigation-mobile-opened')) {
 
 					$(".darkness").css({display: "block"});
 					$(".darkness").animate({opacity: "0.5"}, 200);
 
 				} else {
 
-					$(".darkness").animate({opacity: "0"}, 200, function() {
+					$(".darkness").animate({opacity: "0"}, 200, function () {
 						$(".darkness").css({display: "none"});
 					});
 
@@ -81,11 +82,11 @@ html(lang="ru")
 			});
 
 			// Закрытие меню по клику в область затемнённого контента
-			$('.darkness').on('click', function() {
+			$('.darkness').on('click', function () {
 
 				$('.navigation-mobile').removeClass('navigation-mobile-opened');
 
-				$(".darkness").animate({opacity: "0"}, 200, function() {
+				$(".darkness").animate({opacity: "0"}, 200, function () {
 					$(".darkness").css({display: "none"});
 				});
 			});
@@ -103,7 +104,7 @@ html(lang="ru")
 
 				} else if (breakpoint.matches === true) {
 
-					if ( $(".navigation-mobile").hasClass("navigation-mobile-opened") ) {
+					if ($(".navigation-mobile").hasClass("navigation-mobile-opened")) {
 
 						$(".darkness").css({display: "block", opacity: 0.5});
 					} else {
@@ -120,38 +121,35 @@ html(lang="ru")
 			/* Preloader */
 
 			$(window).on('load', function () {
-
-
-			    var $preloader = $('.page-preloader'),
-			        $spinner   = $preloader.find('.preloader');
-
-				    $spinner.fadeOut();
-				    $preloader.delay(500).fadeOut('slow');
+				var $preloader = $('.page-preloader'),
+					$spinner = $preloader.find('.preloader');
+				$spinner.fadeOut();
+				$preloader.delay(500).fadeOut('slow');
 			});
 		script.
 			// Анимация полоски для кнопки "Подробнее"
 			// Сначала проверяем, есть ли такой блок, 
 			// затем - вешаем класс для анимации
 
-			if( $(".link-more-info").length ) {
+			if ($(".link-more-info").length) {
 				$(".link-more-info").hover(
 					function () {
 						$(".link-more-info div span").removeClass('link-more-out').addClass('link-more-over');
 					},
-				    function () {
+					function () {
 						$(".link-more-info div span").removeClass('link-more-over').addClass('link-more-out');
 					}
 				);
 			}
 		script.
 			// Анимация открытия корзины
-			$('.basket').on('click', function() {
+			$('.basket').on('click', function () {
 
 				$(this).toggleClass('basket-opened');
 
-				if( $(this).hasClass('basket-opened') ) {
+				if ($(this).hasClass('basket-opened')) {
 
-					var basketHeight = -( $(".basket-goods-panel").height() );
+					var basketHeight = -($(".basket-goods-panel").height());
 					$(".basket-goods-panel").css({bottom: basketHeight + "px", opacity: 1});
 
 				} else {
@@ -160,18 +158,18 @@ html(lang="ru")
 			});
 		script.
 			// Скроллбар внутри корзины (корзина в меню)
-			(function($){
-				$(window).on("load",function(){
+			(function ($) {
+				$(window).on("load", function () {
 					$(".basket-wrapper ul.basket-goods").mCustomScrollbar({
 						setHeight: 377,
 						scrollEasing: "linear",
-						theme:"minimal-dark"
+						theme: "minimal-dark"
 					});
 				});
 			})(jQuery);
 		script.
 			// Раскрытие вложенных меню в футере
-			$('ul.footer-top-mobile li > a').click(function(e){
+			$('ul.footer-top-mobile li > a').click(function (e) {
 
 				e.preventDefault();
 
@@ -181,8 +179,8 @@ html(lang="ru")
 			});
 		script.
 			// Анимация звёздочек у товаров (добавление товара в избранное)
-			if ( $('.item-star').length ) {
-				$('.item-star').click(function(){
+			if ($('.item-star').length) {
+				$('.item-star').click(function () {
 
 					$(this).toggleClass("star-checked");
 				});

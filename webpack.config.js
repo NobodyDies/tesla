@@ -215,6 +215,10 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'node_modules/scrollmagic/scrollmagic/minified/plugins/animation.gsap.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollmagic')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/scrollreveal/dist/scrollreveal.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/scrollreveal')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),
