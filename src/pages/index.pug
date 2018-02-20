@@ -9,20 +9,68 @@ block vars
 block append content
 	.index_page
 		.index_page-slider
-			img(
-			src="/assets/img/slider_main.png"
-			)
-			//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
-			//sizes="(max-width: 991px) 50vw, 992px"
-			.center-wrapper
-				.index_page-slider-content
-					h1 Гаджеты, которые упростят вашу жизнь
-					span Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов. Сверхпрочный кабель Tesla с магнитным коннектором невероятно долговечен
-					br
-					br
-					a(href="/store.html").link-more-info Подробнее
-						div
-							span
+			.index_page-slider-wrapper.swiper-wrapper
+				.index_page-slider-item.swiper-slide
+					img.index_page-slider-item--image(
+					src="/assets/img/slider_main.png"
+					)
+					//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
+					//sizes="(max-width: 991px) 50vw, 992px"
+					.center-wrapper
+						.index_page-slider-content
+							.index_page-slider-content-top
+								h1 Гаджеты, которые упростят вашу жизнь
+							.index_page-slider-content-bottom
+								span Мы создали самый удобный и надёжный кабель для iPhone и Android смартфонов. Сверхпрочный кабель Tesla с магнитным коннектором невероятно долговечен.
+								br
+								br
+								a(href="/store.html").link-more-info Подробнее
+									div
+										span
+				.index_page-slider-item.swiper-slide
+					img.index_page-slider-item--image(
+					src="/assets/img/index-slide2.png"
+					)
+					//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
+					//sizes="(max-width: 991px) 50vw, 992px"
+					.center-wrapper
+						.index_page-slider-content
+							.index_page-slider-content-top
+								h1 Все ваши данные в полной безопасности
+							.index_page-slider-content-bottom
+								span Вам больше не стоит беспокоиться о потере фотографий с отпуска или важных данных проекта с работы. Tesla дарит вам спокойствие и надёжность.
+								br
+								br
+								a(href="#").link-more-info Подробнее
+									div
+										span
+				.index_page-slider-item.swiper-slide
+					img.index_page-slider-item--image(
+					src="/assets/img/index-slide3.png"
+					)
+					//srcset="/assets/img/slider_main_phone.png 320w, /assets/img/slider_main_phone.png 992w"
+					//sizes="(max-width: 991px) 50vw, 992px"
+					.center-wrapper
+						.index_page-slider-content
+							.index_page-slider-content-top
+								h1 Третий слайд прекрасен как никогда ранее
+							.index_page-slider-content-bottom
+								span Мы создали самый удобный и надёжный слайд номер три. Все ваши слайды отныне и навсегда в полной безопасности и тотальной адаптивности. Нам пришлось всей душой полюбить и освоить canvas, Swiper Slider и магию Хогвартса.
+								br
+								br
+								a(href="#").link-more-info Подробнее
+									div
+										span
+
+			.swiper-pagination
+
+			.mainslider-controls
+				.mainslider-controls-next
+					+icon('main-arrow-left','')
+					.mainslider-controls-next-img
+				.mainslider-controls-prev
+					.mainslider-controls-prev-img
+					+icon('main-arrow-right','')
 
 			.index_page-slider-bottom
 				.copyright © 2017 Tesla Goods Co. ltd
