@@ -64,11 +64,10 @@ block append content
 
 			.swiper-pagination
 			.mainslider-controls
-				.mainslider-controls-next next:
-				.mainslider-controls-prev prev: 
-
-				+icon('main-arrow-left','')
-				+icon('main-arrow-right','')
+				.mainslider-controls-next(style="color: red") next:
+					+icon('main-arrow-left','')
+				.mainslider-controls-prev(style="color: red") prev: 
+					+icon('main-arrow-right','')
 
 			.index_page-slider-bottom
 				.copyright © 2017 Tesla Goods Co. ltd

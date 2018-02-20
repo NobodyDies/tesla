@@ -105,8 +105,15 @@ $(window).on('load', function(){
 	function controlSlides() {
 
 		// Удаляем старые картинки следующего и предыдущего слайдов
-		$(".nextSlideMin").remove();
-		$(".prevSlideMin").remove();
+		$('.nextSlideMin').animate({ width: 0 }, 1000, 
+			function() {
+				$(this).remove();
+		});
+
+		$('.prevSlideMin').animate({ width: 0 }, 1000, 
+			function() {
+				$(this).remove();
+		});
 
 		// Всё нижеследующее опирается на то, что
 		// mainSlider.slides.length не показывает реального количества слайдов
