@@ -139,11 +139,19 @@
 			&-top {
 				display: flex;
 				height: 50%;
+
+				@media screen and (max-width: 991px) {
+					padding: 0 17px;
+				}
 			}
 			&-bottom {
 				display: flex;
 				flex-direction: column;
 				height: 50%;
+
+				@media screen and (max-width: 991px) {
+					padding: 0 17px 10px;
+				}
 			}
 			h1 {
 				font-size: 60px;
