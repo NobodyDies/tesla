@@ -67,47 +67,12 @@ $(window).on('load', function(){
 		// Navigation arrows
 	});
 
-	mainSlider.on('slideChangeTransitionStart', () => {
-		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
-		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
-		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
-		slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
-		var image = slide.find('.index_page-slider-item--image')[0];
-
-		let { width, height, x, y } = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
-
-		var canvas = document.createElement('canvas');
-		canvas.width = document.body.clientWidth;
-		canvas.height = window.innerHeight/2;
-		var ctx = canvas.getContext('2d');
-		ctx.drawImage(image, x, y, width, height);
-		slide.append(canvas);
-
-		var canvas2 = document.createElement('canvas');
-		canvas2.width = document.body.clientWidth;
-		canvas2.height = window.innerHeight/2;
-		var ctx2 = canvas2.getContext('2d');
-		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
-		slide.append(canvas2);
-
-		controlSlides();
-
-		$(image).css({display: 'none'});
-	})
-
-
-	mainSlider.on('slideChangeTransitionEnd', () => {
-		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
-		prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
-		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
-		slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
-		var image = slide.find('.index_page-slider-item--image')[0];
-		$(image).css({display: 'block'});
-		slide.find('canvas').remove();
-		removeOldCtrlImg();
-	})
-
-
+	var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
+		currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
+		newNextImgWrap = ".mainslider-controls-next-img--wrap",
+		newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+		nextContainer = ".mainslider-controls-next-img",
+		prevContainer = ".mainslider-controls-prev-img";
 
 	// Слайды в стрелках управления главным слайдером
 	function controlSlides() {
@@ -147,13 +112,6 @@ $(window).on('load', function(){
 			addNewCtrlImg(false);
 		}
 
-	var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
-		currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
-		newNextImgWrap = ".mainslider-controls-next-img--wrap",
-		newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
-		nextContainer = ".mainslider-controls-next-img",
-		prevContainer = ".mainslider-controls-prev-img";
-
 		function addNewCtrlImg(firstRun) {
 			if (firstRun) {
 				console.log("First run!");
@@ -186,8 +144,48 @@ $(window).on('load', function(){
 
 	// Кидаем картинки слайдов в контролы при загрузке страницы
 	mainSlider.on('init', controlSlides);
-
+//
 	mainSlider.init();
+
+	mainSlider.on('slideChangeTransitionStart', () => {
+		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+		prev.css({opacity: 1, 'z-index': 0}).addClass('removing').removeClass('inserting');
+		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+		slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
+		var image = slide.find('.index_page-slider-item--image')[0];
+
+		let { width, height, x, y } = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
+
+		var canvas = document.createElement('canvas');
+		canvas.width = document.body.clientWidth;
+		canvas.height = window.innerHeight/2;
+		var ctx = canvas.getContext('2d');
+		ctx.drawImage(image, x, y, width, height);
+		slide.append(canvas);
+
+		var canvas2 = document.createElement('canvas');
+		canvas2.width = document.body.clientWidth;
+		canvas2.height = window.innerHeight/2;
+		var ctx2 = canvas2.getContext('2d');
+		ctx2.drawImage(image, x, -window.innerHeight/2+y, width, height);
+		slide.append(canvas2);
+
+		controlSlides();
+
+		$(image).css({display: 'none'});
+	})
+
+
+	mainSlider.on('slideChangeTransitionEnd', () => {
+		var prev = $(mainSlider.slides[mainSlider.previousIndex]);
+		prev.css({opacity: 0, 'z-index': 0}).removeClass('removing').removeClass('inserting');
+		var slide = $(mainSlider.slides[mainSlider.activeIndex]);
+		slide.css({opacity: 1, 'z-index': 1}).removeClass('removing').removeClass('inserting');
+		var image = slide.find('.index_page-slider-item--image')[0];
+		$(image).css({display: 'block'});
+		slide.find('canvas').remove();
+		removeOldCtrlImg();
+	})
 
 	// pagination position
 	var paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;

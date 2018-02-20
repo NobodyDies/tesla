@@ -242,10 +242,10 @@
 						height: 100px;
 						position: relative;
 
-						transition: all .2s ease-out;
-						-moz-transition: all .2s ease-out;
-						-webkit-transition: all .2s ease-out;
-						-o-transition: all .2s ease-out;
+						transition: all .5s ease-in;
+						-moz-transition: all .5s ease-in;
+						-webkit-transition: all .5s ease-in;
+						-o-transition: all .5s ease-in;
 
 						&.changeCtrlImg {
 							margin-left: -100px;
