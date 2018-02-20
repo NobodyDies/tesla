@@ -131,37 +131,6 @@ $( document ).ready(() => {
 						.addTo(controller2);
 
 
-/*
-
-		// build scenes
-		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
-						.setTween(".catalog_page-catalog-content", {
-							y: "200px", 
-							ease: Linear.easeNone
-						})
-						.addTo(controller);
-
-		// init controller
-		var controller2 = new ScrollMagic.Controller({
-			globalSceneOptions: {
-				triggerHook: "onEnter", 
-				duration: "35%"
-			}
-		});
-
-		//text animation with opacity
-		var makeOpaque = TweenMax.to(".catalog_page-heading-content-text", 1, {
-									opacity: 0,
-									y: "-100%",
-									ease: Linear.easeNone
-								});
-
-		new ScrollMagic.Scene({triggerElement: "#parallaxanchor"})
-						.setTween(makeOpaque)
-						.addTo(controller2);
-
-*/
-
 		//включение и выключение параллакса в зависимости от размера экрана (опираемся на media)
 		var breakpoint = window.matchMedia('(max-width:991px)');
 
