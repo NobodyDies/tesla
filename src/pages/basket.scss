@@ -3,6 +3,16 @@
 	padding-top: 120px;
 	padding-bottom: 80px;
 
+	&-content-wrapper.content-wrapper {
+
+		@media screen and (max-width: 991px) {
+			padding: 15px;
+		}
+		@media screen and (max-width: 767px) {
+			padding: 0px;
+		}
+	}
+
 	@media screen and (max-width: 991px) {
 		padding-top: 60px;
 		padding-bottom: 0px;
@@ -21,6 +31,16 @@
 	input[type=text]::placeholder {color:#666666;}
 
 	.basket_page-content {
+
+		.col-sm-4.col-xs-12 {
+			@media screen and (max-width: 991px) {
+				padding-left: 0px;
+			}
+			@media screen and (max-width: 767px) {
+				padding-left: 15px;
+			}
+		}
+
 		&-left,
 		&-right {
 			background: #ffffff;
@@ -29,7 +49,7 @@
 			padding: 0px 40px 20px;
 
 			@media screen and (max-width: 991px) {
-				padding: 10px 40px 20px;
+				padding: 10px 20px 20px;
 			}
 			@media screen and (max-width: 767px) {
 				padding: 0px 20px 20px;
@@ -233,6 +253,7 @@
 			}
 			.basket_page-content-left-wrap {
 				display: none;
+
 				@media screen and (max-width: 767px) {
 					display: block;
 				}
@@ -278,8 +299,12 @@
 		.item-top {
 			clear: both;
 			display: flex;
-			justify-content: flex-start;
+			justify-content: space-between;
 			position: relative;
+
+			@media screen and (max-width: 767px) {
+				justify-content: flex-start;
+			}
 		}
 		.item-img {
 			width: 60px;
@@ -316,18 +341,13 @@
 			padding-top: 6px;
 		}
 		.item-delete {
-			margin-left: 5px;
+			margin-left: 10px;
 			width: 12px;
 			height: 14px;
 			vertical-align: top;
 			line-height: 0;
-			margin-left: auto;
 			flex-grow: 0;
 			flex-shrink: 0;
-
-			> a {
-				margin-left: 10px;
-			}
 		}
 		.item-bottom {
 			font-size: 0;
