@@ -54,8 +54,8 @@ $(window).on('load', function(){
 			clickable: false,
 		},
 		navigation: {
-			nextEl: '.icon-main-arrow-left',
-			prevEl: '.icon-main-arrow-right',
+			nextEl: '.mainslider-controls-next',
+			prevEl: '.mainslider-controls-prev',
 		},
 		// Navigation arrows
 	});
@@ -86,8 +86,6 @@ $(window).on('load', function(){
 
 		$(image).css({display: 'none'});
 	})
-
-
 
 
 	mainSlider.on('slideChangeTransitionEnd', () => {
@@ -176,13 +174,25 @@ $(window).on('load', function(){
 	// Кидаем картинки слайдов в контролы при загрузке страницы
 	controlSlides();
 
+
 	// pagination position
-	var p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
-	$(".swiper-pagination").css( "left", (p - 36) );
+	var paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;
+	$(".swiper-pagination").css( "left", (paginationPosition - 36) );
+
+
+	// mainSlider controls position
+	var controlsPosition = $( ".basket" )[0].getBoundingClientRect().right;
+	$(".mainslider-controls").css( "left", (controlsPosition - 150) );
+
 
 	$(window).on('resize', function(){
-		p = $( ".navigation-logo" )[0].getBoundingClientRect().right;
-		$(".swiper-pagination").css( "left", (p - 36) );
+		// pagination position
+		paginationPosition = $( ".navigation-logo" )[0].getBoundingClientRect().right;
+		$(".swiper-pagination").css( "left", (paginationPosition - 36) );
+
+		// mainSlider controls position
+		controlsPosition = $( ".basket" )[0].getBoundingClientRect().right;
+		$(".mainslider-controls").css( "left", (controlsPosition - 150) );
 	});
 
 

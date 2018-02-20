@@ -221,10 +221,12 @@
 			top: 50%;
 			transform: translateY(-50%);
 			z-index: 10;
+			width: 150px;
 
 			&-next, &-prev {
 
 				display: flex;
+				cursor: pointer;
 
 				&-img {
 					position: relative;
@@ -251,21 +253,39 @@
 					-moz-transition: all .2s ease-out;
 					-webkit-transition: all .2s ease-out;
 					-o-transition: all .2s ease-out;
-
-					&:hover {
+				}
+				&:hover {
+					svg {
 						fill: #2096d0;
 					}
 				}
 			}
 			&-next {
+				justify-content: flex-end;
+
 				svg {
 					margin-right: -15px;
+				}
+
+				&:hover {
+					svg {
+						margin-right: -10px;
+					}
 				}
 			}
 			&-prev {
 				svg {
 					margin-left: -15px;
 				}
+
+				&:hover {
+					svg {
+						margin-left: -10px;
+					}
+				}
+			}
+			@media screen and (max-width: 991px) {
+				display: none;
 			}
 		}
 
