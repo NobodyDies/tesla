@@ -1,5 +1,12 @@
 #parallaxanchor { position: absolute; top: 100%; }
 
+body.ie {
+	.store_page-category h2,
+	.store_page-info .content-wrapper h2 {
+		font-weight: 400;
+	}
+}
+
 .store_page {
 	background: rgba(244,242,242,1);
 
