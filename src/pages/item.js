@@ -41,6 +41,21 @@ $(document).ready(() => {
 		// Swiper instances on one page.
 	});
 
+	// Переключатель активного класса миниатюрок слайдера
+	mySwiper.on('slideChangeTransitionEnd', () => {
+
+		var weAt = mySwiper.realIndex,
+			littleImage = $(".item_page-slider-thumbs .item_page-slider-thumbs-img");
+
+		if ( $(littleImage[weAt]).hasClass("is-active") ) {
+
+		} else {
+			littleImage.removeClass("is-active");
+		}
+
+		$(littleImage[weAt]).addClass("is-active");
+	});
+
 	// Анимация звёздочки у товара (добавить в избранное)
 	$('.item_page-item-basket-star').on('click', function () {
 		$(this).toggleClass('star-set');
