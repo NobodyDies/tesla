@@ -186,6 +186,16 @@ html(lang="ru")
 					$(this).toggleClass("star-checked");
 				});
 			}
+		script.
+			if (/MSIE 9/i.test(navigator.userAgent) || /rv:11.0/i.test(navigator.userAgent)) {
+				// This is IE
+				$("html body").addClass("ie");
+			}
+
+			if (/Edge\/\d./i.test(navigator.userAgent)){
+				// This is Microsoft Edge
+				$("html body").addClass("ie");
+			}
 		block appScripts
 
 
