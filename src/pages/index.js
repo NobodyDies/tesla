@@ -36,6 +36,7 @@ $(window).on('load', function () {
 		percentPosition: true,
 		columnWidth: '.grid-sizer'
 	});
+
 	var mainSlider;
 	if (device.default.mobile() || device.default.tablet()) {
 		mainSlider = new Swiper('.index_page-slider', {

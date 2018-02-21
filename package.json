@@ -22,9 +22,10 @@
     "masonry-layout": "^4.2.0",
     "parallax-js": "^3.1.0",
     "scrollmagic": "^2.0.5",
+    "scrollreveal": "^3.3.6",
     "slick-carousel": "^1.8.1",
-    "swiper-thumbnails": "^1.0.5",
-    "scrollreveal": "^3.3.6"
+    "swiper": "^4.1.6",
+    "swiper-thumbnails": "^1.0.5"
   },
   "devDependencies": {
     "autoprefixer-loader": "^3.2.0",

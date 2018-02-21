@@ -223,6 +223,14 @@ module.exports = {
 			{
 				from: path.resolve(__dirname, 'node_modules/current-device/umd/current-device.min.js'),
 				to: path.resolve(__dirname, buildFolder + '/assets/js/current-device')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/swiper/dist/js/swiper.min.js'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/swiper')
+			},
+			{
+				from: path.resolve(__dirname, 'node_modules/swiper/dist/css/swiper.min.css'),
+				to: path.resolve(__dirname, buildFolder + '/assets/js/swiper')
 			}
 		]),
 		new webpack.NoEmitOnErrorsPlugin(),
