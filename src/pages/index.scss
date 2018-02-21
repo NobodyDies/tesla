@@ -125,15 +125,14 @@
 			.link-more-info  {
 				margin-top: 23px;
 				max-width: 180px;
+				font-size: 11px;
 			}
 
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: 767px) {
 				.link-more-info {
-					font-size: 15px;
+					margin-top: 18px;
+					font-weight: 400;
 				}
-			}
-
-			@media screen and (max-width: 600px) {
 			}
 
 			&-top {
@@ -159,23 +158,29 @@
 				font-weight: 300;
 				margin-bottom: 15px;
 				align-self: flex-end;
+
 				@media screen and (max-width: 1090px) {
 					font-size: 50px;
 				}
 
 				@media screen and (max-width: 991px) {
 				  font-size: 30px;
-				  line-height: 50px;
+				  line-height: 35px;
 				}
 			}
 
-			span {
+			span, p {
 				font-size: 18px;
 				line-height: 30px;
 
 				@media screen and (max-width: 991px) {
 					font-size: 15px;
-					line-height: 30px;
+					line-height: 19px;
+				}
+				@media screen and (max-width: 767px) {
+					font-size: 14px;
+					line-height: 25px;
+					font-weight: 300;
 				}
 			}
 		}
