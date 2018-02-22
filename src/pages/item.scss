@@ -189,7 +189,7 @@
 			color: #666666;
 
 			@media screen and (max-width: 767px) {
-				order: 2;
+				order: 1;
 				padding: 25px 20px 8px;
 			}
 		}
@@ -202,7 +202,7 @@
 			@media screen and (max-width: 767px) {
 				padding: 0px 20px;
 				margin-top: 8px;
-				order: 3;
+				order: 2;
 			}
 
 			span {
@@ -290,7 +290,7 @@
 
 		&-length {
 			@media screen and (max-width: 767px) {
-				order: 4;
+				order: 3;
 			}
 		}
 
@@ -298,7 +298,7 @@
 			margin-top: 18px;
 
 			@media screen and (max-width: 767px) {
-				order: 6;
+				order: 5;
 			}
 		}
 
@@ -307,7 +307,7 @@
 			justify-content: flex-start;
 
 			@media screen and (max-width: 767px) {
-				order: 5;
+				order: 4;
 				width: 100%;
 				padding: 0px 20px;
 			}
@@ -331,9 +331,10 @@
 
 		&-basket-wrap {
 			@media screen and (max-width: 767px) {
-				order: 1;
+				order: 6;
 				background: #ffffff;
 				width: 100%;
+				margin-top: 19px;
 			}
 		}
 
@@ -405,11 +406,9 @@
 				}
 
 				@media screen and (max-width: 767px) {
-					margin-top: 20px;
 					width: 100%;
 					display: flex;
 					justify-content: center;
-					border-top: 1px solid #e2e0e0;
 
 					.catalog-link {
 						margin: 30px;
