@@ -657,3 +657,14 @@
         transform: translateY(0);
     } 
 }
+
+
+	// temporarily
+	.navigation .navigation-mobile .navigation-mobile-panel .delivery-city,
+	.navigation .left-menu > li.language-switcher,
+	.navigation .left-menu > li.delivery-city {
+		display: none;
+	}
+	.navigation .navigation-mobile .navigation-mobile-panel .main-nav {
+		margin-top: 60px;
+	}
