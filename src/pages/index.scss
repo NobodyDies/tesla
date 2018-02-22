@@ -393,6 +393,22 @@
 				display: flex;
 				justify-content: space-between;
 
+				> div {
+					transition: color .2s ease-out;
+					-moz-transition: color .2s ease-out;
+					-webkit-transition: color .2s ease-out;
+					-o-transition: color .2s ease-out;
+				}
+
+				&:focus,
+				&:hover,
+				&:active {
+					> div {
+						text-decoration: none;
+						color: #2096d0;
+					}
+				}
+
 				@media screen and (max-width: 600px) {
 					padding: 20px;
 					font-size: 20px;
