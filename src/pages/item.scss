@@ -9,7 +9,7 @@
 	}
 
 	@media screen and (max-width: 767px) {
-		padding-top: 66px;
+		padding-top: 60px;
 
 		.content-wrapper {
 			padding: 0px;
@@ -150,7 +150,7 @@
 			@media screen and (max-width: 767px) {
 				display: flex;
 				justify-content: space-between;
-				padding: 20px;
+				padding: 26px;
 			}
 
 			h1 {
@@ -176,6 +176,8 @@
 				@media screen and (max-width: 767px) {
 					font-size: 20px;
 					margin: 0px;
+					font-weight: 300;
+					line-height: 1.1;
 				}
 
 				> span {
