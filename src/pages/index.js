@@ -54,7 +54,7 @@ $(window).on('load', function () {
 			effect: 'slide',
 			pagination: {
 				el: ".swiper-pagination",
-				clickable: false,
+				clickable: true,
 			},
 		});
 	} else {
@@ -78,13 +78,14 @@ $(window).on('load', function () {
 			},
 			pagination: {
 				el: ".swiper-pagination",
-				clickable: false,
+				clickable: true,
 			},
 			navigation: {
 				nextEl: '.mainslider-controls-next',
 				prevEl: '.mainslider-controls-prev',
 			},
-			init: false
+			init: false,
+			preventIntercationOnTransition: true
 			// Navigation arrows
 		});
 
