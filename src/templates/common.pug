@@ -196,6 +196,11 @@ html(lang="ru")
 				// This is Microsoft Edge
 				$("html body").addClass("ie");
 			}
+
+			if (/(?!Chrom.*OPR)Chrom(?:e|ium)\/([0-9\.]+)(:?\s|$)/i.test(navigator.userAgent)){
+				// This is Chrome
+				$("html body").addClass("chrm");
+			}
 		block appScripts
 
 

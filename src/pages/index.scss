@@ -1,3 +1,9 @@
+body.chrm {
+	.mainslider-controls-next {
+		margin-top: -2px;
+	}
+}
+
 @keyframes slider-first-half {
 	0% {
 		transform: translateX(100%)
