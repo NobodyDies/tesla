@@ -213,6 +213,8 @@ ul, li {
 
 .catalog-link {
 	color: #2096d0;
+	user-select: none;
+
 	@media screen and (max-width: 991px) {
 		display: block;
 		align-self: center;

@@ -234,17 +234,20 @@ $(window).on('load', function () {
 	var mySwiper = new Swiper('.swiper-container', {
 		// Optional parameters
 		autoplay: true,
+		autoplay: {
+			delay: 7000,
+		},
 		slidesPerView: 3,
-		slidesPerGroup: 3,
-		speed: 9000,
-		delay: 20000,
+		slidesPerGroup: 1,
+		speed: 600,
+		delay: 7000,
 		spaceBetween: 40,
 		loop: true,
 		breakpoints: {
 			1160: {
 				spaceBetween: 40,
 				slidesPerView: 2,
-				slidesPerGroup: 2
+				slidesPerGroup: 1
 			},
 			991: {
 				spaceBetween: 40,
@@ -254,12 +257,13 @@ $(window).on('load', function () {
 			788: {
 				spaceBetween: 1,
 				slidesPerView: 3,
-				slidesPerGroup: 3
+				slidesPerGroup: 1
 			},
 			680: {
+				speed: 400,
 				spaceBetween: 1,
 				slidesPerView: 2,
-				slidesPerGroup: 2
+				slidesPerGroup: 1
 			}
 		},
 
