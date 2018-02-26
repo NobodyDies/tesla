@@ -3,8 +3,17 @@
 	padding-top: 120px;
 	padding-bottom: 80px;
 
-	.content-wrapper {
-		padding: 0 30px;
+
+	@media screen and (max-width: 1150px) {
+		.content-wrapper {
+			padding: 0 80px;
+		}
+	}
+
+	@media screen and (max-width: 1051px) {
+		.content-wrapper {
+			padding: 0 30px;
+		}
 	}
 
 	&-content-wrapper.content-wrapper {
@@ -38,12 +47,12 @@
 
 	.basket_page-content {
 
-		.col-sm-4.col-xs-12 {
+		.col-md-8.col-sm-6.col-xs-12 {
 			@media screen and (max-width: 1070px) {
-				padding-left: 0px;
+				padding-right: 0px;
 			}
 			@media screen and (max-width: 767px) {
-				padding-left: 15px;
+				padding-right: 15px;
 			}
 		}
 
@@ -363,24 +372,12 @@
 			text-align: left;
 			padding-top: 15px;
 
-
 			@media screen and (max-width: 1199px) {
-				justify-content: space-between;
 				display: flex;
-
-				.item-quantity {
-					margin-right: 10px;
-				}
-				.item-price {
-					margin-left: 10px;
-				}
+				justify-content: space-between;
 			}
 
 			@media screen and (max-width: 880px) {
-				justify-content: flex-start;
-				flex-wrap: wrap;
-				flex-direction: column;
-				align-items: center;
 
 				.item-quantity {
 					margin-right: 0px;
@@ -420,6 +417,10 @@
 				width: 60px;
 				line-height: 27px;
 				border: 1px solid #e8e8e8;
+
+				@media screen and (max-width: 1199px) {
+					margin: 0 10px;
+				}
 
 				> button {
 					width: 50%;
@@ -473,31 +474,13 @@
 				margin-bottom: 0px;
 			}
 
-			@media screen and (max-width: 1199px) {
-				justify-content: space-between;
-				display: flex;
-
-				.item-price-label {
-					margin-right: 10px;
-				}
-				.item-price {
-					margin-left: 10px;
-				}
+			.item-price-label {
+				margin-right: 10px;
+			}
+			.item-price {
+				margin-left: 10px;
 			}
 
-			@media screen and (max-width: 880px) {
-				justify-content: flex-start;
-				flex-wrap: wrap;
-				flex-direction: column;
-				align-items: center;
-
-				.item-price-label {
-					margin-right: 0px;
-				}
-				.item-price {
-					margin-left: 0px;
-				}
-			}
 			@media screen and (max-width: 767px) {
 				display: block;
 			}
@@ -520,10 +503,6 @@
 			}
 			&-promocode {
 				width: 100%;
-
-				@media screen and (max-width: 880px) {
-					text-align: center;
-				}
 
 				a {
 					color: #2096d0;
@@ -548,18 +527,6 @@
 
 						@media screen and (max-width: 1150px) {
 							margin-top: 15px;
-						}
-					}
-
-					&:last-child {
-						@media screen and (max-width: 880px) {
-							display: flex;
-							flex-wrap: wrap;
-							flex-direction: column;
-							align-items: center;
-						}
-						@media screen and (max-width: 767px) {
-							display: block;
 						}
 					}
 
