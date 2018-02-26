@@ -3,9 +3,13 @@
 	padding-top: 120px;
 	padding-bottom: 80px;
 
+	.content-wrapper {
+		padding: 0 30px;
+	}
+
 	&-content-wrapper.content-wrapper {
 
-		@media screen and (max-width: 991px) {
+		@media screen and (max-width: 1070px) {
 			padding: 15px;
 		}
 		@media screen and (max-width: 767px) {
@@ -13,7 +17,7 @@
 		}
 	}
 
-	@media screen and (max-width: 991px) {
+	@media screen and (max-width: 1070px) {
 		padding-top: 60px;
 		padding-bottom: 0px;
 	}
@@ -35,7 +39,7 @@
 	.basket_page-content {
 
 		.col-sm-4.col-xs-12 {
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: 1070px) {
 				padding-left: 0px;
 			}
 			@media screen and (max-width: 767px) {
@@ -50,7 +54,7 @@
 		&-left {
 			padding: 0px 40px 20px;
 
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: 1070px) {
 				padding: 10px 20px 20px;
 			}
 			@media screen and (max-width: 767px) {
@@ -61,7 +65,7 @@
 				padding: 30px 0px;
 				border-top: 1px solid #e8e8e8;
 
-				@media screen and (max-width: 991px) {
+				@media screen and (max-width: 1070px) {
 					padding: 20px 0px;
 
 					&:last-child {
@@ -80,13 +84,13 @@
 				display: flex;
 				align-items: flex-end;
 
-				@media screen and (max-width: 991px) {
+				@media screen and (max-width: 1070px) {
 					display: block;
 				}
 				h2 {
 					margin: 0px;
 					font-weight: 300;
-					@media screen and (max-width: 991px) {
+					@media screen and (max-width: 1070px) {
 						margin-bottom: 15px;
 					}
 					@media screen and (max-width: 767px) {
@@ -100,14 +104,14 @@
 					color: #666666;
 					font-weight: 300;
 
-					@media screen and (max-width: 991px) {
+					@media screen and (max-width: 1070px) {
 						margin-left: 0px;
 					}
 				}
 			}
 
 			.pick-payment {
-				@media screen and (max-width: 991px) {
+				@media screen and (max-width: 1070px) {
 					margin-top: 0px;
 					display: flex;
 					-webkit-flex-wrap: wrap;
@@ -118,7 +122,7 @@
 					justify-content: space-around;
 				}
 				p {
-					@media screen and (max-width: 991px) {
+					@media screen and (max-width: 1070px) {
 						margin-top: 85px;
 						margin-right: 15px;
 					}
@@ -131,7 +135,7 @@
 				justify-content: space-between;
 				margin-top: 26px;
 
-				@media screen and (max-width: 991px) {
+				@media screen and (max-width: 1070px) {
 					display: block;
 					margin-top: 15px;
 				}
@@ -143,7 +147,7 @@
 					max-width: 357px;
 					width: 100%;
 
-					@media screen and (max-width: 991px) {
+					@media screen and (max-width: 1070px) {
 						max-width: 100%;
 						display: block;
 					}
@@ -156,7 +160,7 @@
 					&:last-child {
 						margin-bottom: 0px;
 
-						@media screen and (max-width: 991px) {
+						@media screen and (max-width: 1070px) {
 							margin-bottom: 20px;
 						}
 					}
@@ -173,14 +177,14 @@
 						&:first-child {
 							max-width: 317px;
 							margin-bottom: 24px;
-							@media screen and (max-width: 991px) {
+							@media screen and (max-width: 1070px) {
 								max-width: 100%;
 							}
 						}
 
 						&:last-child {
 							max-width: 200px;
-							@media screen and (max-width: 991px) {
+							@media screen and (max-width: 1070px) {
 								max-width: 100%;
 							}
 						}
@@ -189,7 +193,7 @@
 				.radio-button p {
 					margin-top: 19px;
 					margin-bottom: 4px;
-					@media screen and (max-width: 991px) {
+					@media screen and (max-width: 1070px) {
 						display: block;
 					}
 				}
@@ -221,7 +225,7 @@
 						border-radius: 0px;
 						margin-right: -1px;
 
-						@media screen and (max-width: 991px) {
+						@media screen and (max-width: 1070px) {
 							height: 100%;
 						}
 					}
@@ -243,7 +247,7 @@
 		&-right {
 			padding: 20px;
 
-			@media screen and (max-width: 991px) {
+			@media screen and (max-width: 1070px) {
 				padding-top: 30px;
 			}
 			@media screen and (max-width: 767px) {
@@ -287,10 +291,11 @@
 		border-bottom: 1px solid #e8e8e8;
 		padding: 30px 0 29px;
 
-		@media screen and (max-width: 1199px) {
+		@media screen and (max-width: 880px) {
 			padding: 30px 0 15px;
 		}
-		@media screen and (max-width: 767px) {
+
+		@media screen and (max-width: 880px) {
 			padding: 30px 0 29px;
 		}
 
@@ -358,12 +363,33 @@
 			text-align: left;
 			padding-top: 15px;
 
+
 			@media screen and (max-width: 1199px) {
+				justify-content: space-between;
 				display: flex;
+
+				.item-quantity {
+					margin-right: 10px;
+				}
+				.item-price {
+					margin-left: 10px;
+				}
+			}
+
+			@media screen and (max-width: 880px) {
+				justify-content: flex-start;
 				flex-wrap: wrap;
 				flex-direction: column;
 				align-items: center;
+
+				.item-quantity {
+					margin-right: 0px;
+				}
+				.item-price {
+					margin-left: 0px;
+				}
 			}
+
 
 			@media screen and (max-width: 767px) {
 				display: block;
@@ -435,6 +461,7 @@
 		}
 	}
 
+
 	ul.basket-goods-calculations {
 		border-top: 1px solid #e8e8e8;
 		padding: 24px 0 29px;
@@ -446,60 +473,33 @@
 				margin-bottom: 0px;
 			}
 
-			@media screen and (max-width: 1150px) {
+			@media screen and (max-width: 1199px) {
+				justify-content: space-between;
 				display: flex;
+
+				.item-price-label {
+					margin-right: 10px;
+				}
+				.item-price {
+					margin-left: 10px;
+				}
+			}
+
+			@media screen and (max-width: 880px) {
+				justify-content: flex-start;
 				flex-wrap: wrap;
 				flex-direction: column;
 				align-items: center;
+
+				.item-price-label {
+					margin-right: 0px;
+				}
+				.item-price {
+					margin-left: 0px;
+				}
 			}
 			@media screen and (max-width: 767px) {
 				display: block;
-			}
-		}
-
-		.promocode-discount {
-
-			&:nth-child(2) {
-				display: flex;
-				margin-top: 34px;
-				margin-bottom: 25px;
-			}
-
-			input {
-				width: 100%;
-				outline: none;
-			}
-
-			button {
-				-webkit-box-flex: 0;
-				-webkit-flex-grow: 0;
-				-ms-flex-positive: 0;
-				flex-grow: 0;
-				-webkit-flex-shrink: 0;
-				-ms-flex-negative: 0;
-				flex-shrink: 0;
-				background: #2096d0;
-				width: 40px;
-				height: 40px;
-				display: flex;
-				transition: opacity .15s ease-out;
-				-moz-transition: opacity .15s ease-out;
-				-webkit-transition: opacity .15s ease-out;
-				-o-transition: opacity .15s ease-out;
-				outline: none;
-				border: none;
-				border-radius: 0px;
-
-				&:hover {
-					opacity: 0.82;
-				}
-
-				svg {
-					width: 12px;
-					height: 12px;
-					margin: auto;
-					fill: #ffffff;
-				}
 			}
 		}
 
@@ -519,6 +519,12 @@
 				line-height: 20px;
 			}
 			&-promocode {
+				width: 100%;
+
+				@media screen and (max-width: 880px) {
+					text-align: center;
+				}
+
 				a {
 					color: #2096d0;
 					display: inline;
@@ -532,6 +538,68 @@
 						border-bottom: none;
 					}
 				}
+
+				.promocode-discount {
+
+					&:nth-child(2) {
+						display: flex;
+						margin-top: 34px;
+						margin-bottom: 25px;
+
+						@media screen and (max-width: 1150px) {
+							margin-top: 15px;
+						}
+					}
+
+					&:last-child {
+						@media screen and (max-width: 880px) {
+							display: flex;
+							flex-wrap: wrap;
+							flex-direction: column;
+							align-items: center;
+						}
+						@media screen and (max-width: 767px) {
+							display: block;
+						}
+					}
+
+					input {
+						width: 100%;
+						outline: none;
+					}
+
+					button {
+						-webkit-box-flex: 0;
+						-webkit-flex-grow: 0;
+						-ms-flex-positive: 0;
+						flex-grow: 0;
+						-webkit-flex-shrink: 0;
+						-ms-flex-negative: 0;
+						flex-shrink: 0;
+						background: #2096d0;
+						width: 40px;
+						height: 40px;
+						display: flex;
+						transition: opacity .15s ease-out;
+						-moz-transition: opacity .15s ease-out;
+						-webkit-transition: opacity .15s ease-out;
+						-o-transition: opacity .15s ease-out;
+						outline: none;
+						border: none;
+						border-radius: 0px;
+
+						&:hover {
+							opacity: 0.82;
+						}
+
+						svg {
+							width: 12px;
+							height: 12px;
+							margin: auto;
+							fill: #ffffff;
+						}
+					}
+				}
 			}
 		}
 	}
@@ -542,7 +610,7 @@
 	}
 
 	.green-button {
-		@media screen and (max-width: 991px) {
+		@media screen and (max-width: 1070px) {
 			margin: 0px auto;
 		}
 		span {

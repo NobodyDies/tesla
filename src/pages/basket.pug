@@ -167,18 +167,18 @@ block append content
 										.item-price-valute Р
 							li
 								.item-price-promocode
-									a(href="#") Применить промокод
+									a(href="#").promocode-link Применить промокод
 
-								.promocode-discount
-									input(type="text" placeholder="Введите промокод" id="promocode" name="promocode")
-									button
-										+icon('checked','')
-								.promocode-discount
-									.item-price-label Скидка по промокоду
-									.item-price
-										.item-price-sum - 400
-											=" "
-											.item-price-valute Р
+									.promocode-discount
+										input(type="text" placeholder="Введите промокод" id="promocode" name="promocode")
+										button
+											+icon('checked','')
+									.promocode-discount
+										.item-price-label Скидка по промокоду
+										.item-price
+											.item-price-sum - 400
+												=" "
+												.item-price-valute Р
 
 						ul.basket-goods-calculations.black-border
 							li

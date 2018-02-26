@@ -18,9 +18,9 @@ $(document).ready((e) => {
 
 	$(".promocode-discount").hide();
 
-	$(".item-price-promocode").click(function(e) {
+	$(".promocode-link").click(function(e) {
 		e.preventDefault();
-		$(".item-price-promocode").hide();
+		$(".promocode-link").hide();
 		$(".promocode-discount").show();
 		$("#promocode").focus();
 	});
