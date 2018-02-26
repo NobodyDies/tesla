@@ -42,6 +42,81 @@ $(window).on('load', function () {
 		browserIE = true;
 	}
 
+	var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
+		currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
+		newNextImgWrap = ".mainslider-controls-next-img--wrap",
+		newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
+		nextContainer = ".mainslider-controls-next-img",
+		prevContainer = ".mainslider-controls-prev-img";
+
+	// Слайды в стрелках управления главным слайдером
+	function controlSlides() {
+
+		// Новый следующий и новый предыдущий слайды
+		var newNext = 0,
+
+			newPrev = 0;
+
+		// Всё нижеследующее опирается на то, что
+		// mainSlider.slides.length не показывает реального количества слайдов
+		// и включает в себя два дубликата слайдов для анимаций и ведёт счёт слайдов
+		// не с нуля, а с единицы. Нам же нужна нумерация как в массивах, поэтому (- 3).
+
+		//-------------------NEXT----------------------//
+		var nextSl = (mainSlider.realIndex + 1);
+		if (nextSl > (mainSlider.slides.length - 3)) {
+			nextSl = 0;
+		}
+		newNext =
+			$($("[data-swiper-slide-index=" + nextSl + "]").find('.index_page-slider-item--image')[0]).clone();
+		//-------------------------------------------------//
+
+
+		//-------------------PREVIOUS----------------------//
+		var slPrev = (mainSlider.realIndex - 1);
+		if (slPrev < 0) {
+			slPrev = (mainSlider.slides.length - 3);
+		}
+		newPrev =
+			$($("[data-swiper-slide-index=" + slPrev + "]").find('.index_page-slider-item--image')[0]).clone();
+		//-------------------------------------------------//
+
+		if ($(".mainslider-controls-next-img--wrap img").length == 0) {
+			addNewCtrlImg(true);
+		} else {
+			addNewCtrlImg(false);
+		}
+
+		function addNewCtrlImg(firstRun) {
+			if (firstRun) {
+
+				$(newNextImgWrap).append(newNext);
+				$(newPrevImgWrap).append(newPrev);
+
+			} else {
+
+			var elem1 = document.createElement("div")
+			var elem2 = document.createElement("div")
+			elem1.className = "mainslider-controls-next-img--wrap";
+			elem2.className = "mainslider-controls-prev-img--wrap";
+
+				$(elem1).append(newNext);
+				$(elem2).append(newPrev);
+
+				$(nextContainer).append(elem1);
+				$(prevContainer).append(elem2);
+
+				$(currentNextImgWrap).addClass("changeCtrlImg");
+				$(currentPrevImgWrap).addClass("changeCtrlImg");
+			}
+		}
+	}
+
+	function removeOldCtrlImg() {
+		$(currentNextImgWrap).remove();
+		$(currentPrevImgWrap).remove();
+	}
+
 	var mainSlider;
 	if (browserIE || device.default.mobile() || device.default.tablet()) {
 		mainSlider = new Swiper('.index_page-slider', {
@@ -66,7 +141,23 @@ $(window).on('load', function () {
 				nextEl: '.mainslider-controls-next',
 				prevEl: '.mainslider-controls-prev',
 			},
+			init: false,
+			preventIntercationOnTransition: true
 		});
+
+		// Кидаем картинки слайдов в контролы при загрузке страницы
+		mainSlider.on('init', controlSlides);
+//
+		mainSlider.init();
+
+		mainSlider.on('slideChangeTransitionStart', () => {
+			controlSlides();
+		})
+
+		mainSlider.on('slideChangeTransitionEnd', () => {
+			removeOldCtrlImg();
+		})
+
 	} else {
 		mainSlider = new Swiper('.index_page-slider', {
 			// Optional parameters
@@ -96,82 +187,7 @@ $(window).on('load', function () {
 			},
 			init: false,
 			preventIntercationOnTransition: true
-			// Navigation arrows
 		});
-
-		var currentNextImgWrap = ".mainslider-controls-next-img--wrap:first-child",
-			currentPrevImgWrap = ".mainslider-controls-prev-img--wrap:first-child",
-			newNextImgWrap = ".mainslider-controls-next-img--wrap",
-			newPrevImgWrap = ".mainslider-controls-prev-img--wrap",
-			nextContainer = ".mainslider-controls-next-img",
-			prevContainer = ".mainslider-controls-prev-img";
-
-		// Слайды в стрелках управления главным слайдером
-		function controlSlides() {
-
-			// Новый следующий и новый предыдущий слайды
-			var newNext = 0,
-
-				newPrev = 0;
-
-			// Всё нижеследующее опирается на то, что
-			// mainSlider.slides.length не показывает реального количества слайдов
-			// и включает в себя два дубликата слайдов для анимаций и ведёт счёт слайдов
-			// не с нуля, а с единицы. Нам же нужна нумерация как в массивах, поэтому (- 3).
-
-			//-------------------NEXT----------------------//
-			var nextSl = (mainSlider.realIndex + 1);
-			if (nextSl > (mainSlider.slides.length - 3)) {
-				nextSl = 0;
-			}
-			newNext =
-				$($("[data-swiper-slide-index=" + nextSl + "]").find('.index_page-slider-item--image')[0]).clone();
-			//-------------------------------------------------//
-
-
-			//-------------------PREVIOUS----------------------//
-			var slPrev = (mainSlider.realIndex - 1);
-			if (slPrev < 0) {
-				slPrev = (mainSlider.slides.length - 3);
-			}
-			newPrev =
-				$($("[data-swiper-slide-index=" + slPrev + "]").find('.index_page-slider-item--image')[0]).clone();
-			//-------------------------------------------------//
-
-			if ($(".mainslider-controls-next-img--wrap img").length == 0) {
-				addNewCtrlImg(true);
-			} else {
-				addNewCtrlImg(false);
-			}
-
-			function addNewCtrlImg(firstRun) {
-				if (firstRun) {
-
-					$(newNextImgWrap).append(newNext);
-					$(newPrevImgWrap).append(newPrev);
-				} else {
-
-				var elem1 = document.createElement("div")
-				var elem2 = document.createElement("div")
-				elem1.className = "mainslider-controls-next-img--wrap";
-				elem2.className = "mainslider-controls-prev-img--wrap";
-
-					$(elem1).append(newNext);
-					$(elem2).append(newPrev);
-
-					$(nextContainer).append(elem1);
-					$(prevContainer).append(elem2);
-
-					$(currentNextImgWrap).addClass("changeCtrlImg");
-					$(currentPrevImgWrap).addClass("changeCtrlImg");
-				}
-			}
-		}
-
-		function removeOldCtrlImg() {
-			$(currentNextImgWrap).remove();
-			$(currentPrevImgWrap).remove();
-		}
 
 		// Кидаем картинки слайдов в контролы при загрузке страницы
 		mainSlider.on('init', controlSlides);
