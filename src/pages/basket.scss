@@ -23,7 +23,9 @@
 		padding: 9px 16px;
 		color: #000000;
 		font-weight: 300;
+		border-radius: 0px;
 	}
+
 	input[type=text]::-webkit-input-placeholder {color:#666666;}
 	input[type=text]::-moz-placeholder {color:#666666;}/* Firefox 19+ */
 	input[type=text]:-moz-placeholder {color:#666666;}/* Firefox 18- */
@@ -150,7 +152,6 @@
 				input[type=text] {
 					width: 100%;
 					margin-bottom: 20px;
-					border-radius: 0px;
 
 					&:last-child {
 						margin-bottom: 0px;
@@ -168,7 +169,6 @@
 						margin-right: 20px;
 					}
 					input[type=text] {
-						border-radius: 0px;
 
 						&:first-child {
 							max-width: 317px;
@@ -460,10 +460,6 @@
 		.promocode-discount {
 			display: none;
 
-			input {
-				border-radius: 0px;
-			}
-
 			button {
 				background: #2096d0;
 			}
@@ -620,7 +616,6 @@
 		}
 
 		input {
-			border-radius: 0px;
 			width: 100%;
 			margin: 20px 0 0;
 		}
