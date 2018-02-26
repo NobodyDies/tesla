@@ -128,11 +128,13 @@
 	}
 
 	.delivery-city {
+
 		&-current {
 			position: relative;
 			color: #2096d0;
 			cursor: pointer;
 			padding-right: 14px;
+
 			&:after {
 				content: "";
 				position: absolute;
@@ -176,6 +178,7 @@
 		display: inline-block;
 		font-size: 13px;
 		line-height: 60px;
+
 		li {
 			display: inline-block;
 			padding: 0px 18px;
@@ -489,9 +492,9 @@
 		background-color: #ffffff;
 		cursor: auto;
 		line-height: 0;
--webkit-box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
--moz-box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
-box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
+		-webkit-box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
+		-moz-box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
+		box-shadow: -10px -1px 57px -18px rgba(0,0,0,0.2);
 
 
 		.basket-goods {

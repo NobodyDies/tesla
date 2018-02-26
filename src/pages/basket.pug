@@ -166,8 +166,20 @@ block append content
 										=" "
 										.item-price-valute Р
 							li
-								.item-price-promocode 
-									a Применить промокод
+								.item-price-promocode
+									a(href="#") Применить промокод
+
+								.promocode-discount
+									input(type="text" placeholder="Введите промокод" id="promocode" name="promocode")
+									button
+										span
+								.promocode-discount
+									.item-price-label Скидка по промокоду
+									.item-price
+										.item-price-sum - 400
+											=" "
+											.item-price-valute Р
+
 						ul.basket-goods-calculations.black-border
 							li
 								.item-price-label К оплате

@@ -16,4 +16,10 @@ $(document).ready((e) => {
 	/* Маска для ввода номера телефона */
 	$('#modal_phone').mask('+7(999)-999-99-99');
 
+	$(".item-price-promocode").click(function(e) {
+		e.preventDefault();
+		$(".item-price-promocode").hide();
+		$(".promocode-discount").show();
+	});
+
 });

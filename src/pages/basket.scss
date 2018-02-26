@@ -134,6 +134,7 @@
 					margin-top: 15px;
 				}
 				.basket_page-inputs {
+
 					display: flex;
 					flex-direction: column;
 					margin-right: 20px;
@@ -149,9 +150,11 @@
 				input[type=text] {
 					width: 100%;
 					margin-bottom: 20px;
+					border-radius: 0px;
 
 					&:last-child {
 						margin-bottom: 0px;
+
 						@media screen and (max-width: 991px) {
 							margin-bottom: 20px;
 						}
@@ -165,6 +168,7 @@
 						margin-right: 20px;
 					}
 					input[type=text] {
+						border-radius: 0px;
 
 						&:first-child {
 							max-width: 317px;
@@ -436,6 +440,12 @@
 		padding: 24px 0 29px;
 
 		li {
+			margin-bottom: 19px;
+
+			&:last-child {
+				margin-bottom: 0px;
+			}
+
 			@media screen and (max-width: 1150px) {
 				display: flex;
 				flex-wrap: wrap;
@@ -445,10 +455,18 @@
 			@media screen and (max-width: 767px) {
 				display: block;
 			}
-			&:last-child {
-				margin-bottom: 0px;
+		}
+
+		.promocode-discount {
+			display: none;
+
+			input {
+				border-radius: 0px;
 			}
-			margin-bottom: 19px;
+
+			button {
+				background: #2096d0;
+			}
 		}
 
 		.item-price {
@@ -472,7 +490,10 @@
 					display: inline;
 					border-bottom: 1px dotted #2096d0;
 					cursor: pointer;
-					&:hover {
+
+					&:visited,
+					&:hover,
+					&:active {
 						text-decoration: none;
 						border-bottom: none;
 					}
@@ -599,6 +620,7 @@
 		}
 
 		input {
+			border-radius: 0px;
 			width: 100%;
 			margin: 20px 0 0;
 		}

@@ -30,6 +30,11 @@ body.ie {
 	min-height: 100%;
 }
 
+button, input[type="email"], input[type="number"], input[type="search"], input[type="text"], input[type="tel"], input[type="url"], input[type="password"], textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
 
 // Preloader
 
@@ -188,6 +193,7 @@ ul, li {
 	li {
 		margin-left: 26px;
 		display: inline-block;
+
 		&:first-child {
 			margin-left: 0;
 		}
@@ -206,6 +212,7 @@ ul, li {
 	width: 100%;
 	margin: 0 auto;
 	padding: 0 130px;
+
 	@media screen and (max-width: 991px) {
 		padding: 0;
 	}
@@ -229,6 +236,7 @@ ul, li {
 		fill: #999999;
 		margin-right: 16px;
 		margin-top: 45px;
+
 		@media screen and (max-width: 991px) {
 			margin-top: 0px;
 		}
@@ -236,6 +244,7 @@ ul, li {
 }
 
 .link-more-info {
+
 	color: #2096d0;
 	text-transform: uppercase;
 	font-size: 11px;
