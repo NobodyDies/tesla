@@ -95,13 +95,19 @@ $(window).on('load', function () {
 
 			} else {
 
-			var elem1 = document.createElement("div")
-			var elem2 = document.createElement("div")
-			elem1.className = "mainslider-controls-next-img--wrap";
-			elem2.className = "mainslider-controls-prev-img--wrap";
+				var elem1 = document.createElement("div")
+				var elem2 = document.createElement("div")
+				elem1.className = "mainslider-controls-next-img--wrap";
+				elem2.className = "mainslider-controls-prev-img--wrap";
 
 				$(elem1).append(newNext);
 				$(elem2).append(newPrev);
+
+				//IF BODY CLASS = IE then removeClass() to disable object-fit
+				if (browserIE) {
+					$(elem1).find("img").removeClass("index_page-slider-item--image");
+					$(elem2).find("img").removeClass("index_page-slider-item--image");
+				}
 
 				$(nextContainer).append(elem1);
 				$(prevContainer).append(elem2);
