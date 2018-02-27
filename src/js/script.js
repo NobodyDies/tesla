@@ -85,7 +85,7 @@ if ($(".link-more-info").length) {
 }
 
 
-// Анимация открытия корзины
+//======== Анимация открытия корзины =======//
 
 // Переменные fullscreen-корзины для мобильных
 // Высота окна
@@ -106,18 +106,25 @@ var basketWrapper = $(".navigation .basket-goods-panel");
 // Корзина
 var basket = $(".navigation .basket-goods");
 
+// Первоначальные размеры и позиция корзины
 if ( ($(window).width() + 17) <= 767 ) {
-	basketWrapper.css({height: basketWrapperHeight + "px"});
-	basket.css({height: basketHeight + "px"});
+	basketRuler(true);
 } else {
-	basketWrapper.css({height: "427px"});
-	basket.css({height: "377px"});
-	basketHeight = 377;
-	basketPosition = -427;
+	basketRuler(false);
 }
 
+// Размеры и позиция корзины на ресайзе окна
 $(window).on('resize', function () {
 	if ( ($(window).width() + 17) <= 767 ) {
+		basketRuler(true);
+	} else {
+		basketRuler(false);
+	}
+});
+
+// Функция для управления размерами и положением корзины
+function basketRuler(mobile) {
+	if (mobile) {
 		windowHeight = $(window).height();
 		basketWrapperHeight = windowHeight - 60;
 		basketHeight = windowHeight - 60 - 50;
@@ -126,6 +133,7 @@ $(window).on('resize', function () {
 		basketWrapper.css({height: basketWrapperHeight + "px"});
 		basket.css({height: basketHeight + "px"});
 
+		// Если корзина открыта, то её позиция...
 		if ($('.basket').hasClass('basket-opened')) {
 			basketWrapper.css({bottom: basketPosition + "px"});
 		} else {
@@ -134,16 +142,19 @@ $(window).on('resize', function () {
 	} else {
 		basketWrapper.css({height: "427px"});
 		basket.css({height: "377px"});
+		basketHeight = 377;
+		basketPosition = -427;
 
+		// Если корзина открыта, то её позиция...
 		if ($('.basket').hasClass('basket-opened')) {
-			basketPosition = -427;
 			basketWrapper.css({bottom: basketPosition + "px"});
 		} else {
 			basketWrapper.css({bottom: "100%"})
 		}
 	}
-});
+}
 
+// Кнопка открытия корзины
 $('.basket').on('click', function () {
 
 	$(this).toggleClass('basket-opened');
@@ -167,6 +178,8 @@ $('.basket').on('click', function () {
 		});
 	});
 })(jQuery);
+
+//==========================================//
 
 
 // Раскрытие вложенных меню в футере
