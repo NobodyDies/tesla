@@ -109,7 +109,7 @@ var basketWrapper = $(".navigation .basket-goods-panel");
 var basket = $(".navigation .basket-goods");
 
 // Первоначальные размеры и позиция корзины
-if ( ($(window).width() + 17) <= 767 ) {
+if ( window.matchMedia('(max-width:767px)').matches ) {
 	basketRuler(true);
 } else {
 	basketRuler(false);
@@ -117,7 +117,7 @@ if ( ($(window).width() + 17) <= 767 ) {
 
 // Размеры и позиция корзины на ресайзе окна
 $(window).on('resize', function () {
-	if ( (($(window).width() + 17)) <= 767 ) {
+	if ( window.matchMedia('(max-width:767px)').matches ) {
 		basketRuler(true);
 	} else {
 		basketRuler(false);
@@ -125,7 +125,7 @@ $(window).on('resize', function () {
 });
 
 $(window).on('scroll', function () {
-	if ( ($(window).width() + 17) <= 767 ) {
+	if ( window.matchMedia('(max-width:767px)').matches ) {
 		basketRuler(true);
 	} else {
 		basketRuler(false);
