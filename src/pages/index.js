@@ -240,27 +240,6 @@ $(window).on('load', function () {
 		})
 	}
 
-	// pagination position
-	var paginationPosition = $(".navigation-logo")[0].getBoundingClientRect().right;
-	$(".swiper-pagination").css("left", (paginationPosition - 36));
-
-
-	// mainSlider controls position
-	var controlsPosition = $(".basket")[0].getBoundingClientRect().right;
-	$(".mainslider-controls").css("left", (controlsPosition - 150));
-
-
-	$(window).on('resize', function () {
-		// pagination position
-		paginationPosition = $(".navigation-logo")[0].getBoundingClientRect().right;
-		$(".swiper-pagination").css("left", (paginationPosition - 36));
-
-		// mainSlider controls position
-		controlsPosition = $(".basket")[0].getBoundingClientRect().right;
-		$(".mainslider-controls").css("left", (controlsPosition - 150));
-	});
-
-
 	// Адаптивный слайдер популярных товаров
 	var mySwiper = new Swiper('.swiper-container', {
 		// Optional parameters

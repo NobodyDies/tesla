@@ -50,6 +50,9 @@ body.chrm {
 		position: relative;
 		min-height: 530px;
 		overflow: hidden;
+		max-width: 2000px;
+		width: 100%;
+		margin: 0 auto;
 
 		@media screen and (max-width: 991px) {
 			min-height: 370px;
@@ -58,6 +61,8 @@ body.chrm {
 		&-wrapper {
 			min-height: 530px;
 			width: 99999999px;
+			max-width: 2000px;
+			width: 100%;
 
 			@media screen and (max-width: 991px) {
 				min-height: 370px;
@@ -197,6 +202,7 @@ body.chrm {
 			top: 50%;
 			bottom: auto;
 			transform: translateY(-50%);
+			left: 50px;
 
 			@media screen and (max-width: 991px) {
 				width: auto;
@@ -333,7 +339,7 @@ body.chrm {
 			width: 100%;
 			left: 50%;
 			transform: translateX(-50%);
-			max-width: 1200px;
+			max-width: 2000px;
 			display: flex;
 			justify-content: space-between;
 			align-items: flex-end;
