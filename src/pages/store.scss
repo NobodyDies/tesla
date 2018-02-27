@@ -14,6 +14,9 @@ body.ie {
 		background: #e7e7e7;
 		position: relative;
 		z-index: 1;
+		max-width: 2000px;
+		margin: 0 auto;
+		width: 100%;
 
 		&-content {
 			min-height: 360px;
