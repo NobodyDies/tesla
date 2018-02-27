@@ -84,15 +84,73 @@ if ($(".link-more-info").length) {
 	);
 }
 
+
 // Анимация открытия корзины
+
+// Переменные fullscreen-корзины для мобильных
+// Высота окна
+var windowHeight = $(window).height();
+
+// Высота обёртки корзины (-60px из-за меню)
+var basketWrapperHeight = windowHeight - 60;
+
+// Высота корзины (-60px из-за меню и 50 px из-за кнопки "Сделать заказ")
+var basketHeight = windowHeight - 60 - 50;
+
+// Позиция корзины для анимации
+var basketPosition = -(windowHeight - 60);
+
+// Обёртка корзины
+var basketWrapper = $(".navigation .basket-goods-panel");
+
+// Корзина
+var basket = $(".navigation .basket-goods");
+
+if ( ($(window).width() + 17) <= 767 ) {
+	basketWrapper.css({height: basketWrapperHeight + "px"});
+	basket.css({height: basketHeight + "px"});
+} else {
+	basketWrapper.css({height: "427px"});
+	basket.css({height: "377px"});
+	basketHeight = 377;
+	basketPosition = -427;
+}
+
+$(window).on('resize', function () {
+	if ( ($(window).width() + 17) <= 767 ) {
+		windowHeight = $(window).height();
+		basketWrapperHeight = windowHeight - 60;
+		basketHeight = windowHeight - 60 - 50;
+		basketPosition = -(windowHeight - 60);
+
+		basketWrapper.css({height: basketWrapperHeight + "px"});
+		basket.css({height: basketHeight + "px"});
+
+		if ($('.basket').hasClass('basket-opened')) {
+			basketWrapper.css({bottom: basketPosition + "px"});
+		} else {
+			basketWrapper.css({bottom: "100%"})
+		}
+	} else {
+		basketWrapper.css({height: "427px"});
+		basket.css({height: "377px"});
+
+		if ($('.basket').hasClass('basket-opened')) {
+			basketPosition = -427;
+			basketWrapper.css({bottom: basketPosition + "px"});
+		} else {
+			basketWrapper.css({bottom: "100%"})
+		}
+	}
+});
+
 $('.basket').on('click', function () {
 
 	$(this).toggleClass('basket-opened');
 
 	if ($(this).hasClass('basket-opened')) {
 
-		var basketHeight = -($(".basket-goods-panel").height());
-		$(".basket-goods-panel").css({bottom: basketHeight + "px", opacity: 1});
+		$(".basket-goods-panel").css({bottom: basketPosition + "px", opacity: 1});
 
 	} else {
 		$(".basket-goods-panel").css({bottom: "100%", opacity: 0})
@@ -103,12 +161,13 @@ $('.basket').on('click', function () {
 (function ($) {
 	$(window).on("load", function () {
 		$(".basket-wrapper ul.basket-goods").mCustomScrollbar({
-			setHeight: 377,
+			setHeight: basketHeight,
 			scrollEasing: "linear",
 			theme: "minimal-dark"
 		});
 	});
 })(jQuery);
+
 
 // Раскрытие вложенных меню в футере
 $('ul.footer-top-mobile li > a').click(function (e) {
