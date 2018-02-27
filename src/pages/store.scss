@@ -271,6 +271,8 @@ body.ie {
 	&-category {
 		position: relative;
 		z-index: 2;
+		max-width: 2000px;
+		margin: 0 auto;
 
 		@media screen and (max-width: 767px) {
 			background: #e7e7e7;
@@ -592,6 +594,8 @@ body.ie {
 			margin: 0;
 			width: 100%;
 			position: relative;
+			max-width: 2000px;
+			margin: 0 auto;
 		}
 
 		&-item {
