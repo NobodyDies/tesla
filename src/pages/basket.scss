@@ -99,6 +99,7 @@
 				h2 {
 					margin: 0px;
 					font-weight: 300;
+
 					@media screen and (max-width: 1070px) {
 						margin-bottom: 15px;
 					}
@@ -144,10 +145,6 @@
 				justify-content: space-between;
 				margin-top: 26px;
 
-				@media screen and (max-width: 1070px) {
-					display: block;
-					margin-top: 15px;
-				}
 				.basket_page-inputs {
 
 					display: flex;
@@ -176,11 +173,28 @@
 				}
 
 			}
+
+			.quick-order {
+				@media screen and (max-width: 850px) {
+					.basket_page-inputs-block {
+						display: block;
+						margin-top: 15px;
+					}
+				}
+			}
+
 			.delivery {
 				.basket_page-inputs-block {
+
 					#city {
 						margin-right: 20px;
 					}
+
+					@media screen and (max-width: 978px) {
+						display: block;
+						margin-top: 15px;
+					}
+
 					input[type=text] {
 
 						&:first-child {
