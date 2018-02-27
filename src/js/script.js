@@ -89,7 +89,9 @@ if ($(".link-more-info").length) {
 
 // Переменные fullscreen-корзины для мобильных
 // Высота окна
-var windowHeight = $(window).height();
+var windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
+
+var windowWidth = 0;
 
 // Высота обёртки корзины (-60px из-за меню)
 var basketWrapperHeight = windowHeight - 60;
@@ -115,6 +117,14 @@ if ( ($(window).width() + 17) <= 767 ) {
 
 // Размеры и позиция корзины на ресайзе окна
 $(window).on('resize', function () {
+	if ( (($(window).width() + 17)) <= 767 ) {
+		basketRuler(true);
+	} else {
+		basketRuler(false);
+	}
+});
+
+$(window).on('scroll', function () {
 	if ( ($(window).width() + 17) <= 767 ) {
 		basketRuler(true);
 	} else {
@@ -125,7 +135,7 @@ $(window).on('resize', function () {
 // Функция для управления размерами и положением корзины
 function basketRuler(mobile) {
 	if (mobile) {
-		windowHeight = $(window).height();
+		windowHeight = window.innerHeight ? window.innerHeight : $(window).height();
 		basketWrapperHeight = windowHeight - 60;
 		basketHeight = windowHeight - 60 - 50;
 		basketPosition = -(windowHeight - 60);
@@ -136,14 +146,18 @@ function basketRuler(mobile) {
 		// Если корзина открыта, то её позиция...
 		if ($('.basket').hasClass('basket-opened')) {
 			basketWrapper.css({bottom: basketPosition + "px"});
+			$("html, body").css({overflow: "hidden"});
 		} else {
 			basketWrapper.css({bottom: "100%"})
+			$("html, body").css({overflow: "visible"});
 		}
 	} else {
 		basketWrapper.css({height: "427px"});
 		basket.css({height: "377px"});
 		basketHeight = 377;
 		basketPosition = -427;
+
+		$("html, body").css({overflow: "visible"});
 
 		// Если корзина открыта, то её позиция...
 		if ($('.basket').hasClass('basket-opened')) {
