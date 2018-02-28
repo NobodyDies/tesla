@@ -6,8 +6,9 @@ mixin icon(name,mod)
 	svg(class="icon icon-" + name + ' ' + mod)
 		use(xlink:href="/assets/img/icons.svg#icon-" + name)
 
-mixin teslaItem(img, name, descr, oldprice, price)
-	.tesla-item.col-sm-3.col-xs-6
+mixin teslaItem(img, name, descr, oldprice, price,indx)
+	- indx ? indx = 'swiper-slide' : indx = 'col-sm-3 col-xs-6'
+	.tesla-item(class=indx)
 		.tesla-item__star
 			+icon('star','')
 		.tesla-item__content

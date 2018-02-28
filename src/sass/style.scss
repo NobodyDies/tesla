@@ -711,17 +711,6 @@ ul, li {
 	height: 16px;
 	cursor: pointer;
 
-	//Delete
-	position: absolute;
-	top: 15px;
-	right: 25px;
-	z-index: 3;
-
-	@media screen and (max-width: 450px) {
-		right: 13px;
-	}
-	//-------
-
 	svg {
 		width: 16px;
 		height: 16px;

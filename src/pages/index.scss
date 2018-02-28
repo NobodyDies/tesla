@@ -593,70 +593,19 @@ body.chrm {
 				flex-grow: 0;
 				flex-shrink: 0;
 			}
-			&-item {
-				position: relative;
-				background-color: #fcfcfc;
 
-				.slider-item {
-					display: block;
-					width: 100%;
+			.tesla-item {
+
+				margin: 0;
+				padding: 0px;
+
+				&__star {
+					right: 13px;
+				}
+
+				.tesla-item__content {
+
 					height: 280px;
-					display: flex;
-					z-index: 2;
-
-					&:hover {
-						text-decoration: none;
-					}
-					img {
-						object-fit: cover;
-						font-family: 'object-fit: cover;';
-						position: absolute;
-						left: 50%;
-						bottom: 0;
-						height: auto;
-						max-width: 99.5%;
-						transform: translateX(-50%);
-
-						@media screen and (max-width: 420px) {
-							bottom: auto;
-							top: 20px;
-						}
-						&.pull-right {
-							right: 0;
-							left: auto;
-							transform: translateX(0);
-						}
-					}
-					&-text {
-						position: relative;
-						z-index: 2;
-						align-self: flex-end;
-						width: 100%;
-						padding: 0 10px 29px;
-						text-decoration: none;
-					}
-					&-title {
-						color: #333333;
-						font-size: 18px;
-						line-height: 25px;
-					}
-					&-description {
-						font-size: 14px;
-						color: #999999;
-					}
-					&-old-price {
-						color: #999999;
-						font-size: 16px;
-						text-decoration: line-through;
-					}
-					&-price {
-						color: #2096d0;
-						font-size: 16px;
-
-						> span {
-							color: #999999;
-						}
-					}
 				}
 			}
 		}
