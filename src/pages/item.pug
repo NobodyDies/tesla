@@ -225,50 +225,38 @@ block content
 				.row
 					.col-sm-12.col-xs-12
 						h2 Рекомендовано вам
-					.item_page-rec-item.col-sm-3.col-xs-6
-						.item-star
-							+icon('star','')
-						a.rec-item(href="#")
-							img(src="/assets/img/page-item/recom1.png")
-							.rec-item-text
-								.rec-item-text-wrap
-									.rec-item-title Powerbank
-									.rec-item-price 5800
-										=" "
-										span Р
-					.item_page-rec-item.col-sm-3.col-xs-6
-						.item-star
-							+icon('star','')
-						a.rec-item(href="#")
-							img(src="/assets/img/page-item/recom2.png")
-							.rec-item-text
-								.rec-item-text-wrap
-									.rec-item-title Чехол состаренная кожа
-									.rec-item-price 860
-										=" "
-										span Р
-					.item_page-rec-item.col-sm-3.col-xs-6
-						.item-star
-							+icon('star','')
-						a.rec-item(href="#")
-							img(src="/assets/img/page-item/recom3.png")
-							.rec-item-text
-								.rec-item-text-wrap
-									.rec-item-title Коннектор Type C
-									.rec-item-price 860
-										=" "
-										span Р
-					.item_page-rec-item.col-sm-3.col-xs-6
-						.item-star
-							+icon('star','')
-						a.rec-item(href="#")
-							img(src="/assets/img/page-item/recom4.png")
-							.rec-item-text
-								.rec-item-text-wrap
-									.rec-item-title Магнитный кабель (1,5м)
-									.rec-item-price 1990
-										=" "
-										span Р
+
+					+teslaItem(
+						'/page-item/recom1.png',
+						'Powerbank',
+						'Made for iPhone and Qi Compatible Devices',
+						'6 600',
+						'5 800'
+						)
+
+					+teslaItem(
+						'/page-item/recom2.png',
+						'Чехол состаренная кожа',
+						'Made for iPhone and Qi Compatible Devices',
+						'1 200',
+						'860'
+						)
+
+					+teslaItem(
+						'/page-item/recom3.png',
+						'Коннектор Type C',
+						'Made for iPhone and Qi Compatible Devices',
+						'1 200',
+						'860'
+						)
+
+					+teslaItem(
+						'/page-item/recom4.png',
+						'Магнитный кабель (1,5м)',
+						'Made for iPhone and Qi Compatible Devices',
+						'1 200',
+						'1 990'
+						)
 
 		.item_page-bottom-pic
 			picture

@@ -6,6 +6,25 @@ mixin icon(name,mod)
 	svg(class="icon icon-" + name + ' ' + mod)
 		use(xlink:href="/assets/img/icons.svg#icon-" + name)
 
+mixin teslaItem(img, name, descr, oldprice, price)
+	.tesla-item.col-sm-3.col-xs-6
+		.tesla-item__star
+			+icon('star','')
+		.tesla-item__content
+			img(src="/assets/img" + img)
+			.tesla-item__text
+				.tesla-item__text__wrap
+					a(href="#")
+						.tesla-item__text__title= name
+						.tesla-item__text__description= descr
+						.tesla-item__text__old-price= oldprice
+						.tesla-item__text__price= price
+							=" "
+							span Р
+					.tesla-item__text__buttons
+						span В корзину
+
+
 doctype html
 html(lang="ru")
 

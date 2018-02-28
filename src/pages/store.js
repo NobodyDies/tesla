@@ -173,6 +173,6 @@ $( document ).ready(() => {
 
 	sr = ScrollReveal();
 	sr.reveal('.store_page-category');
-	sr.reveal('.store_page-store-item');
+	sr.reveal('.tesla-item');
 
 });

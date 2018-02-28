@@ -126,7 +126,7 @@ $(document).ready(() => {
 		breakpointChecker();
 
 		sr = ScrollReveal();
-		sr.reveal('.catalog_page-catalog-item');
+		sr.reveal('.tesla-item');
 	});
 
 });

@@ -632,18 +632,27 @@ body.chrm {
 						z-index: 2;
 						align-self: flex-end;
 						width: 100%;
-						text-align: center;
 						padding: 0 10px 29px;
 						text-decoration: none;
 					}
 					&-title {
 						color: #333333;
-						font-size: 16px;
-						font-weight: 300;
+						font-size: 18px;
 						line-height: 25px;
+					}
+					&-description {
+						font-size: 14px;
+						color: #999999;
+					}
+					&-old-price {
+						color: #999999;
+						font-size: 16px;
+						text-decoration: line-through;
 					}
 					&-price {
 						color: #2096d0;
+						font-size: 16px;
+
 						> span {
 							color: #999999;
 						}
