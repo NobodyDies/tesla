@@ -806,8 +806,21 @@ ul, li {
 			position: absolute;
 			width: 100%;
 			bottom: 0px;
-			padding: 0 10px 29px;
+			padding: 0 10% 29px;
 
+			@media screen and (max-width: 1030px) {
+				padding: 0 10% 15px;
+			}
+			@media screen and (max-width: 991px) {
+				padding: 0 10% 29px;
+			}
+			@media screen and (max-width: 800px) {
+				padding: 0 10% 15px;
+			}
+			@media screen and (max-width: 767px) {
+				padding: 0 10% 29px;
+			}
+/*
 			@media screen and (max-width: 1100px) {
 				padding: 0 10px 12px;
 			}
@@ -820,7 +833,7 @@ ul, li {
 			@media screen and (max-width: 400px) {
 				padding: 0 10px 12px;
 			}
-
+*/
 			a {
 				&:link,
 				&:visited,
@@ -837,20 +850,31 @@ ul, li {
 			line-height: 25px;
 		}
 		&__description {
+			margin-top: 7px;
 			font-size: 14px;
 			color: #999999;
 		}
-		&__old-price {
-			color: #999999;
-			font-size: 16px;
-			text-decoration: line-through;
-		}
 		&__price {
-			color: #2096d0;
-			font-size: 16px;
+			margin-top: 7px;
 
-			> span {
+			div {
+				display: inline-block;
+			}
+
+			&-old {
 				color: #999999;
+				font-size: 16px;
+				text-decoration: line-through;
+				margin-right: 10px;
+			}
+
+			&-cur {
+				color: #2096d0;
+				font-size: 16px;
+
+				> span {
+					color: #999999;
+				}
 			}
 		}
 
@@ -859,6 +883,26 @@ ul, li {
 			display: none;
 			margin: 20px auto 0px;
 			cursor: pointer;
+
+			&-open, &-buy {
+				text-transform: uppercase;
+				font-size: 9px;
+				letter-spacing: 1px;
+				height: 36px;
+				width: 50%;
+				text-align: center;
+				line-height: 36px;
+			}
+
+			&-open {
+				background: #e1e1e1;
+				color: #333333;
+			}
+
+			&-buy {
+				background: #2ba0e2;
+				color: #ffffff;
+			}
 
 			@media screen and (max-width: 1100px) {
 				max-width: 110px;
@@ -897,12 +941,22 @@ ul, li {
 
 			.tesla-item__text {
 
-				&-title {
+				&__title {
 					color: #333333;
 				}
-				&-price {
-					> span {
-						color: #999999;
+				&__price {
+
+
+					&-old {
+						//
+					}
+
+					&-cur {
+						//
+
+						> span {
+							color: #999999;
+						}
 					}
 				}
 				&__buttons {

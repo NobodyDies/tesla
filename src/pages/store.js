@@ -58,7 +58,7 @@ $( document ).ready(() => {
 	// переход на страницу товара выполнится моментально.
 	if (mobcheck == true) {
 
-		$('.store-item-text-wrap a').on('click', function (e) {
+		$('.tesla-item__text__wrap a').on('click', function (e) {
 			'use strict'; //satisfy code inspectors
 			var link = $(this); //preselect the link
 
@@ -66,7 +66,7 @@ $( document ).ready(() => {
 				return true;
 			} else {
 				link.addClass('hover');
-				$('.store-item-text-wrap a').not(this).removeClass('hover');
+				$('.tesla-item__text__wrap a').not(this).removeClass('hover');
 				e.preventDefault();
 				return false; //extra, and to make sure the function has consistent return points
 			}
@@ -74,7 +74,7 @@ $( document ).ready(() => {
 
 	} else if (mobcheck == false) {
 
-		$('.store-item-text-wrap a').on('click', function (e) {
+		$('.tesla-item__text__wrap a').on('click', function (e) {
 			return true;
 		});
 	}

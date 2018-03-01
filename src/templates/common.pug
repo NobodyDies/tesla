@@ -7,7 +7,7 @@ mixin icon(name,mod)
 		use(xlink:href="/assets/img/icons.svg#icon-" + name)
 
 mixin teslaItem(img, name, descr, oldprice, price,indx)
-	- indx ? indx = 'swiper-slide' : indx = 'col-sm-3 col-xs-6'
+	- indx ? indx = 'swiper-slide' : indx = 'col-sm-4 col-xs-6'
 	.tesla-item(class=indx)
 		.tesla-item__star
 			+icon('star','')
@@ -18,12 +18,14 @@ mixin teslaItem(img, name, descr, oldprice, price,indx)
 					a(href="#")
 						.tesla-item__text__title= name
 						.tesla-item__text__description= descr
-						.tesla-item__text__old-price= oldprice
-						.tesla-item__text__price= price
-							=" "
-							span Р
+						.tesla-item__text__price
+							.tesla-item__text__price-old= oldprice
+							.tesla-item__text__price-cur= price
+								=" "
+								span Р
 					.tesla-item__text__buttons
-						span В корзину
+						a(href="#").tesla-item__text__buttons-open Просмотр
+						.tesla-item__text__buttons-buy Купить
 
 
 doctype html
