@@ -739,6 +739,17 @@ ul, li {
 	}
 }
 
+@keyframes buttons-fade-up {
+	0% {
+		transform: translateY(100%);
+		opacity: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+}
+
 .tesla-item {
 	margin: 0 0 20px 0;
 	padding: 0 10px;
@@ -953,7 +964,7 @@ ul, li {
 				}
 				&__buttons {
 					display: flex;
-
+					animation: buttons-fade-up .3s ease-in-out forwards;
 					@media screen and (max-width: 535px) {
 						display: none;
 					}
