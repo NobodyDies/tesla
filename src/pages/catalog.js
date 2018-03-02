@@ -20,7 +20,7 @@ $(document).ready(() => {
 
 		$('.tesla-item').on('click', function (e) {
 			e.preventDefault();
-			var link = $(this).find(".tesla-item__text__wrap a").attr('href');
+			var link = $(this).find(".tesla-item__text__wrap > a").attr('href');
 			location.href = link;
 		});
 
@@ -30,7 +30,6 @@ $(document).ready(() => {
 			return true;
 		});
 	}
-
 
 
 	// Параллакс-эффект
