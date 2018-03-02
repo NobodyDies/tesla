@@ -207,17 +207,17 @@ $(window).on('load', function () {
 			slide.addClass('inserting').css({opacity: 1, 'z-index': 1});
 			var image = slide.find('.index_page-slider-item--image')[0];
 
-			let {width, height, x, y} = cover(document.body.clientWidth, window.innerHeight, image.naturalWidth, image.naturalHeight);
+			let {width, height, x, y} = cover(image.width, window.innerHeight, image.naturalWidth, image.naturalHeight);
 
 			var canvas = document.createElement('canvas');
-			canvas.width = document.body.clientWidth;
+			canvas.width = image.width;
 			canvas.height = window.innerHeight / 2;
 			var ctx = canvas.getContext('2d');
 			ctx.drawImage(image, x, y, width, height);
 			slide.append(canvas);
 
 			var canvas2 = document.createElement('canvas');
-			canvas2.width = document.body.clientWidth;
+			canvas2.width = image.width;
 			canvas2.height = window.innerHeight / 2;
 			var ctx2 = canvas2.getContext('2d');
 			ctx2.drawImage(image, x, -window.innerHeight / 2 + y, width, height);
