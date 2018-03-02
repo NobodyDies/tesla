@@ -593,19 +593,61 @@ body.chrm {
 				flex-grow: 0;
 				flex-shrink: 0;
 			}
+			&-item {
+				position: relative;
+				background-color: #fcfcfc;
 
-			.tesla-item {
-
-				margin: 0;
-				padding: 0px;
-
-				&__star {
-					right: 13px;
-				}
-
-				.tesla-item__content {
-
+				.slider-item {
+					display: block;
+					width: 100%;
 					height: 280px;
+					display: flex;
+					z-index: 2;
+
+					&:hover {
+						text-decoration: none;
+					}
+					img {
+						object-fit: cover;
+						font-family: 'object-fit: cover;';
+						position: absolute;
+						left: 50%;
+						bottom: 0;
+						height: auto;
+						max-width: 99.5%;
+						transform: translateX(-50%);
+
+						@media screen and (max-width: 420px) {
+							bottom: auto;
+							top: 20px;
+						}
+						&.pull-right {
+							right: 0;
+							left: auto;
+							transform: translateX(0);
+						}
+					}
+					&-text {
+						position: relative;
+						z-index: 2;
+						align-self: flex-end;
+						width: 100%;
+						text-align: center;
+						padding: 0 10px 29px;
+						text-decoration: none;
+					}
+					&-title {
+						color: #333333;
+						font-size: 16px;
+						font-weight: 300;
+						line-height: 25px;
+					}
+					&-price {
+						color: #2096d0;
+						> span {
+							color: #999999;
+						}
+					}
 				}
 			}
 		}

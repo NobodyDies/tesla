@@ -207,8 +207,8 @@ $('ul.footer-top-mobile li > a').click(function (e) {
 });
 
 // Анимация звёздочек у товаров (добавление товара в избранное)
-if ($('.item-star').length) {
-	$('.item-star').click(function () {
+if ($('.tesla-item__star').length) {
+	$('.tesla-item__star').click(function () {
 
 		$(this).toggleClass("star-checked");
 	});
