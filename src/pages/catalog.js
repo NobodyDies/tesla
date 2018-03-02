@@ -18,18 +18,10 @@ $(document).ready(() => {
 	// переход на страницу товара выполнится моментально.
 	if (mobcheck == true) {
 
-		$('.tesla-item__text__wrap a').on('click', function (e) {
-			'use strict'; //satisfy code inspectors
-			var link = $(this); //preselect the link
-
-			if (link.hasClass('hover')) {
-				return true;
-			} else {
-				link.addClass('hover');
-				$('.tesla-item__text__wrap a').not(this).removeClass('hover');
-				e.preventDefault();
-				return false; //extra, and to make sure the function has consistent return points
-			}
+		$('.tesla-item').on('click', function (e) {
+			e.preventDefault();
+			var link = $(this).find(".tesla-item__text__wrap a").attr('href');
+			location.href = link;
 		});
 
 	} else if (mobcheck == false) {
@@ -38,6 +30,7 @@ $(document).ready(() => {
 			return true;
 		});
 	}
+
 
 
 	// Параллакс-эффект
