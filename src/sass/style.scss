@@ -964,7 +964,15 @@ ul, li {
 				}
 				&__buttons {
 					display: flex;
-					animation: buttons-fade-up .3s ease-in-out forwards;
+
+					&-open {
+						animation: buttons-fade-up .35s ease-in-out forwards;
+					}
+
+					&-buy {
+						animation: buttons-fade-up .6s ease-in-out forwards;
+					}
+
 					@media screen and (max-width: 535px) {
 						display: none;
 					}
