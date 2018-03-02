@@ -6,9 +6,8 @@ mixin icon(name,mod)
 	svg(class="icon icon-" + name + ' ' + mod)
 		use(xlink:href="/assets/img/icons.svg#icon-" + name)
 
-mixin teslaItem(img, name, descr, oldprice, price,indx)
-	- indx ? indx = 'swiper-slide' : indx = 'col-sm-4 col-xs-6'
-	.tesla-item(class=indx)
+mixin teslaItem(img, name, descr, oldprice, price)
+	.tesla-item.col-md-4.col-sm-4.col-xs-12
 		.tesla-item__star
 			+icon('star','')
 		.tesla-item__content
@@ -26,6 +25,20 @@ mixin teslaItem(img, name, descr, oldprice, price,indx)
 					.tesla-item__text__buttons
 						a(href="#").tesla-item__text__buttons-open Просмотр
 						.tesla-item__text__buttons-buy Купить
+
+mixin teslaItemPR(img, name, price, indx, imgclass)
+	- indx ? indx = 'swiper-slide' : indx = 'col-sm-3 col-xs-6'
+	div(class=indx).tesla-itempr
+		.tesla-item__star
+			+icon('star','')
+		a(href="#").tesla-itempr__content
+			img(src="/assets/img" + img)(class=imgclass)
+			.tesla-itempr__text
+				.tesla-itempr__text__wrap
+					.tesla-itempr__text__title= name
+					.tesla-itempr__text__price= price
+						=" "
+						span Р
 
 
 doctype html
