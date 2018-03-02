@@ -7,11 +7,14 @@ mixin icon(name,mod)
 		use(xlink:href="/assets/img/icons.svg#icon-" + name)
 
 mixin teslaItem(img, name, descr, oldprice, price)
-	.tesla-item.col-md-4.col-sm-4.col-xs-12
+	.tesla-item.col-md-4.col-sm-4.col-xs-6
 		.tesla-item__star
 			+icon('star','')
 		.tesla-item__content
-			img(src="/assets/img" + img)
+			picture
+				source(srcset="/assets/img" + img + '' media="(min-width: 535px)")
+				source(srcset="/assets/img/crop-mob" + img + '' media="(min-width: 300px)")
+				img(src="/assets/img" + img)
 			.tesla-item__text
 				.tesla-item__text__wrap
 					a(href="#")
